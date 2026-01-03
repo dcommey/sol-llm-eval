@@ -87,13 +87,7 @@ python scripts/regenerate_figures.py
 ```
 Output location: `paper/figures/` and `results/evaluations/`.
 
-### 4. Compile Manuscript
-To build the final PDF with all generated figures and tables:
-```bash
-cd paper
-./compile.sh
 ```
-Output: `paper/paper.pdf`
 
 ## 📂 Repository Structure
 
@@ -101,9 +95,6 @@ Output: `paper/paper.pdf`
 sol-llm-eval/
 ├── config/              # Experiment configurations (prompts, model params)
 ├── data/                # Dataset storage (raw & processed JSON)
-├── paper/               # LaTeX source for the manuscript
-│   ├── figures/         # Generated plots (PDF)
-│   └── tables/          # Generated LaTeX tables
 ├── results/             # Experimental outputs
 │   ├── evaluations/     # Metrics (JSON) and statistical tests
 │   └── predictions/     # Raw LLM responses
