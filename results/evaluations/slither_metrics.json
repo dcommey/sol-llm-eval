@@ -1,0 +1,853 @@
+{
+  "display_name": "Slither",
+  "overall_metrics": {
+    "precision": 0,
+    "recall": 0,
+    "f1_score": 0,
+    "true_positives": 0,
+    "false_positives": 0,
+    "false_negatives": 0
+  },
+  "results": {
+    "IERC20": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Bytes": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/Bytes.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x7a8721a9d64c74da899424c1b52acbf58ddc9782": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x8fd1e427396ddb511533cf9abdbebd0a7e08da35": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x8fd1e427396ddb511533cf9abdbebd0a7e08da35.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x89c1b3807d4c67df034fffb62f3509561218d30b": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x89c1b3807d4c67df034fffb62f3509561218d30b.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IERC1820Registry": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/interfaces/IERC1820Registry.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x4051334adc52057aca763453820cb0e045076ef3": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x4051334adc52057aca763453820cb0e045076ef3.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "MultiSignerERC7913Weighted": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/cryptography/signers/MultiSignerERC7913Weighted.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC2771Context": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IERC777Sender": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/interfaces/IERC777Sender.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC2771Forwarder": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/metatx/ERC2771Forwarder.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "SignerEIP7702": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/cryptography/signers/SignerEIP7702.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC1155Holder": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC1155/utils/ERC1155Holder.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "AbstractSigner": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/cryptography/signers/AbstractSigner.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "token": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/token.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "SafeERC20": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_benign_1": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_benign_1.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "unchecked_return_value": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xa46edd6a9a93feec36576ee5048146870ea2c3ae": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xa46edd6a9a93feec36576ee5048146870ea2c3ae.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_mapping_sym_1": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_mapping_sym_1.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xf015c35649c82f5467c9c74b7f28ee67665aad68": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xf015c35649c82f5467c9c74b7f28ee67665aad68.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "GovernorCountingFractional": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/governance/extensions/GovernorCountingFractional.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x7d09edb07d23acb532a82be3da5c17d9d85806b4": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x7d09edb07d23acb532a82be3da5c17d9d85806b4.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "overflow_single_tx": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/overflow_single_tx.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC20": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xf29ebe930a539a60279ace72c707cba851a57707": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "SlotDerivation": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/SlotDerivation.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x19cf8481ea15427a98ba3cdd6d9e14690011ab10": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IERC20Permit": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC165": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x8c7777c45481dba411450c228cb692ac3d550344": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x8c7777c45481dba411450c228cb692ac3d550344.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC6909Metadata": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC6909/extensions/ERC6909Metadata.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "draft-IERC1822": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/interfaces/draft-IERC1822.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x2972d548497286d18e92b5fa1f8f9139e5653fd2": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x2972d548497286d18e92b5fa1f8f9139e5653fd2.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC7913WebAuthnVerifier": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/cryptography/verifiers/ERC7913WebAuthnVerifier.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x524960d55174d912768678d8c606b4d50b79d7b1": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x524960d55174d912768678d8c606b4d50b79d7b1.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Calldata": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/Calldata.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "etherpot_lotto": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/etherpot_lotto.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xbaa3de6504690efb064420d89e871c27065cdd52": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbaa3de6504690efb064420d89e871c27065cdd52.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x958a8f594101d2c0485a52319f29b2647f2ebc06": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC20FlashMint": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20FlashMint.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x663e4229142a27f00bafb5d087e1e730648314c3": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xd5967fed03e85d1cce44cab284695b41bc675b5c": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xd5967fed03e85d1cce44cab284695b41bc675b5c.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_add": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_add.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x610495793564aed0f9c7fc48dc4c7c9151d34fd6": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "overflow_simple_add": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/overflow_simple_add.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_1": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_1.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xcead721ef5b11f1a7b530171aab69b16c5e66b6e": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xcead721ef5b11f1a7b530171aab69b16c5e66b6e.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_mul": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_mul.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC7786Recipient": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/crosschain/ERC7786Recipient.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Proxy": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/proxy/Proxy.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xd2018bfaa266a9ec0a1a84b061640faa009def76": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "tokensalechallenge": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/tokensalechallenge.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC721Burnable": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Burnable.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xa1fceeff3acc57d257b917e30c4df661401d6431": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xa1fceeff3acc57d257b917e30c4df661401d6431.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC1363": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC1363.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x7a4349a749e59a5736efb7826ee3496a2dfd5489": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC1967Proxy": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/proxy/ERC1967/ERC1967Proxy.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC1155Supply": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC1155/extensions/ERC1155Supply.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x9d06cbafa865037a01d322d3f4222fa3e04e5488": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x9d06cbafa865037a01d322d3f4222fa3e04e5488.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Packing": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/Packing.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "king_of_the_ether_throne": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IAccessManaged": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/access/manager/IAccessManaged.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x93c32845fae42c83a70e5f06214c8433665c2ab5": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x93c32845fae42c83a70e5f06214c8433665c2ab5.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xec329ffc97d75fe03428ae155fc7793431487f63": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IERC777": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/interfaces/IERC777.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x4e73b32ed6c35f570686b89848e5f39f20ecc106": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x39cfd754c85023648bf003bea2dd498c5612abfa": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x39cfd754c85023648bf003bea2dd498c5612abfa.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x5aa88d2901c68fda244f1d0584400368d2c8e739": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "timelock": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/timelock.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Votes": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/governance/utils/Votes.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrancy_cross_function": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_cross_function.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xe894d54dca59cb53fe9cbc5155093605c7068220": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "spank_chain_payment": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/spank_chain_payment.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xdb1c55f6926e7d847ddf8678905ad871a68199d2": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xe09b1ab8111c2729a76f16de96bc86a7af837928": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_minimal": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_minimal.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "GovernorSettings": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/governance/extensions/GovernorSettings.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "BECToken": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/BECToken.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_multitx_onefunc_feasible": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_multitx_onefunc_feasible.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x941d225236464a25eb18076df7da6a91d0f95e9e": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrancy_simple": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "etherstore": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/etherstore.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC1155Utils": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC1155/utils/ERC1155Utils.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "RLP": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/RLP.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "simple_dao": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "CrosschainLinked": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/crosschain/CrosschainLinked.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "integer_overflow_multitx_multifunc_feasible": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/integer_overflow_multitx_multifunc_feasible.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC721": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x7541b76cb60f4c60af330c208b0623b7f54bf615": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x7541b76cb60f4c60af330c208b0623b7f54bf615.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "draft-InteroperableAddress": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/draft-InteroperableAddress.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x806a6bd219f162442d992bdc4ee6eba1f2c5a707": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrancy_bonus": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_bonus.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "GovernorPreventLateQuorum": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/governance/extensions/GovernorPreventLateQuorum.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "Blockhash": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/Blockhash.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "IERC3156FlashLender": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/interfaces/IERC3156FlashLender.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "mishandled": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "ERC20Permit": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Permit.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "draft-ERC4337Utils": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/account/utils/draft-ERC4337Utils.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x52d2e0f9b01101a59b38a3d05c80b7618aeed984": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "lotto": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/lotto.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb37f18af15bafb869a065b61fc83cfc44ed9cc27": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xf2570186500a46986f3139f65afedc2afe4f445d": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xf2570186500a46986f3139f65afedc2afe4f445d.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrancy_insecure": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_insecure.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xb620cee6b52f96f3c6b253e6eea556aa2d214a99": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrancy_dao": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "modifier_reentrancy": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "CircularBuffer": {
+      "contract_path": "data/raw/openzeppelin-contracts/contracts/utils/structs/CircularBuffer.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x561eac93c92360949ab1f1403323e6db345cbf31": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0x561eac93c92360949ab1f1403323e6db345cbf31.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "etherbank": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "insecure_transfer": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/arithmetic/insecure_transfer.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "reentrance": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/reentrance.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    },
+    "0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8": {
+      "contract_path": "data/raw/smartbugs-curated/dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+      "vulnerabilities": [],
+      "success": true,
+      "error": "No JSON output"
+    }
+  }
+}

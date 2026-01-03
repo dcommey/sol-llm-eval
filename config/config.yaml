@@ -1,0 +1,190 @@
+# Models to evaluate (HuggingFace model IDs and Ollama names)
+models:
+  qwen:
+    model_id: "Qwen/Qwen2.5-Coder-7B-Instruct"
+    ollama_model: "qwen2.5-coder:7b"
+    display_name: "Qwen2.5-Coder-7B"
+    enabled: true
+  
+  deepseek:
+    model_id: "deepseek-ai/deepseek-coder-7b-instruct-v1.5"
+    ollama_model: "deepseek-coder:6.7b"
+    display_name: "DeepSeek-Coder-6.7B"
+    enabled: true
+  
+  codellama:
+    model_id: "codellama/CodeLlama-7b-Instruct-hf"
+    ollama_model: "codellama:7b-instruct"
+    display_name: "CodeLLaMA-7B"
+    enabled: true
+  
+  mistral:
+    model_id: "mistralai/Mistral-7B-Instruct-v0.3"
+    ollama_model: "mistral:7b-instruct"
+    display_name: "Mistral-7B"
+    enabled: true
+
+# Inference settings
+inference:
+  backend: "ollama"  # ollama, huggingface, or auto (prefers ollama on Apple Silicon)
+  device: "auto"  # auto, mps, cuda, or cpu
+  quantization:
+    enabled: true
+    load_in_4bit: true
+    bnb_4bit_compute_dtype: "float16"
+    bnb_4bit_use_double_quant: true
+    bnb_4bit_quant_type: "nf4"
+  
+  generation:
+    temperature: 0.1  # Low for deterministic security analysis
+    max_new_tokens: 2048
+    do_sample: true
+    top_p: 0.95
+    top_k: 50
+    repetition_penalty: 1.1
+    num_return_sequences: 1
+
+# Dataset configuration
+dataset:
+  source: "combined"  # combined (vuln + clean), smartbugs, or solidifi
+  use_combined: true  # Use combined dataset with OpenZeppelin clean contracts
+  dataset_path: "data/raw/smartbugs-curated"
+  openzeppelin_path: "data/raw/openzeppelin-contracts"
+  repo_url: "https://github.com/smartbugs/smartbugs-curated.git"
+  
+  # Vulnerability types to include
+  vulnerability_types:
+    - "reentrancy"
+    - "integer_overflow"
+    - "unchecked_low_level_calls"
+  
+  # Sampling strategy
+  sampling:
+    strategy: "stratified"  # stratified or random
+    n_samples: 141  # Combined: 98 vulnerable + 43 clean
+    n_vulnerable: 98
+    n_clean: 50
+    min_per_type: 10  # Minimum contracts per vulnerability type
+    random_seed: 42  # Reproducibility
+    
+  # Filters
+  filters:
+    max_contract_size: 10000  # Max lines of code
+    min_contract_size: 10     # Min lines of code
+    exclude_test_contracts: true
+
+# Prompt configuration
+prompts:
+  template_version: "v1"
+  system_message: |
+    You are a smart contract security auditor with expertise in Solidity.
+    Your task is to identify security vulnerabilities in smart contracts.
+  
+  instruction_template: |
+    Analyze the following Solidity smart contract for security vulnerabilities.
+    
+    Contract Code:
+    ```solidity
+    {contract_code}
+    ```
+    
+    Instructions:
+    1. Identify all security vulnerabilities in the contract
+    2. For each vulnerability, provide:
+       - Vulnerability Type (e.g., Reentrancy, Integer Overflow, Unchecked External Call)
+       - Line Number(s) where the vulnerability occurs
+       - Severity (Critical, High, Medium, Low)
+       - Brief Explanation (1-2 sentences)
+    
+    Output Format: Return ONLY a JSON array with the following structure:
+    [
+      {{
+        "vulnerability_type": "string",
+        "line_numbers": [int, ...],
+        "severity": "string",
+        "explanation": "string"
+      }}
+    ]
+    
+    If no vulnerabilities are found, return an empty array: []
+
+# Evaluation settings
+evaluation:
+  metrics:
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "false_positive_rate"
+    - "false_negative_rate"
+  
+  # Matching criteria for vulnerability detection
+  matching:
+    line_number_tolerance: 5  # Lines +/- from ground truth
+    type_matching: "exact"    # exact or fuzzy
+  
+  # Statistical tests
+  statistical_tests:
+    significance_level: 0.05
+    bootstrap_iterations: 1000
+
+# Output settings
+output:
+  results_dir: "results"
+  predictions_dir: "results/predictions"
+  evaluations_dir: "results/evaluations"
+  figures_dir: "results/figures"
+  
+  # Checkpointing
+  checkpoint:
+    enabled: true
+    save_interval: 10  # Save after every N contracts
+  
+  # Logging
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+    file: "results/experiment.log"
+    console: true
+
+# Visualization settings
+visualization:
+  style: "seaborn-v0_8-paper"
+  dpi: 300
+  format: "pdf"
+  
+  figures:
+    overall_performance:
+      enabled: true
+      metrics: ["precision", "recall", "f1_score"]
+    
+    per_vulnerability:
+      enabled: true
+      breakdown_by: "vulnerability_type"
+    
+    confusion_matrix:
+      enabled: true
+      normalize: true
+    
+    timing_analysis:
+      enabled: true
+      show_memory: true
+
+# Paper generation
+paper:
+  figures_dir: "paper/figures"
+  tables_dir: "paper/tables"
+  
+  tables:
+    overall_metrics:
+      enabled: true
+      format: "latex"
+      caption: "Overall Performance Metrics Across All Models"
+    
+    per_vulnerability_metrics:
+      enabled: true
+      format: "latex"
+      caption: "Performance Breakdown by Vulnerability Type"
+    
+    timing_cost:
+      enabled: true
+      format: "latex"
+      caption: "Inference Time and Resource Usage Comparison"

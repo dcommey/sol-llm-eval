@@ -1,0 +1,76 @@
+{
+  "qwen": {
+    "f1_bootstrap": {
+      "mean": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "ci_width": 0.0
+    }
+  },
+  "deepseek": {
+    "f1_bootstrap": {
+      "mean": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "ci_width": 0.0
+    }
+  },
+  "codellama": {
+    "f1_bootstrap": {
+      "mean": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "ci_width": 0.0
+    }
+  },
+  "mistral": {
+    "f1_bootstrap": {
+      "mean": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "ci_width": 0.0
+    }
+  },
+  "qwen_vs_deepseek": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  },
+  "qwen_vs_codellama": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  },
+  "qwen_vs_mistral": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  },
+  "deepseek_vs_codellama": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  },
+  "deepseek_vs_mistral": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  },
+  "codellama_vs_mistral": {
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  }
+}

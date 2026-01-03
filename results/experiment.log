@@ -1,0 +1,661 @@
+2025-12-31 17:48:06,750 - __main__ - INFO - ================================================================================
+2025-12-31 17:48:06,750 - __main__ - INFO - LLM Smart Contract Auditing Benchmark
+2025-12-31 17:48:06,750 - __main__ - INFO - ================================================================================
+2025-12-31 17:48:06,750 - src.experiment_runner - INFO - Starting full experiment
+2025-12-31 17:48:06,750 - src.experiment_runner - INFO - Step 1: Loading dataset
+2025-12-31 17:48:06,750 - src.dataset_loader - INFO - Loading SmartBugs-Curated dataset
+2025-12-31 17:48:06,750 - src.dataset_loader - INFO - Dataset already exists at data/raw/smartbugs-curated
+2025-12-31 17:48:06,750 - src.dataset_loader - INFO - Using dataset base path: data/raw/smartbugs-curated/dataset
+2025-12-31 17:48:06,751 - src.dataset_loader - INFO - Found 31 contracts in data/raw/smartbugs-curated/dataset/reentrancy
+2025-12-31 17:48:06,751 - src.dataset_loader - INFO - Found 15 contracts in data/raw/smartbugs-curated/dataset/arithmetic
+2025-12-31 17:48:06,752 - src.dataset_loader - INFO - Found 52 contracts in data/raw/smartbugs-curated/dataset/unchecked_low_level_calls
+2025-12-31 17:48:06,753 - src.dataset_loader - INFO - Found 98 contracts across 3 vulnerability types
+2025-12-31 17:48:06,780 - src.dataset_loader - INFO - After filtering: 98 contracts
+2025-12-31 17:48:06,782 - src.dataset_loader - INFO - Sampled 50 contracts
+2025-12-31 17:48:06,782 - src.dataset_loader - INFO - Distribution: {'unchecked_low_level_calls': 22, 'reentrancy': 17, 'integer_overflow': 11}
+2025-12-31 17:48:06,783 - src.dataset_loader - INFO - Dataset validation passed
+2025-12-31 17:48:06,784 - src.dataset_loader - INFO - Saved processed dataset to data/raw/processed_dataset.json
+2025-12-31 17:48:06,784 - src.experiment_runner - INFO - Step 2: Running all models
+2025-12-31 17:48:06,784 - src.experiment_runner - INFO - Running 4 models: ['qwen', 'deepseek', 'codellama', 'mistral']
+2025-12-31 17:48:06,784 - src.experiment_runner - INFO - 
+================================================================================
+Running model: qwen
+================================================================================
+2025-12-31 17:48:06,784 - src.experiment_runner - INFO - Running Qwen2.5-Coder-7B on 50 contracts
+2025-12-31 17:48:06,824 - src.llm_clients - INFO - Loading Qwen2.5-Coder-7B from Qwen/Qwen2.5-Coder-7B-Instruct
+2025-12-31 17:48:06,824 - src.llm_clients - INFO - Device: mps, Apple Silicon: True
+2025-12-31 17:48:08,193 - src.llm_clients - WARNING - BitsAndBytes quantization not supported on Apple Silicon. Using float16 instead for memory efficiency.
+2025-12-31 17:51:07,442 - src.llm_clients - INFO - Moving model to mps
+2025-12-31 17:53:48,873 - src.llm_clients - INFO - Qwen2.5-Coder-7B loaded successfully on mps
+2025-12-31 18:20:59,067 - src.llm_clients - INFO - Qwen2.5-Coder-7B unloaded from memory
+2025-12-31 18:20:59,087 - __main__ - WARNING - 
+Experiment interrupted by user
+2025-12-31 18:25:33,616 - __main__ - INFO - ================================================================================
+2025-12-31 18:25:33,616 - __main__ - INFO - LLM Smart Contract Auditing Benchmark
+2025-12-31 18:25:33,616 - __main__ - INFO - ================================================================================
+2025-12-31 18:25:33,616 - src.experiment_runner - INFO - Starting full experiment
+2025-12-31 18:25:33,616 - src.experiment_runner - INFO - Step 1: Loading dataset
+2025-12-31 18:25:33,616 - src.dataset_loader - INFO - Loading SmartBugs-Curated dataset
+2025-12-31 18:25:33,616 - src.dataset_loader - INFO - Dataset already exists at data/raw/smartbugs-curated
+2025-12-31 18:25:33,617 - src.dataset_loader - INFO - Using dataset base path: data/raw/smartbugs-curated/dataset
+2025-12-31 18:25:33,617 - src.dataset_loader - INFO - Found 31 contracts in data/raw/smartbugs-curated/dataset/reentrancy
+2025-12-31 18:25:33,618 - src.dataset_loader - INFO - Found 15 contracts in data/raw/smartbugs-curated/dataset/arithmetic
+2025-12-31 18:25:33,619 - src.dataset_loader - INFO - Found 52 contracts in data/raw/smartbugs-curated/dataset/unchecked_low_level_calls
+2025-12-31 18:25:33,621 - src.dataset_loader - INFO - Found 98 contracts across 3 vulnerability types
+2025-12-31 18:25:33,662 - src.dataset_loader - INFO - After filtering: 98 contracts
+2025-12-31 18:25:33,673 - src.dataset_loader - INFO - Sampled 50 contracts
+2025-12-31 18:25:33,674 - src.dataset_loader - INFO - Distribution: {'unchecked_low_level_calls': 22, 'reentrancy': 17, 'integer_overflow': 11}
+2025-12-31 18:25:33,675 - src.dataset_loader - INFO - Dataset validation passed
+2025-12-31 18:25:33,676 - src.dataset_loader - INFO - Saved processed dataset to data/raw/processed_dataset.json
+2025-12-31 18:25:33,676 - src.experiment_runner - INFO - Step 2: Running all models
+2025-12-31 18:25:33,676 - src.experiment_runner - INFO - Running 4 models: ['qwen', 'deepseek', 'codellama', 'mistral']
+2025-12-31 18:25:33,676 - src.experiment_runner - INFO - 
+================================================================================
+Running model: qwen
+================================================================================
+2025-12-31 18:25:33,676 - src.experiment_runner - INFO - Running Qwen2.5-Coder-7B on 50 contracts
+2025-12-31 18:25:33,676 - src.experiment_runner - INFO - Using Ollama backend for qwen
+2025-12-31 18:25:33,684 - src.ollama_clients - INFO - Checking if qwen2.5-coder:7b is available...
+2025-12-31 18:25:33,701 - src.ollama_clients - INFO - Model qwen2.5-coder:7b already available
+2025-12-31 18:25:33,701 - src.ollama_clients - INFO - Qwen2.5-Coder-7B ready for inference
+2025-12-31 18:28:21,806 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 178 column 34 (char 7696)
+2025-12-31 18:29:23,667 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 6 column 159 (char 254)
+2025-12-31 18:29:23,704 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 18:30:41,654 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 18:32:26,173 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 6 column 95 (char 204)
+2025-12-31 18:33:09,750 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 18:34:43,787 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 18:35:56,089 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 18:35:56,091 - src.ollama_clients - INFO - Qwen2.5-Coder-7B session ended (Ollama keeps model loaded)
+2025-12-31 18:35:56,093 - src.experiment_runner - INFO - Saved 50 predictions for Qwen2.5-Coder-7B
+2025-12-31 18:35:56,094 - src.experiment_runner - INFO - Completed qwen
+2025-12-31 18:35:56,094 - src.experiment_runner - INFO - 
+================================================================================
+Running model: deepseek
+================================================================================
+2025-12-31 18:35:56,094 - src.experiment_runner - INFO - Running DeepSeek-Coder-6.7B on 50 contracts
+2025-12-31 18:35:56,104 - src.experiment_runner - INFO - Using Ollama backend for deepseek
+2025-12-31 18:35:56,107 - src.ollama_clients - INFO - Checking if deepseek-coder:6.7b is available...
+2025-12-31 18:35:56,113 - src.ollama_clients - INFO - Model deepseek-coder:6.7b already available
+2025-12-31 18:35:56,113 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B ready for inference
+2025-12-31 18:38:34,511 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 18:40:53,045 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 18:42:05,475 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 27 column 43 (char 1289)
+2025-12-31 18:43:19,125 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting property name enclosed in double quotes: line 5 column 4 (char 76)
+2025-12-31 18:44:22,402 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 18:46:41,892 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 18:48:33,681 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 18:48:33,684 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B session ended (Ollama keeps model loaded)
+2025-12-31 18:48:33,688 - src.experiment_runner - INFO - Saved 50 predictions for DeepSeek-Coder-6.7B
+2025-12-31 18:48:33,688 - src.experiment_runner - INFO - Completed deepseek
+2025-12-31 18:48:33,688 - src.experiment_runner - INFO - 
+================================================================================
+Running model: codellama
+================================================================================
+2025-12-31 18:48:33,689 - src.experiment_runner - INFO - Running CodeLLaMA-7B on 50 contracts
+2025-12-31 18:48:33,704 - src.experiment_runner - INFO - Using Ollama backend for codellama
+2025-12-31 18:48:33,708 - src.ollama_clients - INFO - Checking if codellama:7b-instruct is available...
+2025-12-31 18:48:33,718 - src.ollama_clients - INFO - Model codellama:7b-instruct already available
+2025-12-31 18:48:33,718 - src.ollama_clients - INFO - CodeLLaMA-7B ready for inference
+2025-12-31 18:50:58,840 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 24 column 92 (char 979)
+2025-12-31 18:53:41,678 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 18:56:39,814 - src.ollama_clients - ERROR - Error parsing response: 'int' object has no attribute 'get'
+2025-12-31 18:58:06,921 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 19:01:12,470 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 118 column 26 (char 7437)
+2025-12-31 19:06:41,965 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 19:07:03,323 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting value: line 1 column 2 (char 1)
+2025-12-31 19:11:07,805 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 19:16:37,550 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 19:16:37,552 - src.ollama_clients - INFO - CodeLLaMA-7B session ended (Ollama keeps model loaded)
+2025-12-31 19:16:37,554 - src.experiment_runner - INFO - Saved 50 predictions for CodeLLaMA-7B
+2025-12-31 19:16:37,556 - src.experiment_runner - INFO - Completed codellama
+2025-12-31 19:16:37,556 - src.experiment_runner - INFO - 
+================================================================================
+Running model: mistral
+================================================================================
+2025-12-31 19:16:37,556 - src.experiment_runner - INFO - Running Mistral-7B on 50 contracts
+2025-12-31 19:16:37,565 - src.experiment_runner - INFO - Using Ollama backend for mistral
+2025-12-31 19:16:37,569 - src.ollama_clients - INFO - Checking if mistral:7b-instruct is available...
+2025-12-31 19:16:37,582 - src.ollama_clients - INFO - Model mistral:7b-instruct already available
+2025-12-31 19:16:37,582 - src.ollama_clients - INFO - Mistral-7B ready for inference
+2025-12-31 19:18:11,852 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 30 column 101 (char 1499)
+2025-12-31 19:19:18,329 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 19:19:30,148 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 6 column 267 (char 372)
+2025-12-31 19:20:51,977 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 19:23:46,119 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 19:25:41,925 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 19:27:15,987 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 19:27:15,990 - src.ollama_clients - INFO - Mistral-7B session ended (Ollama keeps model loaded)
+2025-12-31 19:27:15,994 - src.experiment_runner - INFO - Saved 50 predictions for Mistral-7B
+2025-12-31 19:27:15,994 - src.experiment_runner - INFO - Completed mistral
+2025-12-31 19:27:15,994 - src.experiment_runner - INFO - Step 3: Evaluating predictions
+2025-12-31 19:27:15,995 - src.experiment_runner - INFO - Evaluating all models
+2025-12-31 19:27:15,995 - src.experiment_runner - INFO - Evaluating Qwen2.5-Coder-7B
+2025-12-31 19:27:16,055 - src.evaluator - INFO - Evaluation: TP=22, FP=43, TN=0, FN=28
+2025-12-31 19:27:16,055 - src.evaluator - INFO - Precision=0.338, Recall=0.440, F1=0.383
+2025-12-31 19:27:16,072 - src.evaluator - INFO - Evaluation: TP=15, FP=0, TN=0, FN=2
+2025-12-31 19:27:16,072 - src.evaluator - INFO - Precision=1.000, Recall=0.882, F1=0.938
+2025-12-31 19:27:16,072 - src.evaluator - INFO - Metrics for reentrancy: F1=0.938
+2025-12-31 19:27:16,074 - src.evaluator - INFO - Evaluation: TP=7, FP=6, TN=0, FN=4
+2025-12-31 19:27:16,074 - src.evaluator - INFO - Precision=0.538, Recall=0.636, F1=0.583
+2025-12-31 19:27:16,074 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.583
+2025-12-31 19:27:16,077 - src.evaluator - INFO - Evaluation: TP=0, FP=37, TN=0, FN=22
+2025-12-31 19:27:16,077 - src.evaluator - INFO - Precision=0.000, Recall=0.000, F1=0.000
+2025-12-31 19:27:16,077 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.000
+2025-12-31 19:27:16,211 - src.experiment_runner - INFO - Evaluating DeepSeek-Coder-6.7B
+2025-12-31 19:27:16,216 - src.evaluator - INFO - Evaluation: TP=27, FP=74, TN=0, FN=23
+2025-12-31 19:27:16,216 - src.evaluator - INFO - Precision=0.267, Recall=0.540, F1=0.358
+2025-12-31 19:27:16,218 - src.evaluator - INFO - Evaluation: TP=17, FP=12, TN=0, FN=0
+2025-12-31 19:27:16,218 - src.evaluator - INFO - Precision=0.586, Recall=1.000, F1=0.739
+2025-12-31 19:27:16,218 - src.evaluator - INFO - Metrics for reentrancy: F1=0.739
+2025-12-31 19:27:16,219 - src.evaluator - INFO - Evaluation: TP=10, FP=14, TN=0, FN=1
+2025-12-31 19:27:16,219 - src.evaluator - INFO - Precision=0.417, Recall=0.909, F1=0.571
+2025-12-31 19:27:16,219 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.571
+2025-12-31 19:27:16,222 - src.evaluator - INFO - Evaluation: TP=0, FP=48, TN=0, FN=22
+2025-12-31 19:27:16,222 - src.evaluator - INFO - Precision=0.000, Recall=0.000, F1=0.000
+2025-12-31 19:27:16,222 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.000
+2025-12-31 19:27:16,227 - src.experiment_runner - INFO - Evaluating CodeLLaMA-7B
+2025-12-31 19:27:16,232 - src.evaluator - INFO - Evaluation: TP=19, FP=83, TN=0, FN=31
+2025-12-31 19:27:16,232 - src.evaluator - INFO - Precision=0.186, Recall=0.380, F1=0.250
+2025-12-31 19:27:16,233 - src.evaluator - INFO - Evaluation: TP=12, FP=28, TN=0, FN=5
+2025-12-31 19:27:16,233 - src.evaluator - INFO - Precision=0.300, Recall=0.706, F1=0.421
+2025-12-31 19:27:16,233 - src.evaluator - INFO - Metrics for reentrancy: F1=0.421
+2025-12-31 19:27:16,235 - src.evaluator - INFO - Evaluation: TP=7, FP=15, TN=0, FN=4
+2025-12-31 19:27:16,235 - src.evaluator - INFO - Precision=0.318, Recall=0.636, F1=0.424
+2025-12-31 19:27:16,235 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.424
+2025-12-31 19:27:16,237 - src.evaluator - INFO - Evaluation: TP=0, FP=40, TN=0, FN=22
+2025-12-31 19:27:16,237 - src.evaluator - INFO - Precision=0.000, Recall=0.000, F1=0.000
+2025-12-31 19:27:16,237 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.000
+2025-12-31 19:27:16,245 - src.experiment_runner - INFO - Evaluating Mistral-7B
+2025-12-31 19:27:16,265 - src.evaluator - INFO - Evaluation: TP=25, FP=46, TN=0, FN=25
+2025-12-31 19:27:16,265 - src.evaluator - INFO - Precision=0.352, Recall=0.500, F1=0.413
+2025-12-31 19:27:16,268 - src.evaluator - INFO - Evaluation: TP=16, FP=3, TN=0, FN=1
+2025-12-31 19:27:16,268 - src.evaluator - INFO - Precision=0.842, Recall=0.941, F1=0.889
+2025-12-31 19:27:16,268 - src.evaluator - INFO - Metrics for reentrancy: F1=0.889
+2025-12-31 19:27:16,269 - src.evaluator - INFO - Evaluation: TP=9, FP=2, TN=0, FN=2
+2025-12-31 19:27:16,269 - src.evaluator - INFO - Precision=0.818, Recall=0.818, F1=0.818
+2025-12-31 19:27:16,269 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.818
+2025-12-31 19:27:16,274 - src.evaluator - INFO - Evaluation: TP=0, FP=41, TN=0, FN=22
+2025-12-31 19:27:16,274 - src.evaluator - INFO - Precision=0.000, Recall=0.000, F1=0.000
+2025-12-31 19:27:16,274 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.000
+2025-12-31 19:27:16,282 - src.experiment_runner - INFO - Saved evaluation results to results/evaluations/final_metrics.json
+2025-12-31 19:27:16,282 - src.experiment_runner - INFO - Full experiment complete!
+2025-12-31 19:27:16,285 - __main__ - INFO - 
+================================================================================
+2025-12-31 19:27:16,285 - __main__ - INFO - Experiment Summary
+2025-12-31 19:27:16,285 - __main__ - INFO - ================================================================================
+2025-12-31 19:27:16,285 - __main__ - INFO - Dataset size: 50
+2025-12-31 19:27:16,285 - __main__ - INFO - Models evaluated: qwen, deepseek, codellama, mistral
+2025-12-31 19:27:16,285 - __main__ - INFO - 
+Qwen2.5-Coder-7B:
+2025-12-31 19:27:16,285 - __main__ - INFO -   Precision: 0.338
+2025-12-31 19:27:16,285 - __main__ - INFO -   Recall: 0.440
+2025-12-31 19:27:16,285 - __main__ - INFO -   F1-Score: 0.383
+2025-12-31 19:27:16,285 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 19:27:16,285 - __main__ - INFO - 
+DeepSeek-Coder-6.7B:
+2025-12-31 19:27:16,285 - __main__ - INFO -   Precision: 0.267
+2025-12-31 19:27:16,285 - __main__ - INFO -   Recall: 0.540
+2025-12-31 19:27:16,285 - __main__ - INFO -   F1-Score: 0.358
+2025-12-31 19:27:16,285 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 19:27:16,285 - __main__ - INFO - 
+CodeLLaMA-7B:
+2025-12-31 19:27:16,285 - __main__ - INFO -   Precision: 0.186
+2025-12-31 19:27:16,285 - __main__ - INFO -   Recall: 0.380
+2025-12-31 19:27:16,285 - __main__ - INFO -   F1-Score: 0.250
+2025-12-31 19:27:16,285 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 19:27:16,285 - __main__ - INFO - 
+Mistral-7B:
+2025-12-31 19:27:16,285 - __main__ - INFO -   Precision: 0.352
+2025-12-31 19:27:16,285 - __main__ - INFO -   Recall: 0.500
+2025-12-31 19:27:16,285 - __main__ - INFO -   F1-Score: 0.413
+2025-12-31 19:27:16,285 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 19:27:16,286 - __main__ - INFO - 
+================================================================================
+2025-12-31 19:27:16,286 - __main__ - INFO - Generating Visualizations
+2025-12-31 19:27:16,286 - __main__ - INFO - ================================================================================
+2025-12-31 19:27:16,334 - src.visualizations - INFO - Generating all visualizations
+2025-12-31 19:27:18,975 - src.visualizations - INFO - Saved figure: overall_performance
+2025-12-31 19:27:19,083 - src.visualizations - INFO - Saved figure: per_vulnerability_performance
+2025-12-31 19:27:19,759 - src.visualizations - INFO - Saved figure: confusion_matrices
+2025-12-31 19:27:19,760 - src.visualizations - INFO - Saved LaTeX table: overall_metrics.tex
+2025-12-31 19:27:19,760 - src.visualizations - INFO - Saved LaTeX table: per_vulnerability_metrics.tex
+2025-12-31 19:27:19,760 - src.visualizations - INFO - All visualizations generated successfully
+2025-12-31 19:27:19,760 - __main__ - INFO - 
+================================================================================
+2025-12-31 19:27:19,760 - __main__ - INFO - Experiment Complete!
+2025-12-31 19:27:19,760 - __main__ - INFO - ================================================================================
+2025-12-31 19:27:19,760 - __main__ - INFO - Results saved to: results/evaluations
+2025-12-31 19:27:19,760 - __main__ - INFO - Figures saved to: paper/figures
+2025-12-31 19:27:19,760 - __main__ - INFO - Tables saved to: paper/tables
+2025-12-31 21:59:17,412 - __main__ - INFO - ================================================================================
+2025-12-31 21:59:17,412 - __main__ - INFO - LLM Smart Contract Auditing Benchmark
+2025-12-31 21:59:17,412 - __main__ - INFO - ================================================================================
+2025-12-31 21:59:17,412 - src.experiment_runner - INFO - Starting full experiment
+2025-12-31 21:59:17,412 - src.experiment_runner - INFO - Step 1: Loading dataset
+2025-12-31 21:59:17,412 - src.dataset_loader - INFO - Loading SmartBugs-Curated dataset
+2025-12-31 21:59:17,412 - src.dataset_loader - INFO - Dataset already exists at data/raw/smartbugs-curated
+2025-12-31 21:59:17,412 - src.dataset_loader - INFO - Using dataset base path: data/raw/smartbugs-curated/dataset
+2025-12-31 21:59:17,412 - src.dataset_loader - INFO - Found 31 contracts in data/raw/smartbugs-curated/dataset/reentrancy
+2025-12-31 21:59:17,413 - src.dataset_loader - INFO - Found 15 contracts in data/raw/smartbugs-curated/dataset/arithmetic
+2025-12-31 21:59:17,413 - src.dataset_loader - INFO - Found 52 contracts in data/raw/smartbugs-curated/dataset/unchecked_low_level_calls
+2025-12-31 21:59:17,419 - src.dataset_loader - INFO - Found 98 contracts across 3 vulnerability types
+2025-12-31 21:59:17,428 - src.dataset_loader - INFO - After filtering: 98 contracts
+2025-12-31 21:59:17,439 - src.dataset_loader - INFO - Sampled 98 contracts
+2025-12-31 21:59:17,440 - src.dataset_loader - INFO - Distribution: {'unchecked_low_level_calls': 52, 'reentrancy': 31, 'integer_overflow': 15}
+2025-12-31 21:59:17,441 - src.dataset_loader - INFO - Dataset validation passed
+2025-12-31 21:59:17,443 - src.dataset_loader - INFO - Saved processed dataset to data/raw/processed_dataset.json
+2025-12-31 21:59:17,443 - src.experiment_runner - INFO - Step 2: Running all models
+2025-12-31 21:59:17,443 - src.experiment_runner - INFO - Running 4 models: ['qwen', 'deepseek', 'codellama', 'mistral']
+2025-12-31 21:59:17,443 - src.experiment_runner - INFO - 
+================================================================================
+Running model: qwen
+================================================================================
+2025-12-31 21:59:17,443 - src.experiment_runner - INFO - Running Qwen2.5-Coder-7B on 98 contracts
+2025-12-31 21:59:17,444 - src.experiment_runner - INFO - Loading checkpoint for qwen
+2025-12-31 21:59:17,455 - src.experiment_runner - INFO - Resuming from checkpoint: 50 already processed
+2025-12-31 21:59:17,455 - src.experiment_runner - INFO - Using Ollama backend for qwen
+2025-12-31 21:59:17,480 - src.ollama_clients - INFO - Checking if qwen2.5-coder:7b is available...
+2025-12-31 21:59:17,517 - src.ollama_clients - INFO - Model qwen2.5-coder:7b already available
+2025-12-31 21:59:17,517 - src.ollama_clients - INFO - Qwen2.5-Coder-7B ready for inference
+2025-12-31 22:01:17,886 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 22:02:55,345 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 22:04:34,726 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 22:06:36,132 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2025-12-31 22:07:50,400 - src.ollama_clients - INFO - Qwen2.5-Coder-7B session ended (Ollama keeps model loaded)
+2025-12-31 22:07:50,411 - src.experiment_runner - INFO - Saved 97 predictions for Qwen2.5-Coder-7B
+2025-12-31 22:07:50,412 - src.experiment_runner - INFO - Completed qwen
+2025-12-31 22:07:50,412 - src.experiment_runner - INFO - 
+================================================================================
+Running model: deepseek
+================================================================================
+2025-12-31 22:07:50,412 - src.experiment_runner - INFO - Running DeepSeek-Coder-6.7B on 98 contracts
+2025-12-31 22:07:50,412 - src.experiment_runner - INFO - Loading checkpoint for deepseek
+2025-12-31 22:07:50,452 - src.experiment_runner - INFO - Resuming from checkpoint: 50 already processed
+2025-12-31 22:07:50,452 - src.experiment_runner - INFO - Using Ollama backend for deepseek
+2025-12-31 22:07:50,456 - src.ollama_clients - INFO - Checking if deepseek-coder:6.7b is available...
+2025-12-31 22:07:50,465 - src.ollama_clients - INFO - Model deepseek-coder:6.7b already available
+2025-12-31 22:07:50,465 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B ready for inference
+2025-12-31 22:10:25,234 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 22:11:27,826 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 27 column 43 (char 1122)
+2025-12-31 22:13:15,128 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 22:15:48,391 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 22:18:37,781 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2025-12-31 22:20:42,572 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B session ended (Ollama keeps model loaded)
+2025-12-31 22:20:42,621 - src.experiment_runner - INFO - Saved 97 predictions for DeepSeek-Coder-6.7B
+2025-12-31 22:20:42,621 - src.experiment_runner - INFO - Completed deepseek
+2025-12-31 22:20:42,621 - src.experiment_runner - INFO - 
+================================================================================
+Running model: codellama
+================================================================================
+2025-12-31 22:20:42,621 - src.experiment_runner - INFO - Running CodeLLaMA-7B on 98 contracts
+2025-12-31 22:20:42,621 - src.experiment_runner - INFO - Loading checkpoint for codellama
+2025-12-31 22:20:42,667 - src.experiment_runner - INFO - Resuming from checkpoint: 50 already processed
+2025-12-31 22:20:42,669 - src.experiment_runner - INFO - Using Ollama backend for codellama
+2025-12-31 22:20:42,676 - src.ollama_clients - INFO - Checking if codellama:7b-instruct is available...
+2025-12-31 22:20:42,695 - src.ollama_clients - INFO - Model codellama:7b-instruct already available
+2025-12-31 22:20:42,695 - src.ollama_clients - INFO - CodeLLaMA-7B ready for inference
+2025-12-31 22:25:29,200 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 22:25:38,610 - src.ollama_clients - ERROR - Error parsing response: 'int' object has no attribute 'get'
+2025-12-31 22:31:54,250 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 22:36:46,907 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 22:43:53,465 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2025-12-31 22:47:58,103 - src.ollama_clients - INFO - CodeLLaMA-7B session ended (Ollama keeps model loaded)
+2025-12-31 22:47:58,112 - src.experiment_runner - INFO - Saved 97 predictions for CodeLLaMA-7B
+2025-12-31 22:47:58,113 - src.experiment_runner - INFO - Completed codellama
+2025-12-31 22:47:58,113 - src.experiment_runner - INFO - 
+================================================================================
+Running model: mistral
+================================================================================
+2025-12-31 22:47:58,113 - src.experiment_runner - INFO - Running Mistral-7B on 98 contracts
+2025-12-31 22:47:58,113 - src.experiment_runner - INFO - Loading checkpoint for mistral
+2025-12-31 22:47:58,222 - src.experiment_runner - INFO - Resuming from checkpoint: 50 already processed
+2025-12-31 22:47:58,222 - src.experiment_runner - INFO - Using Ollama backend for mistral
+2025-12-31 22:47:58,241 - src.ollama_clients - INFO - Checking if mistral:7b-instruct is available...
+2025-12-31 22:47:58,257 - src.ollama_clients - INFO - Model mistral:7b-instruct already available
+2025-12-31 22:47:58,257 - src.ollama_clients - INFO - Mistral-7B ready for inference
+2025-12-31 22:50:34,239 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 22:52:58,195 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 22:54:42,881 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 22:56:51,953 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2025-12-31 22:58:41,843 - src.ollama_clients - INFO - Mistral-7B session ended (Ollama keeps model loaded)
+2025-12-31 22:58:41,855 - src.experiment_runner - INFO - Saved 97 predictions for Mistral-7B
+2025-12-31 22:58:41,856 - src.experiment_runner - INFO - Completed mistral
+2025-12-31 22:58:41,856 - src.experiment_runner - INFO - Step 3: Evaluating predictions
+2025-12-31 22:58:41,857 - src.experiment_runner - INFO - Evaluating all models
+2025-12-31 22:58:41,857 - src.experiment_runner - INFO - Evaluating Qwen2.5-Coder-7B
+2025-12-31 22:58:41,900 - src.evaluator - INFO - Evaluation: TP=93, FP=48, TN=0, FN=5
+2025-12-31 22:58:41,901 - src.evaluator - INFO - Precision=0.660, Recall=0.949, F1=0.778
+2025-12-31 22:58:41,922 - src.evaluator - INFO - Evaluation: TP=29, FP=0, TN=0, FN=2
+2025-12-31 22:58:41,922 - src.evaluator - INFO - Precision=1.000, Recall=0.935, F1=0.967
+2025-12-31 22:58:41,922 - src.evaluator - INFO - Metrics for reentrancy: F1=0.967
+2025-12-31 22:58:41,924 - src.evaluator - INFO - Evaluation: TP=14, FP=3, TN=0, FN=1
+2025-12-31 22:58:41,924 - src.evaluator - INFO - Precision=0.824, Recall=0.933, F1=0.875
+2025-12-31 22:58:41,924 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.875
+2025-12-31 22:58:41,929 - src.evaluator - INFO - Evaluation: TP=50, FP=45, TN=0, FN=2
+2025-12-31 22:58:41,930 - src.evaluator - INFO - Precision=0.526, Recall=0.962, F1=0.680
+2025-12-31 22:58:41,930 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.680
+2025-12-31 22:58:42,029 - src.experiment_runner - INFO - Evaluating DeepSeek-Coder-6.7B
+2025-12-31 22:58:42,041 - src.evaluator - INFO - Evaluation: TP=78, FP=139, TN=0, FN=20
+2025-12-31 22:58:42,041 - src.evaluator - INFO - Precision=0.359, Recall=0.796, F1=0.495
+2025-12-31 22:58:42,044 - src.evaluator - INFO - Evaluation: TP=31, FP=22, TN=0, FN=0
+2025-12-31 22:58:42,044 - src.evaluator - INFO - Precision=0.585, Recall=1.000, F1=0.738
+2025-12-31 22:58:42,044 - src.evaluator - INFO - Metrics for reentrancy: F1=0.738
+2025-12-31 22:58:42,046 - src.evaluator - INFO - Evaluation: TP=15, FP=14, TN=0, FN=0
+2025-12-31 22:58:42,046 - src.evaluator - INFO - Precision=0.517, Recall=1.000, F1=0.682
+2025-12-31 22:58:42,046 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.682
+2025-12-31 22:58:42,052 - src.evaluator - INFO - Evaluation: TP=32, FP=103, TN=0, FN=20
+2025-12-31 22:58:42,052 - src.evaluator - INFO - Precision=0.237, Recall=0.615, F1=0.342
+2025-12-31 22:58:42,052 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.342
+2025-12-31 22:58:42,062 - src.experiment_runner - INFO - Evaluating CodeLLaMA-7B
+2025-12-31 22:58:42,075 - src.evaluator - INFO - Evaluation: TP=67, FP=144, TN=0, FN=31
+2025-12-31 22:58:42,075 - src.evaluator - INFO - Precision=0.318, Recall=0.684, F1=0.434
+2025-12-31 22:58:42,078 - src.evaluator - INFO - Evaluation: TP=22, FP=49, TN=0, FN=9
+2025-12-31 22:58:42,078 - src.evaluator - INFO - Precision=0.310, Recall=0.710, F1=0.431
+2025-12-31 22:58:42,078 - src.evaluator - INFO - Metrics for reentrancy: F1=0.431
+2025-12-31 22:58:42,080 - src.evaluator - INFO - Evaluation: TP=10, FP=20, TN=0, FN=5
+2025-12-31 22:58:42,080 - src.evaluator - INFO - Precision=0.333, Recall=0.667, F1=0.444
+2025-12-31 22:58:42,080 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.444
+2025-12-31 22:58:42,085 - src.evaluator - INFO - Evaluation: TP=35, FP=75, TN=0, FN=17
+2025-12-31 22:58:42,085 - src.evaluator - INFO - Precision=0.318, Recall=0.673, F1=0.432
+2025-12-31 22:58:42,085 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.432
+2025-12-31 22:58:42,096 - src.experiment_runner - INFO - Evaluating Mistral-7B
+2025-12-31 22:58:42,106 - src.evaluator - INFO - Evaluation: TP=82, FP=73, TN=0, FN=16
+2025-12-31 22:58:42,106 - src.evaluator - INFO - Precision=0.529, Recall=0.837, F1=0.648
+2025-12-31 22:58:42,110 - src.evaluator - INFO - Evaluation: TP=30, FP=8, TN=0, FN=1
+2025-12-31 22:58:42,110 - src.evaluator - INFO - Precision=0.789, Recall=0.968, F1=0.870
+2025-12-31 22:58:42,110 - src.evaluator - INFO - Metrics for reentrancy: F1=0.870
+2025-12-31 22:58:42,111 - src.evaluator - INFO - Evaluation: TP=14, FP=1, TN=0, FN=1
+2025-12-31 22:58:42,111 - src.evaluator - INFO - Precision=0.933, Recall=0.933, F1=0.933
+2025-12-31 22:58:42,112 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.933
+2025-12-31 22:58:42,117 - src.evaluator - INFO - Evaluation: TP=38, FP=64, TN=0, FN=14
+2025-12-31 22:58:42,117 - src.evaluator - INFO - Precision=0.373, Recall=0.731, F1=0.494
+2025-12-31 22:58:42,117 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.494
+2025-12-31 22:58:42,129 - src.experiment_runner - INFO - Saved evaluation results to results/evaluations/final_metrics.json
+2025-12-31 22:58:42,129 - src.experiment_runner - INFO - Full experiment complete!
+2025-12-31 22:58:42,132 - __main__ - INFO - 
+================================================================================
+2025-12-31 22:58:42,132 - __main__ - INFO - Experiment Summary
+2025-12-31 22:58:42,132 - __main__ - INFO - ================================================================================
+2025-12-31 22:58:42,132 - __main__ - INFO - Dataset size: 98
+2025-12-31 22:58:42,132 - __main__ - INFO - Models evaluated: qwen, deepseek, codellama, mistral
+2025-12-31 22:58:42,132 - __main__ - INFO - 
+Qwen2.5-Coder-7B:
+2025-12-31 22:58:42,132 - __main__ - INFO -   Precision: 0.660
+2025-12-31 22:58:42,132 - __main__ - INFO -   Recall: 0.949
+2025-12-31 22:58:42,132 - __main__ - INFO -   F1-Score: 0.778
+2025-12-31 22:58:42,132 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 22:58:42,132 - __main__ - INFO - 
+DeepSeek-Coder-6.7B:
+2025-12-31 22:58:42,132 - __main__ - INFO -   Precision: 0.359
+2025-12-31 22:58:42,132 - __main__ - INFO -   Recall: 0.796
+2025-12-31 22:58:42,132 - __main__ - INFO -   F1-Score: 0.495
+2025-12-31 22:58:42,132 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 22:58:42,132 - __main__ - INFO - 
+CodeLLaMA-7B:
+2025-12-31 22:58:42,132 - __main__ - INFO -   Precision: 0.318
+2025-12-31 22:58:42,132 - __main__ - INFO -   Recall: 0.684
+2025-12-31 22:58:42,132 - __main__ - INFO -   F1-Score: 0.434
+2025-12-31 22:58:42,132 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 22:58:42,132 - __main__ - INFO - 
+Mistral-7B:
+2025-12-31 22:58:42,132 - __main__ - INFO -   Precision: 0.529
+2025-12-31 22:58:42,132 - __main__ - INFO -   Recall: 0.837
+2025-12-31 22:58:42,132 - __main__ - INFO -   F1-Score: 0.648
+2025-12-31 22:58:42,132 - __main__ - INFO -   False Positive Rate: 1.000
+2025-12-31 22:58:42,133 - __main__ - INFO - 
+================================================================================
+2025-12-31 22:58:42,133 - __main__ - INFO - Generating Visualizations
+2025-12-31 22:58:42,133 - __main__ - INFO - ================================================================================
+2025-12-31 22:58:42,163 - src.visualizations - INFO - Generating all visualizations
+2025-12-31 22:58:43,876 - src.visualizations - INFO - Saved figure: overall_performance
+2025-12-31 22:58:43,979 - src.visualizations - INFO - Saved figure: per_vulnerability_performance
+2025-12-31 22:58:44,540 - src.visualizations - INFO - Saved figure: confusion_matrices
+2025-12-31 22:58:44,541 - src.visualizations - INFO - Saved LaTeX table: overall_metrics.tex
+2025-12-31 22:58:44,541 - src.visualizations - INFO - Saved LaTeX table: per_vulnerability_metrics.tex
+2025-12-31 22:58:44,541 - src.visualizations - INFO - All visualizations generated successfully
+2025-12-31 22:58:44,541 - __main__ - INFO - 
+================================================================================
+2025-12-31 22:58:44,541 - __main__ - INFO - Experiment Complete!
+2025-12-31 22:58:44,541 - __main__ - INFO - ================================================================================
+2025-12-31 22:58:44,541 - __main__ - INFO - Results saved to: results/evaluations
+2025-12-31 22:58:44,541 - __main__ - INFO - Figures saved to: paper/figures
+2025-12-31 22:58:44,541 - __main__ - INFO - Tables saved to: paper/tables
+2026-01-01 00:25:41,086 - __main__ - INFO - ================================================================================
+2026-01-01 00:25:41,087 - __main__ - INFO - LLM Smart Contract Auditing Benchmark
+2026-01-01 00:25:41,087 - __main__ - INFO - ================================================================================
+2026-01-01 00:25:41,087 - src.experiment_runner - INFO - Starting full experiment
+2026-01-01 00:25:41,087 - src.experiment_runner - INFO - Step 1: Loading dataset
+2026-01-01 00:25:41,087 - src.experiment_runner - INFO - Using COMBINED dataset (vulnerable + clean contracts)
+2026-01-01 00:25:41,087 - src.experiment_runner - INFO - Loading existing combined dataset from data/raw/combined_dataset.json
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - Dataset: 141 contracts (98 vulnerable, 43 clean)
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - Step 2: Running all models
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - Running 4 models: ['qwen', 'deepseek', 'codellama', 'mistral']
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - 
+================================================================================
+Running model: qwen
+================================================================================
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - Running Qwen2.5-Coder-7B on 141 contracts
+2026-01-01 00:25:41,104 - src.experiment_runner - INFO - Using Ollama backend for qwen
+2026-01-01 00:25:41,128 - src.ollama_clients - INFO - Checking if qwen2.5-coder:7b is available...
+2026-01-01 00:25:41,161 - src.ollama_clients - INFO - Model qwen2.5-coder:7b already available
+2026-01-01 00:25:41,161 - src.ollama_clients - INFO - Qwen2.5-Coder-7B ready for inference
+2026-01-01 00:27:47,920 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:29:09,922 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:31:32,153 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:33:23,656 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:34:46,752 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:36:06,977 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:37:43,402 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:39:31,342 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:42:11,889 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 6 column 95 (char 204)
+2026-01-01 00:42:11,901 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:43:27,280 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:45:56,303 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:47:00,536 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:48:31,312 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:50:14,943 - src.experiment_runner - INFO - Saved checkpoint for qwen
+2026-01-01 00:50:21,740 - src.ollama_clients - INFO - Qwen2.5-Coder-7B session ended (Ollama keeps model loaded)
+2026-01-01 00:50:21,743 - src.experiment_runner - INFO - Saved 141 predictions for Qwen2.5-Coder-7B
+2026-01-01 00:50:21,743 - src.experiment_runner - INFO - Completed qwen
+2026-01-01 00:50:21,743 - src.experiment_runner - INFO - 
+================================================================================
+Running model: deepseek
+================================================================================
+2026-01-01 00:50:21,743 - src.experiment_runner - INFO - Running DeepSeek-Coder-6.7B on 141 contracts
+2026-01-01 00:50:21,753 - src.experiment_runner - INFO - Using Ollama backend for deepseek
+2026-01-01 00:50:21,756 - src.ollama_clients - INFO - Checking if deepseek-coder:6.7b is available...
+2026-01-01 00:50:21,764 - src.ollama_clients - INFO - Model deepseek-coder:6.7b already available
+2026-01-01 00:50:21,764 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B ready for inference
+2026-01-01 00:51:43,522 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 10 column 26 (char 313)
+2026-01-01 00:54:09,593 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 00:55:18,578 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 10 column 26 (char 349)
+2026-01-01 00:56:19,620 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 00:59:14,716 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:00:36,571 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 588)
+2026-01-01 01:02:04,727 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 512)
+2026-01-01 01:02:55,617 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:03:39,472 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 68 (char 669)
+2026-01-01 01:05:24,743 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:06:01,861 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 16 column 26 (char 571)
+2026-01-01 01:07:20,549 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 635)
+2026-01-01 01:07:36,252 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:10:18,270 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:11:49,894 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 556)
+2026-01-01 01:13:58,067 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:17:45,635 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 4 column 26 (char 71)
+2026-01-01 01:17:45,645 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:20:13,895 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:23:13,952 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 472)
+2026-01-01 01:24:21,303 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:24:50,704 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 675)
+2026-01-01 01:25:45,419 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ':' delimiter: line 15 column 43 (char 630)
+2026-01-01 01:26:55,818 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:29:05,740 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:31:28,315 - src.experiment_runner - INFO - Saved checkpoint for deepseek
+2026-01-01 01:31:36,761 - src.ollama_clients - INFO - DeepSeek-Coder-6.7B session ended (Ollama keeps model loaded)
+2026-01-01 01:31:36,778 - src.experiment_runner - INFO - Saved 141 predictions for DeepSeek-Coder-6.7B
+2026-01-01 01:31:36,784 - src.experiment_runner - INFO - Completed deepseek
+2026-01-01 01:31:36,784 - src.experiment_runner - INFO - 
+================================================================================
+Running model: codellama
+================================================================================
+2026-01-01 01:31:36,784 - src.experiment_runner - INFO - Running CodeLLaMA-7B on 141 contracts
+2026-01-01 01:31:36,797 - src.experiment_runner - INFO - Using Ollama backend for codellama
+2026-01-01 01:31:36,806 - src.ollama_clients - INFO - Checking if codellama:7b-instruct is available...
+2026-01-01 01:31:36,813 - src.ollama_clients - INFO - Model codellama:7b-instruct already available
+2026-01-01 01:31:36,814 - src.ollama_clients - INFO - CodeLLaMA-7B ready for inference
+2026-01-01 01:43:40,834 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 01:49:51,920 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 18 column 92 (char 705)
+2026-01-01 01:50:10,040 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 01:55:45,230 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting value: line 1 column 2 (char 1)
+2026-01-01 01:57:30,157 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting value: line 1 column 2 (char 1)
+2026-01-01 02:01:30,413 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:10:13,609 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:20:05,379 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:22:40,433 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 154 column 26 (char 6567)
+2026-01-01 02:29:20,086 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:36:07,389 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:46:42,050 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 02:54:39,353 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:03:33,780 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:13:11,002 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 1 column 3 (char 2)
+2026-01-01 03:13:44,424 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:22:39,673 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting value: line 1 column 2 (char 1)
+2026-01-01 03:22:39,711 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:27:21,485 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:34:38,845 - src.experiment_runner - INFO - Saved checkpoint for codellama
+2026-01-01 03:35:07,543 - src.ollama_clients - INFO - CodeLLaMA-7B session ended (Ollama keeps model loaded)
+2026-01-01 03:35:07,555 - src.experiment_runner - INFO - Saved 141 predictions for CodeLLaMA-7B
+2026-01-01 03:35:07,575 - src.experiment_runner - INFO - Completed codellama
+2026-01-01 03:35:07,575 - src.experiment_runner - INFO - 
+================================================================================
+Running model: mistral
+================================================================================
+2026-01-01 03:35:07,576 - src.experiment_runner - INFO - Running Mistral-7B on 141 contracts
+2026-01-01 03:35:07,592 - src.experiment_runner - INFO - Using Ollama backend for mistral
+2026-01-01 03:35:07,597 - src.ollama_clients - INFO - Checking if mistral:7b-instruct is available...
+2026-01-01 03:35:07,617 - src.ollama_clients - INFO - Model mistral:7b-instruct already available
+2026-01-01 03:35:07,617 - src.ollama_clients - INFO - Mistral-7B ready for inference
+2026-01-01 03:38:36,115 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 166 column 26 (char 6789)
+2026-01-01 03:40:52,841 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:43:09,798 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:45:48,007 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:48:50,054 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:49:32,680 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 6 column 98 (char 206)
+2026-01-01 03:51:05,007 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:53:09,996 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:55:23,600 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 03:56:41,215 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting value: line 32 column 3 (char 1289)
+2026-01-01 03:59:01,588 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:03:33,502 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:05:26,366 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:09:47,481 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 118 column 26 (char 6147)
+2026-01-01 04:11:12,515 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:15:05,764 - src.ollama_clients - WARNING - Failed to parse JSON: Expecting ',' delimiter: line 142 column 25 (char 6492)
+2026-01-01 04:15:28,160 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:16:54,955 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:18:58,259 - src.experiment_runner - INFO - Saved checkpoint for mistral
+2026-01-01 04:19:07,498 - src.ollama_clients - INFO - Mistral-7B session ended (Ollama keeps model loaded)
+2026-01-01 04:19:07,505 - src.experiment_runner - INFO - Saved 141 predictions for Mistral-7B
+2026-01-01 04:19:07,506 - src.experiment_runner - INFO - Completed mistral
+2026-01-01 04:19:07,507 - src.experiment_runner - INFO - Step 3: Evaluating predictions
+2026-01-01 04:19:07,509 - src.experiment_runner - INFO - Evaluating all models
+2026-01-01 04:19:07,509 - src.experiment_runner - INFO - Evaluating Qwen2.5-Coder-7B
+2026-01-01 04:19:07,582 - src.evaluator - INFO - Evaluation: TP=95, FP=81, TN=0, FN=3
+2026-01-01 04:19:07,582 - src.evaluator - INFO - Precision=0.540, Recall=0.969, F1=0.693
+2026-01-01 04:19:07,603 - src.evaluator - INFO - Evaluation: TP=31, FP=4, TN=0, FN=0
+2026-01-01 04:19:07,603 - src.evaluator - INFO - Precision=0.886, Recall=1.000, F1=0.939
+2026-01-01 04:19:07,603 - src.evaluator - INFO - Metrics for reentrancy: F1=0.939
+2026-01-01 04:19:07,604 - src.evaluator - INFO - Evaluation: TP=14, FP=3, TN=0, FN=1
+2026-01-01 04:19:07,604 - src.evaluator - INFO - Precision=0.824, Recall=0.933, F1=0.875
+2026-01-01 04:19:07,604 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.875
+2026-01-01 04:19:07,609 - src.evaluator - INFO - Evaluation: TP=50, FP=54, TN=0, FN=2
+2026-01-01 04:19:07,609 - src.evaluator - INFO - Precision=0.481, Recall=0.962, F1=0.641
+2026-01-01 04:19:07,609 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.641
+2026-01-01 04:19:07,736 - src.experiment_runner - INFO - Evaluating DeepSeek-Coder-6.7B
+2026-01-01 04:19:07,752 - src.evaluator - INFO - Evaluation: TP=77, FP=215, TN=0, FN=21
+2026-01-01 04:19:07,752 - src.evaluator - INFO - Precision=0.264, Recall=0.786, F1=0.395
+2026-01-01 04:19:07,755 - src.evaluator - INFO - Evaluation: TP=31, FP=16, TN=0, FN=0
+2026-01-01 04:19:07,755 - src.evaluator - INFO - Precision=0.660, Recall=1.000, F1=0.795
+2026-01-01 04:19:07,755 - src.evaluator - INFO - Metrics for reentrancy: F1=0.795
+2026-01-01 04:19:07,756 - src.evaluator - INFO - Evaluation: TP=15, FP=10, TN=0, FN=0
+2026-01-01 04:19:07,756 - src.evaluator - INFO - Precision=0.600, Recall=1.000, F1=0.750
+2026-01-01 04:19:07,756 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.750
+2026-01-01 04:19:07,761 - src.evaluator - INFO - Evaluation: TP=31, FP=99, TN=0, FN=21
+2026-01-01 04:19:07,761 - src.evaluator - INFO - Precision=0.238, Recall=0.596, F1=0.341
+2026-01-01 04:19:07,761 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.341
+2026-01-01 04:19:07,774 - src.experiment_runner - INFO - Evaluating CodeLLaMA-7B
+2026-01-01 04:19:07,788 - src.evaluator - INFO - Evaluation: TP=58, FP=165, TN=0, FN=40
+2026-01-01 04:19:07,788 - src.evaluator - INFO - Precision=0.260, Recall=0.592, F1=0.361
+2026-01-01 04:19:07,791 - src.evaluator - INFO - Evaluation: TP=23, FP=52, TN=0, FN=8
+2026-01-01 04:19:07,791 - src.evaluator - INFO - Precision=0.307, Recall=0.742, F1=0.434
+2026-01-01 04:19:07,791 - src.evaluator - INFO - Metrics for reentrancy: F1=0.434
+2026-01-01 04:19:07,792 - src.evaluator - INFO - Evaluation: TP=9, FP=19, TN=0, FN=6
+2026-01-01 04:19:07,793 - src.evaluator - INFO - Precision=0.321, Recall=0.600, F1=0.419
+2026-01-01 04:19:07,793 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.419
+2026-01-01 04:19:07,798 - src.evaluator - INFO - Evaluation: TP=26, FP=62, TN=0, FN=26
+2026-01-01 04:19:07,798 - src.evaluator - INFO - Precision=0.295, Recall=0.500, F1=0.371
+2026-01-01 04:19:07,798 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.371
+2026-01-01 04:19:07,812 - src.experiment_runner - INFO - Evaluating Mistral-7B
+2026-01-01 04:19:07,825 - src.evaluator - INFO - Evaluation: TP=82, FP=179, TN=0, FN=16
+2026-01-01 04:19:07,825 - src.evaluator - INFO - Precision=0.314, Recall=0.837, F1=0.457
+2026-01-01 04:19:07,828 - src.evaluator - INFO - Evaluation: TP=31, FP=14, TN=0, FN=0
+2026-01-01 04:19:07,828 - src.evaluator - INFO - Precision=0.689, Recall=1.000, F1=0.816
+2026-01-01 04:19:07,828 - src.evaluator - INFO - Metrics for reentrancy: F1=0.816
+2026-01-01 04:19:07,830 - src.evaluator - INFO - Evaluation: TP=15, FP=1, TN=0, FN=0
+2026-01-01 04:19:07,830 - src.evaluator - INFO - Precision=0.938, Recall=1.000, F1=0.968
+2026-01-01 04:19:07,830 - src.evaluator - INFO - Metrics for integer_overflow: F1=0.968
+2026-01-01 04:19:07,835 - src.evaluator - INFO - Evaluation: TP=36, FP=60, TN=0, FN=16
+2026-01-01 04:19:07,835 - src.evaluator - INFO - Precision=0.375, Recall=0.692, F1=0.486
+2026-01-01 04:19:07,835 - src.evaluator - INFO - Metrics for unchecked_low_level_calls: F1=0.486
+2026-01-01 04:19:07,849 - src.experiment_runner - INFO - Saved evaluation results to results/evaluations/final_metrics.json
+2026-01-01 04:19:07,849 - src.experiment_runner - INFO - Full experiment complete!
+2026-01-01 04:19:07,855 - __main__ - INFO - 
+================================================================================
+2026-01-01 04:19:07,855 - __main__ - INFO - Experiment Summary
+2026-01-01 04:19:07,855 - __main__ - INFO - ================================================================================
+2026-01-01 04:19:07,855 - __main__ - INFO - Dataset size: 141
+2026-01-01 04:19:07,855 - __main__ - INFO - Models evaluated: qwen, deepseek, codellama, mistral
+2026-01-01 04:19:07,855 - __main__ - INFO - 
+Qwen2.5-Coder-7B:
+2026-01-01 04:19:07,855 - __main__ - INFO -   Precision: 0.540
+2026-01-01 04:19:07,855 - __main__ - INFO -   Recall: 0.969
+2026-01-01 04:19:07,855 - __main__ - INFO -   F1-Score: 0.693
+2026-01-01 04:19:07,855 - __main__ - INFO -   False Positive Rate: 1.000
+2026-01-01 04:19:07,855 - __main__ - INFO - 
+DeepSeek-Coder-6.7B:
+2026-01-01 04:19:07,855 - __main__ - INFO -   Precision: 0.264
+2026-01-01 04:19:07,855 - __main__ - INFO -   Recall: 0.786
+2026-01-01 04:19:07,855 - __main__ - INFO -   F1-Score: 0.395
+2026-01-01 04:19:07,855 - __main__ - INFO -   False Positive Rate: 1.000
+2026-01-01 04:19:07,855 - __main__ - INFO - 
+CodeLLaMA-7B:
+2026-01-01 04:19:07,855 - __main__ - INFO -   Precision: 0.260
+2026-01-01 04:19:07,855 - __main__ - INFO -   Recall: 0.592
+2026-01-01 04:19:07,855 - __main__ - INFO -   F1-Score: 0.361
+2026-01-01 04:19:07,855 - __main__ - INFO -   False Positive Rate: 1.000
+2026-01-01 04:19:07,855 - __main__ - INFO - 
+Mistral-7B:
+2026-01-01 04:19:07,855 - __main__ - INFO -   Precision: 0.314
+2026-01-01 04:19:07,855 - __main__ - INFO -   Recall: 0.837
+2026-01-01 04:19:07,855 - __main__ - INFO -   F1-Score: 0.457
+2026-01-01 04:19:07,855 - __main__ - INFO -   False Positive Rate: 1.000
+2026-01-01 04:19:07,857 - __main__ - INFO - 
+================================================================================
+2026-01-01 04:19:07,857 - __main__ - INFO - Generating Visualizations
+2026-01-01 04:19:07,857 - __main__ - INFO - ================================================================================
+2026-01-01 04:19:07,897 - src.visualizations - INFO - Generating all visualizations
+2026-01-01 04:19:09,664 - src.visualizations - INFO - Saved figure: overall_performance
+2026-01-01 04:19:09,779 - src.visualizations - INFO - Saved figure: per_vulnerability_performance
+2026-01-01 04:19:10,291 - src.visualizations - INFO - Saved figure: confusion_matrices
+2026-01-01 04:19:10,291 - src.visualizations - INFO - Saved LaTeX table: overall_metrics.tex
+2026-01-01 04:19:10,291 - src.visualizations - INFO - Saved LaTeX table: per_vulnerability_metrics.tex
+2026-01-01 04:19:10,291 - src.visualizations - INFO - All visualizations generated successfully
+2026-01-01 04:19:10,291 - __main__ - INFO - 
+================================================================================
+2026-01-01 04:19:10,291 - __main__ - INFO - Experiment Complete!
+2026-01-01 04:19:10,291 - __main__ - INFO - ================================================================================
+2026-01-01 04:19:10,291 - __main__ - INFO - Results saved to: results/evaluations
+2026-01-01 04:19:10,291 - __main__ - INFO - Figures saved to: paper/figures
+2026-01-01 04:19:10,291 - __main__ - INFO - Tables saved to: paper/tables

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+
+# MacOS
+.DS_Store
+
+# Project Specific
+paper/
+results/logs/
+experiment_run.log
+.idea/
+.vscode/

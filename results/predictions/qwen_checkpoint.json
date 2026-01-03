@@ -1,0 +1,3172 @@
+[
+  {
+    "contract_name":"IERC20",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":31.1637511253,
+    "timestamp":1767248772.3379998207,
+    "error":null
+  },
+  {
+    "contract_name":"0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract allows an attacker to withdraw funds multiple times by calling the `GetFreebie` function repeatedly before the transfer is completed, leading to a reentrancy attack."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          54
+        ],
+        "severity":"High",
+        "explanation":"Similar to line 44, this unchecked external call can lead to loss of funds or other unexpected behavior if the call fails."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows an attacker to withdraw funds multiple times by calling the `GetFreebie` function repeatedly before the transfer is completed, leading to a reentrancy attack.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [54],\n    \"severity\": \"High\",\n    \"explanation\": \"Similar to line 44, this unchecked external call can lead to loss of funds or other unexpected behavior if the call fails.\"\n  }\n]\n```",
+    "inference_time":14.0932750702,
+    "timestamp":1767248786.454310894,
+    "error":null
+  },
+  {
+    "contract_name":"Bytes",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":19.9316837788,
+    "timestamp":1767248806.3883841038,
+    "error":null
+  },
+  {
+    "contract_name":"0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          52
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker could exploit this by sending a malicious contract that calls `CashOut` again before the balance is deducted, leading to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [52],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker could exploit this by sending a malicious contract that calls `CashOut` again before the balance is deducted, leading to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":8.2364737988,
+    "timestamp":1767248814.6259520054,
+    "error":null
+  },
+  {
+    "contract_name":"0x8fd1e427396ddb511533cf9abdbebd0a7e08da35",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44,
+          97
+        ],
+        "severity":"High",
+        "explanation":"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44, 97],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":7.1408369541,
+    "timestamp":1767248821.7695391178,
+    "error":null
+  },
+  {
+    "contract_name":"0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          40
+        ],
+        "severity":"High",
+        "explanation":"The `CashOut` function is vulnerable to reentrancy because it allows an attacker to call the contract multiple times before the balance is updated, potentially leading to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [40],\n    \"severity\": \"High\",\n    \"explanation\": \"The `CashOut` function is vulnerable to reentrancy because it allows an attacker to call the contract multiple times before the balance is updated, potentially leading to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":6.6165633202,
+    "timestamp":1767248828.3865790367,
+    "error":null
+  },
+  {
+    "contract_name":"0x89c1b3807d4c67df034fffb62f3509561218d30b",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          162,
+          175,
+          180,
+          192
+        ],
+        "severity":"High",
+        "explanation":"The contract uses unchecked external calls to send Ether and call callback functions. This can lead to loss of funds or execution of malicious code if the called contracts are not trustworthy."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [162, 175, 180, 192],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses unchecked external calls to send Ether and call callback functions. This can lead to loss of funds or execution of malicious code if the called contracts are not trustworthy.\"\n  }\n]\n```",
+    "inference_time":15.9495978355,
+    "timestamp":1767248844.3379540443,
+    "error":null
+  },
+  {
+    "contract_name":"IERC1820Registry",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":6.3267230988,
+    "timestamp":1767248850.6657841206,
+    "error":null
+  },
+  {
+    "contract_name":"0x4051334adc52057aca763453820cb0e045076ef3",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          16
+        ],
+        "severity":"High",
+        "explanation":"The contract calls the `transferFrom` function on an external contract without checking if the call was successful. This can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [16],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls the `transferFrom` function on an external contract without checking if the call was successful. This can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.4785130024,
+    "timestamp":1767248856.1460859776,
+    "error":null
+  },
+  {
+    "contract_name":"MultiSignerERC7913Weighted",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":11.7383060455,
+    "timestamp":1767248867.8846080303,
+    "error":null
+  },
+  {
+    "contract_name":"0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          38
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker can exploit this by sending a malicious contract that calls `CashOut` again before the balance is deducted, leading to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [38],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker can exploit this by sending a malicious contract that calls `CashOut` again before the balance is deducted, leading to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":7.6036038399,
+    "timestamp":1767248875.5402359962,
+    "error":null
+  },
+  {
+    "contract_name":"ERC2771Context",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          46
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `unchecked` for the address extraction, which could lead to undefined behavior if the calldata is not as expected."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [46],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `unchecked` for the address extraction, which could lead to undefined behavior if the calldata is not as expected.\"\n  }\n]\n```",
+    "inference_time":8.6007068157,
+    "timestamp":1767248884.1443510056,
+    "error":null
+  },
+  {
+    "contract_name":"IERC777Sender",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.5385930538,
+    "timestamp":1767248886.6840510368,
+    "error":null
+  },
+  {
+    "contract_name":"ERC2771Forwarder",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          120
+        ],
+        "severity":"High",
+        "explanation":"The contract makes a staticcall to the target contract without checking if the call was successful. If the call fails, it could lead to unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          130
+        ],
+        "severity":"High",
+        "explanation":"The contract uses a nonce before making an external call, which could be exploited if the same nonce is reused in a reentrant attack."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          140
+        ],
+        "severity":"Medium",
+        "explanation":"The contract performs division operations that could result in integer overflow, although this is unlikely given the context but should still be reviewed."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [120],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes a staticcall to the target contract without checking if the call was successful. If the call fails, it could lead to unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [130],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses a nonce before making an external call, which could be exploited if the same nonce is reused in a reentrant attack.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [140],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The contract performs division operations that could result in integer overflow, although this is unlikely given the context but should still be reviewed.\"\n  }\n]\n```",
+    "inference_time":33.3736829758,
+    "timestamp":1767248920.0582110882,
+    "error":null
+  },
+  {
+    "contract_name":"SignerEIP7702",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.3663098812,
+    "timestamp":1767248922.4255890846,
+    "error":null
+  },
+  {
+    "contract_name":"ERC1155Holder",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.6736021042,
+    "timestamp":1767248925.0993640423,
+    "error":null
+  },
+  {
+    "contract_name":"AbstractSigner",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.1034078598,
+    "timestamp":1767248927.2029969692,
+    "error":null
+  },
+  {
+    "contract_name":"token",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          20
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in line 20 can lead to an integer underflow if the balance of the sender is less than the value being transferred."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          22
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in line 22 can lead to an integer underflow if the balance of the sender is less than the value being transferred."
+      }
+    ],
+    "num_vulnerabilities":2,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [20],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in line 20 can lead to an integer underflow if the balance of the sender is less than the value being transferred.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [22],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in line 22 can lead to an integer underflow if the balance of the sender is less than the value being transferred.\"\n  }\n]\n```",
+    "inference_time":8.8877837658,
+    "timestamp":1767248936.091105938,
+    "error":null
+  },
+  {
+    "contract_name":"0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          54
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining the contract's funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [54],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining the contract's funds.\"\n  }\n]\n```",
+    "inference_time":7.1326110363,
+    "timestamp":1767248943.224738121,
+    "error":null
+  },
+  {
+    "contract_name":"0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          39
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `adr.call.value(msg.value)(data);` which is an unchecked external call. This can lead to a reentrancy attack if the called contract has fallback or receive functions that transfer Ether back to this contract."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [39],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `adr.call.value(msg.value)(data);` which is an unchecked external call. This can lead to a reentrancy attack if the called contract has fallback or receive functions that transfer Ether back to this contract.\"\n  }\n]\n```",
+    "inference_time":6.6902718544,
+    "timestamp":1767248949.9155728817,
+    "error":null
+  },
+  {
+    "contract_name":"0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          63
+        ],
+        "severity":"High",
+        "explanation":"The Collect function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [63],\n    \"severity\": \"High\",\n    \"explanation\": \"The Collect function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds.\"\n  }\n]\n```",
+    "inference_time":6.8792951107,
+    "timestamp":1767248956.8079679012,
+    "error":null
+  },
+  {
+    "contract_name":"0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          46
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          46,
+          50
+        ],
+        "severity":"High",
+        "explanation":"The contract allows the owner to withdraw funds using `Owner.transfer(this.balance);`. If this function is called during a reentrancy attack, it can lead to the loss of funds."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          58
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          58,
+          62
+        ],
+        "severity":"High",
+        "explanation":"The contract allows the owner to withdraw funds using `Owner.transfer(this.balance);`. If this function is called during a reentrancy attack, it can lead to the loss of funds."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [46],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [46, 50],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows the owner to withdraw funds using `Owner.transfer(this.balance);`. If this function is called during a reentrancy attack, it can lead to the loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [58],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [58, 62],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows the owner to withdraw funds using `Owner.transfer(this.balance);`. If this function is called during a reentrancy attack, it can lead to the loss of funds.\"\n  }\n]\n```",
+    "inference_time":18.9095339775,
+    "timestamp":1767248975.7218470573,
+    "error":null
+  },
+  {
+    "contract_name":"SafeERC20",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":17.9065201283,
+    "timestamp":1767248993.6339409351,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_benign_1",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Underflow",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in line 17 can result in an underflow if the input is greater than or equal to the current value of count."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Underflow\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in line 17 can result in an underflow if the input is greater than or equal to the current value of count.\"\n  }\n]\n```",
+    "inference_time":5.1953091621,
+    "timestamp":1767248998.8328959942,
+    "error":null
+  },
+  {
+    "contract_name":"unchecked_return_value",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The function `callnotchecked` directly calls another contract without checking the return value, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The function `callnotchecked` directly calls another contract without checking the return value, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.0648748875,
+    "timestamp":1767249003.8980979919,
+    "error":null
+  },
+  {
+    "contract_name":"0xa46edd6a9a93feec36576ee5048146870ea2c3ae",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          16
+        ],
+        "severity":"High",
+        "explanation":"The contract calls the `call` method on an external address without checking if the call was successful. This can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [16],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls the `call` method on an external address without checking if the call was successful. This can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.490883112,
+    "timestamp":1767249009.3894100189,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_mapping_sym_1",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Underflow",
+        "line_numbers":[
+          16
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in the init function can lead to an integer underflow if the value of v is greater than the current value stored at map[k]. This can result in unexpected behavior or allow attackers to manipulate the state of the contract."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Underflow\",\n    \"line_numbers\": [16],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in the init function can lead to an integer underflow if the value of v is greater than the current value stored at map[k]. This can result in unexpected behavior or allow attackers to manipulate the state of the contract.\"\n  }\n]\n```",
+    "inference_time":6.1250901222,
+    "timestamp":1767249015.5156280994,
+    "error":null
+  },
+  {
+    "contract_name":"0xf015c35649c82f5467c9c74b7f28ee67665aad68",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. This can allow an attacker to drain funds from the contract by calling `Collect` with a large amount and then sending additional transactions to the contract before the current transaction completes."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. This can allow an attacker to drain funds from the contract by calling `Collect` with a large amount and then sending additional transactions to the contract before the current transaction completes.\"\n  }\n]\n```",
+    "inference_time":8.494166851,
+    "timestamp":1767249024.0099718571,
+    "error":null
+  },
+  {
+    "contract_name":"GovernorCountingFractional",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          102
+        ],
+        "severity":"High",
+        "explanation":"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          106
+        ],
+        "severity":"High",
+        "explanation":"The contract calculates `usedWeight` by adding `againstVotes`, `forVotes`, and `abstainVotes`. Since these variables are of type `uint128`, there is a risk of integer overflow if the sum exceeds the maximum value for `uint128`."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          106,
+          114
+        ],
+        "severity":"High",
+        "explanation":"The contract updates vote tallies and used votes without checking if the external call to `mload` is successful. This could lead to a reentrancy attack where an attacker exploits the contract by calling it multiple times before the first call completes."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          106
+        ],
+        "severity":"High",
+        "explanation":"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          106
+        ],
+        "severity":"High",
+        "explanation":"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract."
+      }
+    ],
+    "num_vulnerabilities":5,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [102],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [106],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calculates `usedWeight` by adding `againstVotes`, `forVotes`, and `abstainVotes`. Since these variables are of type `uint128`, there is a risk of integer overflow if the sum exceeds the maximum value for `uint128`.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [106, 114],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates vote tallies and used votes without checking if the external call to `mload` is successful. This could lead to a reentrancy attack where an attacker exploits the contract by calling it multiple times before the first call completes.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [106],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [106],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses assembly code to decode the `params` argument, but it does not check if the external call to `mload` is successful. This could lead to a failure in decoding and potentially allow an attacker to exploit the contract.\"\n  }\n]\n```",
+    "inference_time":38.2036099434,
+    "timestamp":1767249062.2186591625,
+    "error":null
+  },
+  {
+    "contract_name":"0x7d09edb07d23acb532a82be3da5c17d9d85806b4",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          164,
+          170
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `unchecked` external calls to the whale address. If the whale contract is malicious or reentrant, it could lead to loss of funds."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          164,
+          170
+        ],
+        "severity":"High",
+        "explanation":"The external calls to the whale contract are not protected against reentrancy. An attacker could exploit this by calling `donate()` or `transferAnyERC20Token()` multiple times in a single transaction."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          164,
+          170
+        ],
+        "severity":"Medium",
+        "explanation":"The contract does not check for integer overflow when calculating the amount to transfer. While unlikely with current ETH values, it's a potential issue."
+      },
+      {
+        "vulnerability_type":"Unrestricted External Call",
+        "line_numbers":[
+          164,
+          170
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `donate()` on the whale address without any checks. If this function is not implemented correctly or maliciously, it could lead to loss of funds."
+      },
+      {
+        "vulnerability_type":"Gas Limit Issue",
+        "line_numbers":[
+          164,
+          170
+        ],
+        "severity":"High",
+        "explanation":"The contract does not specify a gas limit for the external calls. If the whale contract consumes too much gas, it could cause the transaction to fail or be reverted."
+      }
+    ],
+    "num_vulnerabilities":5,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [164, 170],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `unchecked` external calls to the whale address. If the whale contract is malicious or reentrant, it could lead to loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [164, 170],\n    \"severity\": \"High\",\n    \"explanation\": \"The external calls to the whale contract are not protected against reentrancy. An attacker could exploit this by calling `donate()` or `transferAnyERC20Token()` multiple times in a single transaction.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [164, 170],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The contract does not check for integer overflow when calculating the amount to transfer. While unlikely with current ETH values, it's a potential issue.\"\n  },\n  {\n    \"vulnerability_type\": \"Unrestricted External Call\",\n    \"line_numbers\": [164, 170],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `donate()` on the whale address without any checks. If this function is not implemented correctly or maliciously, it could lead to loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Gas Limit Issue\",\n    \"line_numbers\": [164, 170],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract does not specify a gas limit for the external calls. If the whale contract consumes too much gas, it could cause the transaction to fail or be reverted.\"\n  }\n]\n```",
+    "inference_time":29.9191110134,
+    "timestamp":1767249092.1444830894,
+    "error":null
+  },
+  {
+    "contract_name":"overflow_single_tx",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          18,
+          24,
+          30
+        ],
+        "severity":"High",
+        "explanation":"The functions `overflowaddtostate`, `overflowmultostate`, and `underflowtostate` can lead to integer overflow or underflow, which can result in unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          36,
+          42,
+          48
+        ],
+        "severity":"High",
+        "explanation":"The functions `overflowlocalonly`, `overflowmulocalonly`, and `underflowlocalonly` can lead to integer overflow or underflow, which can result in unexpected behavior or loss of funds."
+      }
+    ],
+    "num_vulnerabilities":2,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [18, 24, 30],\n    \"severity\": \"High\",\n    \"explanation\": \"The functions `overflowaddtostate`, `overflowmultostate`, and `underflowtostate` can lead to integer overflow or underflow, which can result in unexpected behavior or loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [36, 42, 48],\n    \"severity\": \"High\",\n    \"explanation\": \"The functions `overflowlocalonly`, `overflowmulocalonly`, and `underflowlocalonly` can lead to integer overflow or underflow, which can result in unexpected behavior or loss of funds.\"\n  }\n]\n```",
+    "inference_time":12.0986869335,
+    "timestamp":1767249104.2543900013,
+    "error":null
+  },
+  {
+    "contract_name":"ERC20",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":14.0115361214,
+    "timestamp":1767249118.2687218189,
+    "error":null
+  },
+  {
+    "contract_name":"0xf29ebe930a539a60279ace72c707cba851a57707",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          16
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the return value, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [16],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the return value, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.1708729267,
+    "timestamp":1767249123.4430510998,
+    "error":null
+  },
+  {
+    "contract_name":"SlotDerivation",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":7.850924015,
+    "timestamp":1767249131.2944340706,
+    "error":null
+  },
+  {
+    "contract_name":"0x19cf8481ea15427a98ba3cdd6d9e14690011ab10",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          130
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `owner.send(this.balance)` without checking if the transfer was successful. This can lead to loss of funds."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          142,
+          150
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `owner.send(this.balance - SubX)` and `msg.sender.transfer(ETHValue)` without checking if the transfers were successful. This can lead to loss of funds."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          162
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `MigrationAgent(migrationAgent).migrateFrom(msg.sender, _value)` without checking if the migration was successful. This can lead to loss of funds."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          107
+        ],
+        "severity":"High",
+        "explanation":"The contract calculates `numTokens` and `additionalTokens` using multiplication, which could result in an integer overflow if the values are too large."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          108
+        ],
+        "severity":"High",
+        "explanation":"The contract calculates `numTokensRAW` and `numTokens` using multiplication, which could result in an integer overflow if the values are too large."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          109
+        ],
+        "severity":"High",
+        "explanation":"The contract calculates `additionalTokens` using multiplication and division, which could result in an integer overflow if the values are too large."
+      }
+    ],
+    "num_vulnerabilities":6,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [130],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `owner.send(this.balance)` without checking if the transfer was successful. This can lead to loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [142, 150],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `owner.send(this.balance - SubX)` and `msg.sender.transfer(ETHValue)` without checking if the transfers were successful. This can lead to loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [162],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `MigrationAgent(migrationAgent).migrateFrom(msg.sender, _value)` without checking if the migration was successful. This can lead to loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [107],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calculates `numTokens` and `additionalTokens` using multiplication, which could result in an integer overflow if the values are too large.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [108],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calculates `numTokensRAW` and `numTokens` using multiplication, which could result in an integer overflow if the values are too large.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [109],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calculates `additionalTokens` using multiplication and division, which could result in an integer overflow if the values are too large.\"\n  }\n]\n```",
+    "inference_time":46.567538023,
+    "timestamp":1767249177.8636500835,
+    "error":null
+  },
+  {
+    "contract_name":"0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          12
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external address without checking the result of the call, which can lead to loss of funds or other malicious actions."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [12],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external address without checking the result of the call, which can lead to loss of funds or other malicious actions.\"\n  }\n]\n```",
+    "inference_time":5.2888000011,
+    "timestamp":1767249183.1564760208,
+    "error":null
+  },
+  {
+    "contract_name":"IERC20Permit",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":5.8053619862,
+    "timestamp":1767249188.9633369446,
+    "error":null
+  },
+  {
+    "contract_name":"ERC165",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.0752272606,
+    "timestamp":1767249191.0391380787,
+    "error":null
+  },
+  {
+    "contract_name":"0x8c7777c45481dba411450c228cb692ac3d550344",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          41
+        ],
+        "severity":"High",
+        "explanation":"The `CashOut` function is vulnerable to reentrancy because it allows an attacker to drain the contract's funds by calling `msg.sender.call.value(_am)()` before updating the balance. This can lead to the attacker withdrawing more funds than they are entitled to."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [41],\n    \"severity\": \"High\",\n    \"explanation\": \"The `CashOut` function is vulnerable to reentrancy because it allows an attacker to drain the contract's funds by calling `msg.sender.call.value(_am)()` before updating the balance. This can lead to the attacker withdrawing more funds than they are entitled to.\"\n  }\n]\n```",
+    "inference_time":7.6978878975,
+    "timestamp":1767249198.7374022007,
+    "error":null
+  },
+  {
+    "contract_name":"ERC6909Metadata",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":4.9068846703,
+    "timestamp":1767249203.6456019878,
+    "error":null
+  },
+  {
+    "contract_name":"draft-IERC1822",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":1.9963428974,
+    "timestamp":1767249205.6548841,
+    "error":null
+  },
+  {
+    "contract_name":"0x2972d548497286d18e92b5fa1f8f9139e5653fd2",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function using `call` without checking the return value. This can lead to a loss of funds if the called function reverts."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function using `call` without checking the return value. This can lead to a loss of funds if the called function reverts.\"\n  }\n]\n```",
+    "inference_time":5.5415170193,
+    "timestamp":1767249211.1971049309,
+    "error":null
+  },
+  {
+    "contract_name":"0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. This can allow an attacker to drain funds from the contract by calling `Collect` with a large amount and then sending additional transactions to call `Collect` again before the first transaction completes."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. This can allow an attacker to drain funds from the contract by calling `Collect` with a large amount and then sending additional transactions to call `Collect` again before the first transaction completes.\"\n  }\n]\n```",
+    "inference_time":8.71154809,
+    "timestamp":1767249219.9106328487,
+    "error":null
+  },
+  {
+    "contract_name":"ERC7913WebAuthnVerifier",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":3.0215029716,
+    "timestamp":1767249222.9363639355,
+    "error":null
+  },
+  {
+    "contract_name":"0x524960d55174d912768678d8c606b4d50b79d7b1",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          21
+        ],
+        "severity":"High",
+        "explanation":"The contract makes external calls to the `contract_address` without checking the return value. This can lead to loss of funds or other malicious actions if the called function fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [21],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes external calls to the `contract_address` without checking the return value. This can lead to loss of funds or other malicious actions if the called function fails.\"\n  }\n]\n```",
+    "inference_time":6.169659853,
+    "timestamp":1767249229.106208086,
+    "error":null
+  },
+  {
+    "contract_name":"Calldata",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":1.7748792171,
+    "timestamp":1767249230.8821499348,
+    "error":null
+  },
+  {
+    "contract_name":"etherpot_lotto",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          109
+        ],
+        "severity":"High",
+        "explanation":"The `winner.send(subpot)` call does not check if the transfer was successful, which could lead to a loss of funds."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          141
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.send(msg.value-value)` call does not check if the transfer was successful, which could lead to a loss of funds."
+      }
+    ],
+    "num_vulnerabilities":2,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [109],\n    \"severity\": \"High\",\n    \"explanation\": \"The `winner.send(subpot)` call does not check if the transfer was successful, which could lead to a loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [141],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.send(msg.value-value)` call does not check if the transfer was successful, which could lead to a loss of funds.\"\n  }\n]\n```",
+    "inference_time":14.8053781986,
+    "timestamp":1767249245.6878778934,
+    "error":null
+  },
+  {
+    "contract_name":"0xbaa3de6504690efb064420d89e871c27065cdd52",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The `target.call.value(msg.value)(data)` call does not check for the success of the external function call, which can lead to loss of funds if the target contract reverts."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The `withdraw` function is vulnerable to reentrancy attacks because it does not check for the success of the transfer before allowing another withdrawal."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          21
+        ],
+        "severity":"Medium",
+        "explanation":"The `Deposits[msg.sender] += msg.value` operation could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256."
+      },
+      {
+        "vulnerability_type":"Unrestricted External Call",
+        "line_numbers":[
+          17
+        ],
+        "severity":"Medium",
+        "explanation":"The `msg.sender.transfer(amount)` call does not check for the success of the transfer, which can lead to loss of funds if the recipient contract reverts."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The `target.call.value(msg.value)(data)` call does not check for the success of the external function call, which can lead to loss of funds if the target contract reverts.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The `withdraw` function is vulnerable to reentrancy attacks because it does not check for the success of the transfer before allowing another withdrawal.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [21],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `Deposits[msg.sender] += msg.value` operation could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256.\"\n  },\n  {\n    \"vulnerability_type\": \"Unrestricted External Call\",\n    \"line_numbers\": [17],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `msg.sender.transfer(amount)` call does not check for the success of the transfer, which can lead to loss of funds if the recipient contract reverts.\"\n  }\n]\n```",
+    "inference_time":16.8424911499,
+    "timestamp":1767249262.5324218273,
+    "error":null
+  },
+  {
+    "contract_name":"0x958a8f594101d2c0485a52319f29b2647f2ebc06",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          55
+        ],
+        "severity":"High",
+        "explanation":"The `execute` function calls an external contract without checking the return value, which can lead to a loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          109
+        ],
+        "severity":"High",
+        "explanation":"The `sendMessage` function transfers Ether to the owner and then appends a message. If the transfer is not successful, it could lead to a reentrancy attack."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          109
+        ],
+        "severity":"Medium",
+        "explanation":"The `msg.value` is added to the contract's balance without checking for integer overflow, which could lead to unexpected behavior if the value is very large."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [55],\n    \"severity\": \"High\",\n    \"explanation\": \"The `execute` function calls an external contract without checking the return value, which can lead to a loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [109],\n    \"severity\": \"High\",\n    \"explanation\": \"The `sendMessage` function transfers Ether to the owner and then appends a message. If the transfer is not successful, it could lead to a reentrancy attack.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [109],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `msg.value` is added to the contract's balance without checking for integer overflow, which could lead to unexpected behavior if the value is very large.\"\n  }\n]\n```",
+    "inference_time":16.628606081,
+    "timestamp":1767249279.1615030766,
+    "error":null
+  },
+  {
+    "contract_name":"ERC20FlashMint",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":7.5860600471,
+    "timestamp":1767249286.7494280338,
+    "error":null
+  },
+  {
+    "contract_name":"0x663e4229142a27f00bafb5d087e1e730648314c3",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          102
+        ],
+        "severity":"High",
+        "explanation":"The contract accepts Ether but does not check if the sender is one of the two auction contracts, which could lead to unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          152
+        ],
+        "severity":"High",
+        "explanation":"The calculation `avePrice + (avePrice \/ 2)` can result in an integer overflow if `avePrice` is large enough."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          187
+        ],
+        "severity":"High",
+        "explanation":"The contract sends Ether to the CFO address without checking if the transfer was successful, which could lead to loss of funds."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [102],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract accepts Ether but does not check if the sender is one of the two auction contracts, which could lead to unexpected behavior or loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [152],\n    \"severity\": \"High\",\n    \"explanation\": \"The calculation `avePrice + (avePrice \/ 2)` can result in an integer overflow if `avePrice` is large enough.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [187],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract sends Ether to the CFO address without checking if the transfer was successful, which could lead to loss of funds.\"\n  }\n]\n```",
+    "inference_time":33.0926761627,
+    "timestamp":1767249319.8473138809,
+    "error":null
+  },
+  {
+    "contract_name":"0xd5967fed03e85d1cce44cab284695b41bc675b5c",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          16
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result of the call. If the call fails, it could lead to unexpected behavior or loss of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [16],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result of the call. If the call fails, it could lead to unexpected behavior or loss of funds.\"\n  }\n]\n```",
+    "inference_time":5.6658182144,
+    "timestamp":1767249325.5149979591,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_add",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The addition operation in line 17 can cause an integer overflow if the value of 'input' is large enough to make 'count' exceed the maximum value for a uint256."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The addition operation in line 17 can cause an integer overflow if the value of 'input' is large enough to make 'count' exceed the maximum value for a uint256.\"\n  }\n]\n```",
+    "inference_time":5.6405920982,
+    "timestamp":1767249331.1561210155,
+    "error":null
+  },
+  {
+    "contract_name":"0x610495793564aed0f9c7fc48dc4c7c9151d34fd6",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          34
+        ],
+        "severity":"High",
+        "explanation":"The call to `_target.call.value(_value)(_data)` does not check the return value, which can lead to loss of funds if the external contract reverts."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [34],\n    \"severity\": \"High\",\n    \"explanation\": \"The call to `_target.call.value(_value)(_data)` does not check the return value, which can lead to loss of funds if the external contract reverts.\"\n  }\n]\n```",
+    "inference_time":5.4414141178,
+    "timestamp":1767249336.5981490612,
+    "error":null
+  },
+  {
+    "contract_name":"overflow_simple_add",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The addition operation on line 14 can cause an integer overflow if the value of 'balance' plus 'deposit' exceeds the maximum value that a uint256 can hold."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The addition operation on line 14 can cause an integer overflow if the value of 'balance' plus 'deposit' exceeds the maximum value that a uint256 can hold.\"\n  }\n]\n```",
+    "inference_time":5.2863399982,
+    "timestamp":1767249341.8848309517,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_1",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The addition operation on line 14 can cause an integer overflow if the value added to sellerBalance exceeds the maximum uint value."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The addition operation on line 14 can cause an integer overflow if the value added to sellerBalance exceeds the maximum uint value.\"\n  }\n]\n```",
+    "inference_time":5.0246212482,
+    "timestamp":1767249346.9096698761,
+    "error":null
+  },
+  {
+    "contract_name":"0xcead721ef5b11f1a7b530171aab69b16c5e66b6e",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds.\"\n  }\n]\n```",
+    "inference_time":6.6303632259,
+    "timestamp":1767249353.5460920334,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_mul",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The multiplication operation in line 17 can result in an integer overflow if the input is large enough. This could lead to unexpected behavior or allow attackers to manipulate contract state."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The multiplication operation in line 17 can result in an integer overflow if the input is large enough. This could lead to unexpected behavior or allow attackers to manipulate contract state.\"\n  }\n]\n```",
+    "inference_time":5.3418500423,
+    "timestamp":1767249358.8881549835,
+    "error":null
+  },
+  {
+    "contract_name":"ERC7786Recipient",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":4.3508071899,
+    "timestamp":1767249363.2435781956,
+    "error":null
+  },
+  {
+    "contract_name":"Proxy",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":3.7310478687,
+    "timestamp":1767249366.9747979641,
+    "error":null
+  },
+  {
+    "contract_name":"0xd2018bfaa266a9ec0a1a84b061640faa009def76",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract allows for a reentrant call to the `Get` function, which can lead to unauthorized withdrawal of funds or other malicious activities."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          58
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          58
+        ],
+        "severity":"High",
+        "explanation":"The contract allows for a reentrant call to the `withdraw` function, which can lead to unauthorized withdrawal of funds or other malicious activities."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          64
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          64
+        ],
+        "severity":"High",
+        "explanation":"The contract allows for a reentrant call to the `Command` function, which can lead to unauthorized execution of arbitrary code or other malicious activities."
+      }
+    ],
+    "num_vulnerabilities":6,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows for a reentrant call to the `Get` function, which can lead to unauthorized withdrawal of funds or other malicious activities.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [58],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [58],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows for a reentrant call to the `withdraw` function, which can lead to unauthorized withdrawal of funds or other malicious activities.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [64],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result. If the call fails, it can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [64],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows for a reentrant call to the `Command` function, which can lead to unauthorized execution of arbitrary code or other malicious activities.\"\n  }\n]\n```",
+    "inference_time":23.4028868675,
+    "timestamp":1767249390.3822660446,
+    "error":null
+  },
+  {
+    "contract_name":"0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          63
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it allows an attacker to call the `msg.sender.call.value(_am)()` function, which can be used to drain funds from the contract if not properly protected."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [63],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it allows an attacker to call the `msg.sender.call.value(_am)()` function, which can be used to drain funds from the contract if not properly protected.\"\n  }\n]\n```",
+    "inference_time":7.4760591984,
+    "timestamp":1767249397.8598320484,
+    "error":null
+  },
+  {
+    "contract_name":"tokensalechallenge",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          23,
+          25,
+          33
+        ],
+        "severity":"High",
+        "explanation":"The contract performs arithmetic operations that could lead to integer overflow. This can be exploited by providing a very large number of tokens for purchase or sale."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [23, 25, 33],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs arithmetic operations that could lead to integer overflow. This can be exploited by providing a very large number of tokens for purchase or sale.\"\n  }\n]\n```",
+    "inference_time":6.2082490921,
+    "timestamp":1767249404.0682508945,
+    "error":null
+  },
+  {
+    "contract_name":"ERC721Burnable",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+
+        ],
+        "severity":"Low",
+        "explanation":"The contract does not perform any unchecked external calls."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [],\n    \"severity\": \"Low\",\n    \"explanation\": \"The contract does not perform any unchecked external calls.\"\n  }\n]\n```",
+    "inference_time":4.5520870686,
+    "timestamp":1767249408.6208090782,
+    "error":null
+  },
+  {
+    "contract_name":"0xa1fceeff3acc57d257b917e30c4df661401d6431",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          31
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `call` to invoke the `transferFrom` function on an external contract without checking if the call was successful. This can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [31],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `call` to invoke the `transferFrom` function on an external contract without checking if the call was successful. This can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":6.0158038139,
+    "timestamp":1767249414.6369259357,
+    "error":null
+  },
+  {
+    "contract_name":"0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          45
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [45],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.949308157,
+    "timestamp":1767249420.5873310566,
+    "error":null
+  },
+  {
+    "contract_name":"ERC1363",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          106,
+          123,
+          140
+        ],
+        "severity":"High",
+        "explanation":"The contract does not check the return value of the external call to `onTransferReceived` and `onApprovalReceived`, which could lead to a reentrancy attack."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [106, 123, 140],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract does not check the return value of the external call to `onTransferReceived` and `onApprovalReceived`, which could lead to a reentrancy attack.\"\n  }\n]\n```",
+    "inference_time":12.5978620052,
+    "timestamp":1767249433.1853659153,
+    "error":null
+  },
+  {
+    "contract_name":"0x7a4349a749e59a5736efb7826ee3496a2dfd5489",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          23,
+          24
+        ],
+        "severity":"High",
+        "explanation":"The contract allows the owner to withdraw funds using a reentrant call pattern, which can lead to draining of the contract's balance."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          38
+        ],
+        "severity":"High",
+        "explanation":"Similar to line 44, this unchecked external call can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [23, 24],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows the owner to withdraw funds using a reentrant call pattern, which can lead to draining of the contract's balance.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [38],\n    \"severity\": \"High\",\n    \"explanation\": \"Similar to line 44, this unchecked external call can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":12.6972806454,
+    "timestamp":1767249445.8838300705,
+    "error":null
+  },
+  {
+    "contract_name":"ERC1967Proxy",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":4.185382843,
+    "timestamp":1767249450.070371151,
+    "error":null
+  },
+  {
+    "contract_name":"ERC1155Supply",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          46,
+          50
+        ],
+        "severity":"High",
+        "explanation":"The code does not perform overflow checks when updating `_totalSupply` and `_totalSupplyAll`. This can lead to integer overflow if the sum of values exceeds the maximum value for a `uint256`."
+      },
+      {
+        "vulnerability_type":"Integer Underflow",
+        "line_numbers":[
+          54,
+          58
+        ],
+        "severity":"High",
+        "explanation":"The code does not perform underflow checks when updating `_totalSupply` and `_totalSupplyAll`. This can lead to integer underflow if the value being subtracted exceeds the current balance."
+      }
+    ],
+    "num_vulnerabilities":2,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [46, 50],\n    \"severity\": \"High\",\n    \"explanation\": \"The code does not perform overflow checks when updating `_totalSupply` and `_totalSupplyAll`. This can lead to integer overflow if the sum of values exceeds the maximum value for a `uint256`.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Underflow\",\n    \"line_numbers\": [54, 58],\n    \"severity\": \"High\",\n    \"explanation\": \"The code does not perform underflow checks when updating `_totalSupply` and `_totalSupplyAll`. This can lead to integer underflow if the value being subtracted exceeds the current balance.\"\n  }\n]\n```",
+    "inference_time":13.3237550259,
+    "timestamp":1767249463.3947451115,
+    "error":null
+  },
+  {
+    "contract_name":"0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          69,
+          71,
+          73,
+          75
+        ],
+        "severity":"High",
+        "explanation":"The contract makes unchecked external calls to the `extra` addresses using `.call.value(_share).gas(800000)()`. This can lead to reentrancy attacks if the called contracts have fallback functions that call back into this contract."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          102
+        ],
+        "severity":"High",
+        "explanation":"The fallback function in the `Puppet` contract makes an unchecked external call to `target[0]`. If `target[0]` has a fallback function that calls back into this contract, it can lead to reentrancy."
+      }
+    ],
+    "num_vulnerabilities":2,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [69, 71, 73, 75],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes unchecked external calls to the `extra` addresses using `.call.value(_share).gas(800000)()`. This can lead to reentrancy attacks if the called contracts have fallback functions that call back into this contract.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [102],\n    \"severity\": \"High\",\n    \"explanation\": \"The fallback function in the `Puppet` contract makes an unchecked external call to `target[0]`. If `target[0]` has a fallback function that calls back into this contract, it can lead to reentrancy.\"\n  }\n]\n```",
+    "inference_time":15.8957219124,
+    "timestamp":1767249479.3046269417,
+    "error":null
+  },
+  {
+    "contract_name":"0x9d06cbafa865037a01d322d3f4222fa3e04e5488",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          54,
+          65
+        ],
+        "severity":"High",
+        "explanation":"The contract makes unchecked external calls to the `transferFrom` function and `send` method. These calls can fail, leading to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [54, 65],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes unchecked external calls to the `transferFrom` function and `send` method. These calls can fail, leading to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":8.4804251194,
+    "timestamp":1767249487.7861790657,
+    "error":null
+  },
+  {
+    "contract_name":"Packing",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":20.9679999352,
+    "timestamp":1767249508.7610681057,
+    "error":null
+  },
+  {
+    "contract_name":"king_of_the_ether_throne",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          110,
+          118,
+          132,
+          174
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `msg.sender.send()` to transfer Ether without checking if the transfer was successful. If the transfer fails, it can lead to loss of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [110, 118, 132, 174],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `msg.sender.send()` to transfer Ether without checking if the transfer was successful. If the transfer fails, it can lead to loss of funds.\"\n  }\n]\n```",
+    "inference_time":14.3003048897,
+    "timestamp":1767249523.0630660057,
+    "error":null
+  },
+  {
+    "contract_name":"IAccessManaged",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.0885398388,
+    "timestamp":1767249525.1534290314,
+    "error":null
+  },
+  {
+    "contract_name":"0x93c32845fae42c83a70e5f06214c8433665c2ab5",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The 'Collect' function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The 'Collect' function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":6.6843278408,
+    "timestamp":1767249531.8381319046,
+    "error":null
+  },
+  {
+    "contract_name":"0xec329ffc97d75fe03428ae155fc7793431487f63",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          30
+        ],
+        "severity":"High",
+        "explanation":"The `execute` function calls an external contract without checking the return value, which can lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          104
+        ],
+        "severity":"High",
+        "explanation":"The `run` function is vulnerable to reentrancy because it does not check the return value of the `transfer` call, allowing an attacker to drain funds by calling `run` multiple times."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          74
+        ],
+        "severity":"Medium",
+        "explanation":"The `fill` function does not check for integer overflow when calculating the total amount, which could lead to incorrect values if the input data is maliciously crafted."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [30],\n    \"severity\": \"High\",\n    \"explanation\": \"The `execute` function calls an external contract without checking the return value, which can lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [104],\n    \"severity\": \"High\",\n    \"explanation\": \"The `run` function is vulnerable to reentrancy because it does not check the return value of the `transfer` call, allowing an attacker to drain funds by calling `run` multiple times.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [74],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `fill` function does not check for integer overflow when calculating the total amount, which could lead to incorrect values if the input data is maliciously crafted.\"\n  }\n]\n```",
+    "inference_time":17.0542831421,
+    "timestamp":1767249548.8929159641,
+    "error":null
+  },
+  {
+    "contract_name":"IERC777",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":8.8349020481,
+    "timestamp":1767249557.7305531502,
+    "error":null
+  },
+  {
+    "contract_name":"0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          54
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function uses a reentrant call to transfer Ether, which can be exploited by an attacker to drain the contract's funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [54],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function uses a reentrant call to transfer Ether, which can be exploited by an attacker to drain the contract's funds.\"\n  }\n]\n```",
+    "inference_time":6.5011537075,
+    "timestamp":1767249564.2318809032,
+    "error":null
+  },
+  {
+    "contract_name":"0x39cfd754c85023648bf003bea2dd498c5612abfa",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44,
+          97
+        ],
+        "severity":"High",
+        "explanation":"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44, 97],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":7.0963590145,
+    "timestamp":1767249571.3381979465,
+    "error":null
+  },
+  {
+    "contract_name":"0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The `target.call.value(msg.value)(data)` call does not check for the success of the external function call, which can lead to loss of funds if the target contract reverts."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The `withdraw` function is vulnerable to reentrancy attacks because it does not check for the success of the transfer before allowing another withdrawal."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          21
+        ],
+        "severity":"Medium",
+        "explanation":"The `Deposits[msg.sender] += msg.value` operation could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256."
+      },
+      {
+        "vulnerability_type":"Unrestricted External Call",
+        "line_numbers":[
+          17
+        ],
+        "severity":"Medium",
+        "explanation":"The `msg.sender.transfer(amount)` call does not check for the success of the transfer, which can lead to loss of funds if the recipient contract reverts."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The `target.call.value(msg.value)(data)` call does not check for the success of the external function call, which can lead to loss of funds if the target contract reverts.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The `withdraw` function is vulnerable to reentrancy attacks because it does not check for the success of the transfer before allowing another withdrawal.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [21],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `Deposits[msg.sender] += msg.value` operation could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256.\"\n  },\n  {\n    \"vulnerability_type\": \"Unrestricted External Call\",\n    \"line_numbers\": [17],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The `msg.sender.transfer(amount)` call does not check for the success of the transfer, which can lead to loss of funds if the recipient contract reverts.\"\n  }\n]\n```",
+    "inference_time":16.8229870796,
+    "timestamp":1767249588.1674611568,
+    "error":null
+  },
+  {
+    "contract_name":"0x5aa88d2901c68fda244f1d0584400368d2c8e739",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":4.9667630196,
+    "timestamp":1767249593.1361432076,
+    "error":null
+  },
+  {
+    "contract_name":"0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          45
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          45,
+          61
+        ],
+        "severity":"High",
+        "explanation":"The contract has a reentrancy vulnerability because it allows the `Owner` to withdraw funds multiple times by calling `redeem()` or `withdraw()`. An attacker can exploit this by sending a transaction that calls these functions in a loop, draining the contract's balance."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          61
+        ],
+        "severity":"High",
+        "explanation":"Similar to line 45, the `withdraw()` function also calls an external function without checking its return value. This can lead to a loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [45],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [45, 61],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract has a reentrancy vulnerability because it allows the `Owner` to withdraw funds multiple times by calling `redeem()` or `withdraw()`. An attacker can exploit this by sending a transaction that calls these functions in a loop, draining the contract's balance.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [61],\n    \"severity\": \"High\",\n    \"explanation\": \"Similar to line 45, the `withdraw()` function also calls an external function without checking its return value. This can lead to a loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":15.4359762669,
+    "timestamp":1767249608.5722949505,
+    "error":null
+  },
+  {
+    "contract_name":"timelock",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          22
+        ],
+        "severity":"High",
+        "explanation":"The function `increaseLockTime` does not check for integer overflow when adding `_secondsToIncrease` to `lockTime[msg.sender]`. This could lead to the lock time being set to an unintended value, potentially allowing unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [22],\n    \"severity\": \"High\",\n    \"explanation\": \"The function `increaseLockTime` does not check for integer overflow when adding `_secondsToIncrease` to `lockTime[msg.sender]`. This could lead to the lock time being set to an unintended value, potentially allowing unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":6.3818459511,
+    "timestamp":1767249614.9590368271,
+    "error":null
+  },
+  {
+    "contract_name":"Votes",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":12.2083799839,
+    "timestamp":1767249627.1676239967,
+    "error":null
+  },
+  {
+    "contract_name":"reentrancy_cross_function",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          24
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `withdrawBalance` function sends Ether to the caller and then immediately sets their balance to zero. If the caller has a fallback or receive function that calls `transfer`, it can exploit this to drain funds repeatedly."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [24],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `withdrawBalance` function sends Ether to the caller and then immediately sets their balance to zero. If the caller has a fallback or receive function that calls `transfer`, it can exploit this to drain funds repeatedly.\"\n  }\n]\n```",
+    "inference_time":6.8053851128,
+    "timestamp":1767249633.9750649929,
+    "error":null
+  },
+  {
+    "contract_name":"0xe894d54dca59cb53fe9cbc5155093605c7068220",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The contract calls the `transferFrom` function on an external contract (`caddress`) without checking if the call was successful. This can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls the `transferFrom` function on an external contract (`caddress`) without checking if the call was successful. This can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.6526930332,
+    "timestamp":1767249639.6281011105,
+    "error":null
+  },
+  {
+    "contract_name":"spank_chain_payment",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          102,
+          138
+        ],
+        "severity":"High",
+        "explanation":"The contract uses reentrant calls to transfer funds. The `byzantineCloseChannel` and `closeVirtualChannel` functions do not check if the transfer has completed before allowing further execution."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          104,
+          139
+        ],
+        "severity":"High",
+        "explanation":"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          103,
+          139
+        ],
+        "severity":"Medium",
+        "explanation":"The contract performs arithmetic operations that could result in integer overflow. The `+=` operator is used to add balances, which could lead to unexpected results if the values exceed the maximum uint256 value."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          104,
+          139
+        ],
+        "severity":"High",
+        "explanation":"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          104,
+          139
+        ],
+        "severity":"High",
+        "explanation":"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully."
+      }
+    ],
+    "num_vulnerabilities":5,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [102, 138],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses reentrant calls to transfer funds. The `byzantineCloseChannel` and `closeVirtualChannel` functions do not check if the transfer has completed before allowing further execution.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [104, 139],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [103, 139],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The contract performs arithmetic operations that could result in integer overflow. The `+=` operator is used to add balances, which could lead to unexpected results if the values exceed the maximum uint256 value.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [104, 139],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [104, 139],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract makes external calls to transfer funds. The `transfer` and `transferFrom` functions do not check if the call has completed successfully.\"\n  }\n]\n```",
+    "inference_time":44.3985919952,
+    "timestamp":1767249684.0295810699,
+    "error":null
+  },
+  {
+    "contract_name":"0xdb1c55f6926e7d847ddf8678905ad871a68199d2",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          39
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `adr.call.value(msg.value)(data);` which does not check the return value of the external call. This can lead to loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [39],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `adr.call.value(msg.value)(data);` which does not check the return value of the external call. This can lead to loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":6.6758987904,
+    "timestamp":1767249690.7074329853,
+    "error":null
+  },
+  {
+    "contract_name":"0xe09b1ab8111c2729a76f16de96bc86a7af837928",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [140],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls the `whale.call.value(donate_amount)(bytes4(keccak256(\"donate()\")));` function without checking if the call was successful. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [107, 108, 109],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs arithmetic operations that could result in integer overflow. For example, `lockedInBets += amount * WIN_X \/ 1000;` and similar lines can cause overflow if the values are too large.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [140],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `whale.call.value(donate_amount)(bytes4(keccak256(\"donate()\")));` without checking if the call was successful. This can lead to a reentrancy attack if the external function is malicious.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [178],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `paidUser.send(amount);` without checking if the call was successful. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [185],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `ERC20Interface(tokenAddress).transfer(tokenOwner, tokens);` without checking if the call was successful. This can lead to a loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":41.1837809086,
+    "timestamp":1767249731.8915100098,
+    "error":null
+  },
+  {
+    "contract_name":"0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          94
+        ],
+        "severity":"High",
+        "explanation":"The `WithdrawToHolder` function is vulnerable to reentrancy because it allows the recipient to call back into the contract before the state has been fully updated. This can lead to draining of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [94],\n    \"severity\": \"High\",\n    \"explanation\": \"The `WithdrawToHolder` function is vulnerable to reentrancy because it allows the recipient to call back into the contract before the state has been fully updated. This can lead to draining of funds.\"\n  }\n]\n```",
+    "inference_time":7.0932660103,
+    "timestamp":1767249738.9948852062,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_minimal",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Underflow",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in line 17 can lead to an integer underflow if the input is greater than or equal to the current value of count."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Underflow\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in line 17 can lead to an integer underflow if the input is greater than or equal to the current value of count.\"\n  }\n]\n```",
+    "inference_time":5.2486460209,
+    "timestamp":1767249744.2440540791,
+    "error":null
+  },
+  {
+    "contract_name":"GovernorSettings",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":5.0952308178,
+    "timestamp":1767249749.3430860043,
+    "error":null
+  },
+  {
+    "contract_name":"BECToken",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          264
+        ],
+        "severity":"High",
+        "explanation":"The `batchTransfer` function is vulnerable to reentrancy because it does not check the return value of the `transfer` calls, which could allow an attacker to drain funds from the contract."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [264],\n    \"severity\": \"High\",\n    \"explanation\": \"The `batchTransfer` function is vulnerable to reentrancy because it does not check the return value of the `transfer` calls, which could allow an attacker to drain funds from the contract.\"\n  }\n]\n```",
+    "inference_time":17.0430459976,
+    "timestamp":1767249766.3863229752,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_multitx_onefunc_feasible",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          22
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in line 22 can lead to integer overflow if the value of 'input' is greater than or equal to the current value of 'count'. This could potentially allow an attacker to set 'count' to a very large negative number, which might be exploited further."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [22],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in line 22 can lead to integer overflow if the value of 'input' is greater than or equal to the current value of 'count'. This could potentially allow an attacker to set 'count' to a very large negative number, which might be exploited further.\"\n  }\n]\n```",
+    "inference_time":6.6505219936,
+    "timestamp":1767249773.0416140556,
+    "error":null
+  },
+  {
+    "contract_name":"0x941d225236464a25eb18076df7da6a91d0f95e9e",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker could exploit this by calling `CashOut` with a large amount and then immediately sending another transaction that triggers the same function, potentially draining the contract's funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.call.value(_am)()` call in the `CashOut` function is vulnerable to reentrancy attacks. An attacker could exploit this by calling `CashOut` with a large amount and then immediately sending another transaction that triggers the same function, potentially draining the contract's funds.\"\n  }\n]\n```",
+    "inference_time":7.8389210701,
+    "timestamp":1767249780.8807859421,
+    "error":null
+  },
+  {
+    "contract_name":"0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44,
+          97
+        ],
+        "severity":"High",
+        "explanation":"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44, 97],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses low-level calls (`call`) to transfer tokens and Ether without checking the return value. This can lead to loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":7.090940237,
+    "timestamp":1767249787.9734010696,
+    "error":null
+  },
+  {
+    "contract_name":"reentrancy_simple",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          24
+        ],
+        "severity":"Critical",
+        "explanation":"The contract is vulnerable to reentrancy attacks because it does not check the return value of the external call made in the `withdrawBalance` function. If the called contract has a fallback function that sends Ether back to the attacker, it can cause the withdrawal to be executed multiple times, leading to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [24],\n    \"severity\": \"Critical\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because it does not check the return value of the external call made in the `withdrawBalance` function. If the called contract has a fallback function that sends Ether back to the attacker, it can cause the withdrawal to be executed multiple times, leading to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":7.2677590847,
+    "timestamp":1767249795.2416799068,
+    "error":null
+  },
+  {
+    "contract_name":"etherstore",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          27
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `msg.sender.call.value(_weiToWithdraw)()` call can be exploited by an attacker who sends a malicious contract that calls back into this function before it completes, potentially draining the contract's funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [27],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `msg.sender.call.value(_weiToWithdraw)()` call can be exploited by an attacker who sends a malicious contract that calls back into this function before it completes, potentially draining the contract's funds.\"\n  }\n]\n```",
+    "inference_time":6.7551701069,
+    "timestamp":1767249801.9972119331,
+    "error":null
+  },
+  {
+    "contract_name":"ERC1155Utils",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":5.277602911,
+    "timestamp":1767249807.2769091129,
+    "error":null
+  },
+  {
+    "contract_name":"RLP",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":20.8953781128,
+    "timestamp":1767249828.1773509979,
+    "error":null
+  },
+  {
+    "contract_name":"simple_dao",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          19
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `withdraw` function calls an external function (`msg.sender.call.value(amount)`) without checking if the call was successful. If the external call fails, it could lead to a loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [19],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `withdraw` function calls an external function (`msg.sender.call.value(amount)`) without checking if the call was successful. If the external call fails, it could lead to a loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":6.8779439926,
+    "timestamp":1767249835.0569651127,
+    "error":null
+  },
+  {
+    "contract_name":"0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          55
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [55],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds.\"\n  }\n]\n```",
+    "inference_time":6.9172489643,
+    "timestamp":1767249841.9748668671,
+    "error":null
+  },
+  {
+    "contract_name":"CrosschainLinked",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          102
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` without checking the return value. If this call fails, it could lead to unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          102
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` which could be reentrant if the external contract is not designed to handle such cases."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          120
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` without checking the return value. If this call fails, it could lead to unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          120
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` which could be reentrant if the external contract is not designed to handle such cases."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [102],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` without checking the return value. If this call fails, it could lead to unexpected behavior or loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [102],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` which could be reentrant if the external contract is not designed to handle such cases.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [120],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` without checking the return value. If this call fails, it could lead to unexpected behavior or loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [120],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `IERC7786GatewaySource(gateway).sendMessage(counterpart, payload, attributes)` which could be reentrant if the external contract is not designed to handle such cases.\"\n  }\n]\n```",
+    "inference_time":23.6608977318,
+    "timestamp":1767249865.6367681026,
+    "error":null
+  },
+  {
+    "contract_name":"integer_overflow_multitx_multifunc_feasible",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Underflow",
+        "line_numbers":[
+          25
+        ],
+        "severity":"High",
+        "explanation":"The subtraction operation in the 'run' function can lead to an integer underflow if 'input' is greater than or equal to 'count'. This could potentially allow attackers to manipulate the state of the contract."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Underflow\",\n    \"line_numbers\": [25],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation in the 'run' function can lead to an integer underflow if 'input' is greater than or equal to 'count'. This could potentially allow attackers to manipulate the state of the contract.\"\n  }\n]\n```",
+    "inference_time":5.9251871109,
+    "timestamp":1767249871.5665080547,
+    "error":null
+  },
+  {
+    "contract_name":"0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `token.call` and `_addr.call.value(_wei)()` without checking the return value, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `token.call` and `_addr.call.value(_wei)()` without checking the return value, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":6.9027929306,
+    "timestamp":1767249878.4695219994,
+    "error":null
+  },
+  {
+    "contract_name":"ERC721",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          142,
+          150
+        ],
+        "severity":"High",
+        "explanation":"The contract calls `ERC721Utils.checkOnERC721Received` without checking the return value. If this function reverts, it could cause a loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          86,
+          90
+        ],
+        "severity":"High",
+        "explanation":"The contract increments and decrements the `_balances` mapping without checking for integer overflow. If `from` or `to` has a balance of `type(uint256).max`, this could cause an overflow."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          142,
+          150
+        ],
+        "severity":"High",
+        "explanation":"The contract calls external functions (`ERC721Utils.checkOnERC721Received`) without using a reentrancy guard. If the called function is reentrant and calls back into this contract, it could lead to unexpected behavior or loss of funds."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [142, 150],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls `ERC721Utils.checkOnERC721Received` without checking the return value. If this function reverts, it could cause a loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [86, 90],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract increments and decrements the `_balances` mapping without checking for integer overflow. If `from` or `to` has a balance of `type(uint256).max`, this could cause an overflow.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [142, 150],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls external functions (`ERC721Utils.checkOnERC721Received`) without using a reentrancy guard. If the called function is reentrant and calls back into this contract, it could lead to unexpected behavior or loss of funds.\"\n  }\n]\n```",
+    "inference_time":37.0719559193,
+    "timestamp":1767249915.5428779125,
+    "error":null
+  },
+  {
+    "contract_name":"0x7541b76cb60f4c60af330c208b0623b7f54bf615",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. If the called contract reverts, the balance of the caller in the `U_BANK` contract will be incorrectly reduced."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) without checking the return value. If the called contract reverts, the balance of the caller in the `U_BANK` contract will be incorrectly reduced.\"\n  }\n]\n```",
+    "inference_time":8.2330548763,
+    "timestamp":1767249923.7807748318,
+    "error":null
+  },
+  {
+    "contract_name":"draft-InteroperableAddress",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":13.8851788044,
+    "timestamp":1767249937.6677360535,
+    "error":null
+  },
+  {
+    "contract_name":"0x806a6bd219f162442d992bdc4ee6eba1f2c5a707",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          44
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          44,
+          50
+        ],
+        "severity":"High",
+        "explanation":"The contract allows the `Owner` to withdraw funds by calling `withdraw()`. If this function is called while another transaction is in progress that also calls `withdraw()`, it can lead to a reentrancy attack."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          50
+        ],
+        "severity":"High",
+        "explanation":"Similar to line 44, the contract calls an external function `Owner.transfer(this.balance)` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          56
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [44],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [44, 50],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract allows the `Owner` to withdraw funds by calling `withdraw()`. If this function is called while another transaction is in progress that also calls `withdraw()`, it can lead to a reentrancy attack.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [50],\n    \"severity\": \"High\",\n    \"explanation\": \"Similar to line 44, the contract calls an external function `Owner.transfer(this.balance)` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [56],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `adr.call.value(msg.value)(data)` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":18.6236858368,
+    "timestamp":1767249956.2945210934,
+    "error":null
+  },
+  {
+    "contract_name":"reentrancy_bonus",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          28
+        ],
+        "severity":"High",
+        "explanation":"The function `withdrawReward` is vulnerable to reentrancy because it allows the caller to execute `getFirstWithdrawalBonus` again before the transaction is finalized. This can lead to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [28],\n    \"severity\": \"High\",\n    \"explanation\": \"The function `withdrawReward` is vulnerable to reentrancy because it allows the caller to execute `getFirstWithdrawalBonus` again before the transaction is finalized. This can lead to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":6.4128723145,
+    "timestamp":1767249962.7214980125,
+    "error":null
+  },
+  {
+    "contract_name":"GovernorPreventLateQuorum",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":5.4327969551,
+    "timestamp":1767249968.1549389362,
+    "error":null
+  },
+  {
+    "contract_name":"Blockhash",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":3.7424440384,
+    "timestamp":1767249971.8975491524,
+    "error":null
+  },
+  {
+    "contract_name":"IERC3156FlashLender",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":2.9962170124,
+    "timestamp":1767249974.8942530155,
+    "error":null
+  },
+  {
+    "contract_name":"mishandled",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `msg.sender.send(amountToWithdraw)` without checking if the transfer was successful. If the transfer fails, it can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `msg.sender.send(amountToWithdraw)` without checking if the transfer was successful. If the transfer fails, it can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.4687850475,
+    "timestamp":1767249980.3633899689,
+    "error":null
+  },
+  {
+    "contract_name":"ERC20Permit",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":4.6119470596,
+    "timestamp":1767249984.9758839607,
+    "error":null
+  },
+  {
+    "contract_name":"draft-ERC4337Utils",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":17.587854147,
+    "timestamp":1767250002.5640909672,
+    "error":null
+  },
+  {
+    "contract_name":"0x52d2e0f9b01101a59b38a3d05c80b7618aeed984",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          27
+        ],
+        "severity":"High",
+        "explanation":"The `addr.call.value(0 wei)()` call does not check if the external call was successful. This can lead to a loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [27],\n    \"severity\": \"High\",\n    \"explanation\": \"The `addr.call.value(0 wei)()` call does not check if the external call was successful. This can lead to a loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.714869976,
+    "timestamp":1767250008.2820420265,
+    "error":null
+  },
+  {
+    "contract_name":"lotto",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          20,
+          27
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `send()` to transfer Ether to the winner and leftover funds. The `send()` function does not check if the transfer was successful, which can lead to loss of funds if the recipient is a malicious contract."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [20, 27],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `send()` to transfer Ether to the winner and leftover funds. The `send()` function does not check if the transfer was successful, which can lead to loss of funds if the recipient is a malicious contract.\"\n  }\n]\n```",
+    "inference_time":6.2862432003,
+    "timestamp":1767250014.5687820911,
+    "error":null
+  },
+  {
+    "contract_name":"0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          25
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `msg.sender.call.value(balances[msg.sender])()` which does not check if the external call was successful. If the call fails, it can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [25],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `msg.sender.call.value(balances[msg.sender])()` which does not check if the external call was successful. If the call fails, it can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.9644649029,
+    "timestamp":1767250020.5335040092,
+    "error":null
+  },
+  {
+    "contract_name":"0xb37f18af15bafb869a065b61fc83cfc44ed9cc27",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          32
+        ],
+        "severity":"High",
+        "explanation":"The call to `_target.call.value(_value)()` does not check for the success of the external call, which can lead to loss of funds if the call fails."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [32],\n    \"severity\": \"High\",\n    \"explanation\": \"The call to `_target.call.value(_value)()` does not check for the success of the external call, which can lead to loss of funds if the call fails.\"\n  }\n]\n```",
+    "inference_time":5.5399000645,
+    "timestamp":1767250026.0780820847,
+    "error":null
+  },
+  {
+    "contract_name":"0xf2570186500a46986f3139f65afedc2afe4f445d",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          18
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function `giveBlockReward()` without checking the return value. This can lead to a loss of funds if the call fails or consumes all gas."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [18],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function `giveBlockReward()` without checking the return value. This can lead to a loss of funds if the call fails or consumes all gas.\"\n  }\n]\n```",
+    "inference_time":5.5276641846,
+    "timestamp":1767250031.6059131622,
+    "error":null
+  },
+  {
+    "contract_name":"reentrancy_insecure",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy because the `withdrawBalance` function sends Ether to the caller and then immediately sets their balance to zero. If the caller's code (e.g., a malicious contract) calls `withdrawBalance` again during this time, it can withdraw more funds than they are owed."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy because the `withdrawBalance` function sends Ether to the caller and then immediately sets their balance to zero. If the caller's code (e.g., a malicious contract) calls `withdrawBalance` again during this time, it can withdraw more funds than they are owed.\"\n  }\n]\n```",
+    "inference_time":6.9953258038,
+    "timestamp":1767250038.6018590927,
+    "error":null
+  },
+  {
+    "contract_name":"0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          19
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function without checking the result of the call. If the call fails, it could lead to unexpected behavior or loss of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [19],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function without checking the result of the call. If the call fails, it could lead to unexpected behavior or loss of funds.\"\n  }\n]\n```",
+    "inference_time":6.0965120792,
+    "timestamp":1767250044.6989171505,
+    "error":null
+  },
+  {
+    "contract_name":"0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          41
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.call.value(_am)()` call in the CashOut function is vulnerable to reentrancy attacks. An attacker could exploit this by sending a malicious contract that calls back into the CashOut function before the balance is updated, potentially leading to loss of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [41],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.call.value(_am)()` call in the CashOut function is vulnerable to reentrancy attacks. An attacker could exploit this by sending a malicious contract that calls back into the CashOut function before the balance is updated, potentially leading to loss of funds.\"\n  }\n]\n```",
+    "inference_time":7.6177458763,
+    "timestamp":1767250052.3186590672,
+    "error":null
+  },
+  {
+    "contract_name":"0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          14
+        ],
+        "severity":"High",
+        "explanation":"The `target.call.value(msg.value)(data)` call does not check if the external call was successful. If the call fails, it could lead to loss of funds or other unexpected behavior."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          25
+        ],
+        "severity":"High",
+        "explanation":"The `withdraw` function is vulnerable to reentrancy attacks. If an attacker calls the `withdraw` function and then sends a transaction that triggers another call to `withdraw`, it could lead to unauthorized withdrawal of funds."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          20
+        ],
+        "severity":"Medium",
+        "explanation":"The line `Deposits[msg.sender] += msg.value;` could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256."
+      }
+    ],
+    "num_vulnerabilities":3,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [14],\n    \"severity\": \"High\",\n    \"explanation\": \"The `target.call.value(msg.value)(data)` call does not check if the external call was successful. If the call fails, it could lead to loss of funds or other unexpected behavior.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [25],\n    \"severity\": \"High\",\n    \"explanation\": \"The `withdraw` function is vulnerable to reentrancy attacks. If an attacker calls the `withdraw` function and then sends a transaction that triggers another call to `withdraw`, it could lead to unauthorized withdrawal of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [20],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The line `Deposits[msg.sender] += msg.value;` could potentially cause an integer overflow if the sum exceeds the maximum value for a uint256.\"\n  }\n]\n```",
+    "inference_time":14.1499130726,
+    "timestamp":1767250066.4705338478,
+    "error":null
+  },
+  {
+    "contract_name":"0xb620cee6b52f96f3c6b253e6eea556aa2d214a99",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          106,
+          133
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          106,
+          133
+        ],
+        "severity":"High",
+        "explanation":"The contract does not check the return value of `call.value(msg.value)()`, which can be exploited in a reentrancy attack."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          106,
+          133
+        ],
+        "severity":"Medium",
+        "explanation":"The contract does not check for integer overflow when performing arithmetic operations on `msg.value` and the balance of the contract."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          106,
+          133
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          106,
+          133
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":5,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [106, 133],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [106, 133],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract does not check the return value of `call.value(msg.value)()`, which can be exploited in a reentrancy attack.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [106, 133],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The contract does not check for integer overflow when performing arithmetic operations on `msg.value` and the balance of the contract.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [106, 133],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [106, 133],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `call.value(msg.value)()` without checking the return value. This can lead to loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":24.416312933,
+    "timestamp":1767250090.8906109333,
+    "error":null
+  },
+  {
+    "contract_name":"0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          56
+        ],
+        "severity":"High",
+        "explanation":"The `execute` function calls an external contract without checking the return value, which can lead to loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [56],\n    \"severity\": \"High\",\n    \"explanation\": \"The `execute` function calls an external contract without checking the return value, which can lead to loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":7.8093979359,
+    "timestamp":1767250098.7015340328,
+    "error":null
+  },
+  {
+    "contract_name":"0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The `adr.call.value(msg.value)(data)` call does not check the return value, which can lead to loss of funds if the external contract reverts."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The `adr.call.value(msg.value)(data)` call does not check the return value, which can lead to loss of funds if the external contract reverts.\"\n  }\n]\n```",
+    "inference_time":5.4697217941,
+    "timestamp":1767250104.1714479923,
+    "error":null
+  },
+  {
+    "contract_name":"0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          38
+        ],
+        "severity":"High",
+        "explanation":"The `msg.sender.call.value(_am)()` call in the CashOut function is vulnerable to reentrancy attacks. An attacker can exploit this by calling the CashOut function multiple times before the balance is updated, leading to unauthorized withdrawal of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [38],\n    \"severity\": \"High\",\n    \"explanation\": \"The `msg.sender.call.value(_am)()` call in the CashOut function is vulnerable to reentrancy attacks. An attacker can exploit this by calling the CashOut function multiple times before the balance is updated, leading to unauthorized withdrawal of funds.\"\n  }\n]\n```",
+    "inference_time":7.1368670464,
+    "timestamp":1767250111.3094630241,
+    "error":null
+  },
+  {
+    "contract_name":"reentrancy_dao",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          18
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `withdrawAll` function calls an external function (`msg.sender.call.value(oCredit)()`) without checking the return value. This allows an attacker to call `withdrawAll` multiple times before the balance is updated, potentially leading to loss of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [18],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `withdrawAll` function calls an external function (`msg.sender.call.value(oCredit)()`) without checking the return value. This allows an attacker to call `withdrawAll` multiple times before the balance is updated, potentially leading to loss of funds.\"\n  }\n]\n```",
+    "inference_time":7.0469391346,
+    "timestamp":1767250118.3617248535,
+    "error":null
+  },
+  {
+    "contract_name":"modifier_reentrancy",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          15
+        ],
+        "severity":"High",
+        "explanation":"The `airDrop` function is vulnerable to reentrancy because it does not check the return value of the external call to `Bank(msg.sender).supportsToken()`. If an attacker can manipulate this call, they could cause a reentrant attack."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [15],\n    \"severity\": \"High\",\n    \"explanation\": \"The `airDrop` function is vulnerable to reentrancy because it does not check the return value of the external call to `Bank(msg.sender).supportsToken()`. If an attacker can manipulate this call, they could cause a reentrant attack.\"\n  }\n]\n```",
+    "inference_time":7.3141658306,
+    "timestamp":1767250125.6777050495,
+    "error":null
+  },
+  {
+    "contract_name":"CircularBuffer",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+
+    ],
+    "num_vulnerabilities":0,
+    "raw_response":"```json\n[]\n```",
+    "inference_time":7.4972159863,
+    "timestamp":1767250133.1752948761,
+    "error":null
+  },
+  {
+    "contract_name":"0x561eac93c92360949ab1f1403323e6db345cbf31",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          54
+        ],
+        "severity":"High",
+        "explanation":"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [54],\n    \"severity\": \"High\",\n    \"explanation\": \"The `Collect` function is vulnerable to reentrancy because it allows the caller to send additional transactions before the balance is updated. This can lead to draining of funds.\"\n  }\n]\n```",
+    "inference_time":6.7964830399,
+    "timestamp":1767250139.9728560448,
+    "error":null
+  },
+  {
+    "contract_name":"etherbank",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          21
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `withdrawBalance` function calls an external function (`msg.sender.call.value(amountToWithdraw)()`) without checking its return value. This allows an attacker to drain the contract's funds by repeatedly calling the `withdrawBalance` function."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [21],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `withdrawBalance` function calls an external function (`msg.sender.call.value(amountToWithdraw)()`) without checking its return value. This allows an attacker to drain the contract's funds by repeatedly calling the `withdrawBalance` function.\"\n  }\n]\n```",
+    "inference_time":6.9062919617,
+    "timestamp":1767250146.8793311119,
+    "error":null
+  },
+  {
+    "contract_name":"insecure_transfer",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          18
+        ],
+        "severity":"High",
+        "explanation":"The addition operation in line 18 can cause an integer overflow if the sum exceeds the maximum value that a uint256 can hold."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [18],\n    \"severity\": \"High\",\n    \"explanation\": \"The addition operation in line 18 can cause an integer overflow if the sum exceeds the maximum value that a uint256 can hold.\"\n  }\n]\n```",
+    "inference_time":5.1836647987,
+    "timestamp":1767250152.065032959,
+    "error":null
+  },
+  {
+    "contract_name":"0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          17
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function using `caddress.call(id, from, _tos[i], v);` without checking if the call was successful. This can lead to a loss of funds or other unexpected behavior."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [17],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function using `caddress.call(id, from, _tos[i], v);` without checking if the call was successful. This can lead to a loss of funds or other unexpected behavior.\"\n  }\n]\n```",
+    "inference_time":5.9725489616,
+    "timestamp":1767250158.0378229618,
+    "error":null
+  },
+  {
+    "contract_name":"0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          143,
+          152
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `unchecked` external calls to the `whale.call.value(amount)(bytes4(keccak256(\"donate()\")));` function. This can lead to reentrancy attacks if the `donate()` function in the `whale` contract is not designed to handle such calls safely."
+      },
+      {
+        "vulnerability_type":"Integer Overflow",
+        "line_numbers":[
+          143,
+          152
+        ],
+        "severity":"High",
+        "explanation":"The contract performs arithmetic operations that could result in integer overflow. For example, `address(this).balance \/ 2` and `totalDonated += amount`. Integer overflows can lead to unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          143,
+          152
+        ],
+        "severity":"High",
+        "explanation":"The contract uses unchecked external calls that could be exploited by a malicious `whale` contract to execute reentrant calls and drain funds from the PoCGame contract."
+      },
+      {
+        "vulnerability_type":"Timestamp Dependence",
+        "line_numbers":[
+          89,
+          102
+        ],
+        "severity":"Medium",
+        "explanation":"The contract relies on the block number as a timestamp. However, block timestamps can be manipulated by miners, which could lead to unfair outcomes in the game."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          174
+        ],
+        "severity":"High",
+        "explanation":"The contract uses `unchecked` external calls to transfer tokens. This can lead to reentrancy attacks if the token contract is not designed to handle such calls safely."
+      }
+    ],
+    "num_vulnerabilities":5,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [143, 152],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `unchecked` external calls to the `whale.call.value(amount)(bytes4(keccak256(\\\"donate()\\\")));` function. This can lead to reentrancy attacks if the `donate()` function in the `whale` contract is not designed to handle such calls safely.\"\n  },\n  {\n    \"vulnerability_type\": \"Integer Overflow\",\n    \"line_numbers\": [143, 152],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs arithmetic operations that could result in integer overflow. For example, `address(this).balance \/ 2` and `totalDonated += amount`. Integer overflows can lead to unexpected behavior or loss of funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [143, 152],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses unchecked external calls that could be exploited by a malicious `whale` contract to execute reentrant calls and drain funds from the PoCGame contract.\"\n  },\n  {\n    \"vulnerability_type\": \"Timestamp Dependence\",\n    \"line_numbers\": [89, 102],\n    \"severity\": \"Medium\",\n    \"explanation\": \"The contract relies on the block number as a timestamp. However, block timestamps can be manipulated by miners, which could lead to unfair outcomes in the game.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [174],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract uses `unchecked` external calls to transfer tokens. This can lead to reentrancy attacks if the token contract is not designed to handle such calls safely.\"\n  }\n]\n```",
+    "inference_time":31.3144130707,
+    "timestamp":1767250189.3545470238,
+    "error":null
+  },
+  {
+    "contract_name":"0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          29
+        ],
+        "severity":"High",
+        "explanation":"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          29,
+          30
+        ],
+        "severity":"High",
+        "explanation":"The contract transfers funds to the owner and msg.sender in the `GetHoneyFromJar` function. If this function is called multiple times in quick succession, it can lead to a reentrancy attack where the attacker drains the contract's funds."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          36
+        ],
+        "severity":"High",
+        "explanation":"Similar to line 29, the `Command` function calls an external function without checking its return value. This can lead to a loss of funds if the external call fails."
+      },
+      {
+        "vulnerability_type":"Unchecked External Call",
+        "line_numbers":[
+          41
+        ],
+        "severity":"High",
+        "explanation":"The `withdraw` function calls an external function without checking its return value. This can lead to a loss of funds if the external call fails."
+      }
+    ],
+    "num_vulnerabilities":4,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [29],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract calls an external function using `adr.call.value(msg.value)(data);` without checking the return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [29, 30],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract transfers funds to the owner and msg.sender in the `GetHoneyFromJar` function. If this function is called multiple times in quick succession, it can lead to a reentrancy attack where the attacker drains the contract's funds.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [36],\n    \"severity\": \"High\",\n    \"explanation\": \"Similar to line 29, the `Command` function calls an external function without checking its return value. This can lead to a loss of funds if the external call fails.\"\n  },\n  {\n    \"vulnerability_type\": \"Unchecked External Call\",\n    \"line_numbers\": [41],\n    \"severity\": \"High\",\n    \"explanation\": \"The `withdraw` function calls an external function without checking its return value. This can lead to a loss of funds if the external call fails.\"\n  }\n]\n```",
+    "inference_time":18.6454510689,
+    "timestamp":1767250208.0027368069,
+    "error":null
+  },
+  {
+    "contract_name":"reentrance",
+    "model":"qwen",
+    "display_name":"Qwen2.5-Coder-7B",
+    "vulnerabilities":[
+      {
+        "vulnerability_type":"Reentrancy",
+        "line_numbers":[
+          24
+        ],
+        "severity":"High",
+        "explanation":"The contract is vulnerable to reentrancy attacks because the `withdraw` function calls an external function (`msg.sender.call.value(_amount)()`) before updating the balance. This allows an attacker to drain the contract's funds by calling `withdraw` multiple times in a single transaction."
+      }
+    ],
+    "num_vulnerabilities":1,
+    "raw_response":"```json\n[\n  {\n    \"vulnerability_type\": \"Reentrancy\",\n    \"line_numbers\": [24],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract is vulnerable to reentrancy attacks because the `withdraw` function calls an external function (`msg.sender.call.value(_amount)()`) before updating the balance. This allows an attacker to drain the contract's funds by calling `withdraw` multiple times in a single transaction.\"\n  }\n]\n```",
+    "inference_time":6.931043148,
+    "timestamp":1767250214.9385919571,
+    "error":null
+  }
+]
