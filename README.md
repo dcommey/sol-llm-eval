@@ -87,7 +87,6 @@ python scripts/regenerate_figures.py
 ```
 Output location: `paper/figures/` and `results/evaluations/`.
 
-```
 
 ## 📂 Repository Structure
 
@@ -110,7 +109,7 @@ sol-llm-eval/
 
 A full BibTeX citation will be added here upon acceptance/publication of the associated paper.
 
-If you use this codebase, please acknolwedge the authors:
+If you use this codebase, please acknowledge the authors:
 *Daniel Commey, Kamel Abbad, Benjamin Appiah, Lyes Khoukhi, and Garth V. Crosby.*
 
 ## 📜 License
