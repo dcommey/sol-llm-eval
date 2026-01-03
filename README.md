@@ -87,6 +87,14 @@ python scripts/regenerate_figures.py
 ```
 Output location: `paper/figures/` and `results/evaluations/`.
 
+### 4. Compile Manuscript
+To build the final PDF with all generated figures and tables:
+```bash
+cd paper
+./compile.sh
+```
+Output: `paper/paper.pdf`
+
 ## 📂 Repository Structure
 
 ```
