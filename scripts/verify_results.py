@@ -86,7 +86,7 @@ def calculate_metrics(predictions, ground_truth):
     }
 
 def main():
-    base_dir = Path("/Volumes/ExtSystem/Users/seraphic/Documents/dev/sol-llm-eval")
+    base_dir = Path(__file__).resolve().parents[1]
     raw_data_path = base_dir / "data/raw/combined_dataset.json"
     pred_dir = base_dir / "results/predictions"
     

@@ -1,0 +1,5 @@
+FROM hf.co/fdtn-ai/Foundation-Sec-1.1-8B-Instruct-Q4_K_M-GGUF:Q4_K_M
+# Direct translation of the publisher's chat_template.jinja at revision
+# 243b27655e01c87cc04fdb88632be7cd9e55ac1f. Single-turn system/user roles.
+TEMPLATE """{{- range .Messages }}{{ if eq .Role "system" }}{{ printf "<|system|>\n%s\n" .Content }}{{ else if eq .Role "user" }}{{ printf "<|user|>\n%s\n" .Content }}{{ else if eq .Role "assistant" }}{{ printf "<|assistant|>\n%s<|end_of_text|>\n" .Content }}{{ end }}{{ end }}{{ printf "<|assistant|>\n" }}"""
+PARAMETER stop "<|end_of_text|>"

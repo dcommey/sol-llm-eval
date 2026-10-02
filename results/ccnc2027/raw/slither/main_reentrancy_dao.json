@@ -1,0 +1,264 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdrawAll",
+              "source_mapping": {
+                "start": 245,
+                "length": 324,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "ReentrancyDAO",
+                  "source_mapping": {
+                    "start": 159,
+                    "length": 530,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "withdrawAll()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "callResult = msg.sender.call.value(oCredit)()",
+              "source_mapping": {
+                "start": 432,
+                "length": 50,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  18
+                ],
+                "starting_column": 13,
+                "ending_column": 63
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawAll",
+                  "source_mapping": {
+                    "start": 245,
+                    "length": 324,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ReentrancyDAO",
+                      "source_mapping": {
+                        "start": 159,
+                        "length": 530,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdrawAll()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "credit[msg.sender] = 0",
+              "source_mapping": {
+                "start": 530,
+                "length": 22,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  20
+                ],
+                "starting_column": 13,
+                "ending_column": 35
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawAll",
+                  "source_mapping": {
+                    "start": 245,
+                    "length": 324,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ReentrancyDAO",
+                      "source_mapping": {
+                        "start": 159,
+                        "length": 530,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdrawAll()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "credit"
+              }
+            }
+          ],
+          "description": "Reentrancy in ReentrancyDAO.withdrawAll() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#13-22):\n\tExternal calls:\n\t- callResult = msg.sender.call.value(oCredit)() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#18)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#20)\n\tReentrancyDAO.credit (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#10) can be used in cross function reentrancies:\n\t- ReentrancyDAO.deposit() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#24-27)\n\t- ReentrancyDAO.withdrawAll() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#13-22)\n",
+          "markdown": "Reentrancy in [ReentrancyDAO.withdrawAll()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L13-L22):\n\tExternal calls:\n\t- [callResult = msg.sender.call.value(oCredit)()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L18)\n\tState variables written after the call(s):\n\t- [credit[msg.sender] = 0](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L20)\n\t[ReentrancyDAO.credit](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L10) can be used in cross function reentrancies:\n\t- [ReentrancyDAO.deposit()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L24-L27)\n\t- [ReentrancyDAO.withdrawAll()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L13-L22)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_dao.sol#L13-L22",
+          "id": "202f467d23a0580f5250f3856a84b7ab58a8142efa315667016d5a3a4a2d4c9c",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

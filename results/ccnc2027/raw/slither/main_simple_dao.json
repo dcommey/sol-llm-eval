@@ -1,0 +1,252 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdraw",
+              "source_mapping": {
+                "start": 303,
+                "length": 200,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22
+                ],
+                "starting_column": 3,
+                "ending_column": 4
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "SimpleDAO",
+                  "source_mapping": {
+                    "start": 162,
+                    "length": 422,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "withdraw(uint256)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "res = msg.sender.call.value(amount)()",
+              "source_mapping": {
+                "start": 416,
+                "length": 42,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  19
+                ],
+                "starting_column": 7,
+                "ending_column": 49
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 303,
+                    "length": 200,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "SimpleDAO",
+                      "source_mapping": {
+                        "start": 162,
+                        "length": 422,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw(uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "credit[msg.sender] -= amount",
+              "source_mapping": {
+                "start": 466,
+                "length": 26,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                "is_dependency": false,
+                "lines": [
+                  20
+                ],
+                "starting_column": 7,
+                "ending_column": 33
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 303,
+                    "length": 200,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "SimpleDAO",
+                      "source_mapping": {
+                        "start": 162,
+                        "length": 422,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw(uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "credit"
+              }
+            }
+          ],
+          "description": "Reentrancy in SimpleDAO.withdraw(uint256) (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#16-22):\n\tExternal calls:\n\t- res = msg.sender.call.value(amount)() (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#19)\n\tState variables written after the call(s):\n\t- credit[msg.sender] -= amount (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#20)\n\tSimpleDAO.credit (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#10) can be used in cross function reentrancies:\n\t- SimpleDAO.credit (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#10)\n\t- SimpleDAO.donate(address) (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#12-14)\n\t- SimpleDAO.queryCredit(address) (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#24-26)\n\t- SimpleDAO.withdraw(uint256) (data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#16-22)\n",
+          "markdown": "Reentrancy in [SimpleDAO.withdraw(uint256)](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L16-L22):\n\tExternal calls:\n\t- [res = msg.sender.call.value(amount)()](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L19)\n\tState variables written after the call(s):\n\t- [credit[msg.sender] -= amount](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L20)\n\t[SimpleDAO.credit](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L10) can be used in cross function reentrancies:\n\t- [SimpleDAO.credit](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L10)\n\t- [SimpleDAO.donate(address)](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L12-L14)\n\t- [SimpleDAO.queryCredit(address)](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L24-L26)\n\t- [SimpleDAO.withdraw(uint256)](data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L16-L22)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/simple_dao.sol#L16-L22",
+          "id": "cb119123228c7107f76f76572758da3175cc105c7b60a4d4b6e11f627db630ca",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

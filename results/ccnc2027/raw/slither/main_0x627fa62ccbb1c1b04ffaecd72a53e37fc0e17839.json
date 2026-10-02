@@ -1,0 +1,514 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "WithdrawToHolder",
+              "source_mapping": {
+                "start": 1443,
+                "length": 298,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "is_dependency": false,
+                "lines": [
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "TokenBank",
+                  "source_mapping": {
+                    "start": 740,
+                    "length": 1003,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54,
+                      55,
+                      56,
+                      57,
+                      58,
+                      59,
+                      60,
+                      61,
+                      62,
+                      63,
+                      64,
+                      65,
+                      66,
+                      67,
+                      68,
+                      69,
+                      70,
+                      71,
+                      72,
+                      73,
+                      74,
+                      75,
+                      76,
+                      77,
+                      78,
+                      79,
+                      80,
+                      81,
+                      82,
+                      83,
+                      84,
+                      85,
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99,
+                      100,
+                      101
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 0
+                  }
+                },
+                "signature": "WithdrawToHolder(address,uint256)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "_addr.call.value(_wei)()",
+              "source_mapping": {
+                "start": 1634,
+                "length": 24,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "is_dependency": false,
+                "lines": [
+                  94
+                ],
+                "starting_column": 16,
+                "ending_column": 40
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "WithdrawToHolder",
+                  "source_mapping": {
+                    "start": 1443,
+                    "length": 298,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "TokenBank",
+                      "source_mapping": {
+                        "start": 740,
+                        "length": 1003,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          47,
+                          48,
+                          49,
+                          50,
+                          51,
+                          52,
+                          53,
+                          54,
+                          55,
+                          56,
+                          57,
+                          58,
+                          59,
+                          60,
+                          61,
+                          62,
+                          63,
+                          64,
+                          65,
+                          66,
+                          67,
+                          68,
+                          69,
+                          70,
+                          71,
+                          72,
+                          73,
+                          74,
+                          75,
+                          76,
+                          77,
+                          78,
+                          79,
+                          80,
+                          81,
+                          82,
+                          83,
+                          84,
+                          85,
+                          86,
+                          87,
+                          88,
+                          89,
+                          90,
+                          91,
+                          92,
+                          93,
+                          94,
+                          95,
+                          96,
+                          97,
+                          98,
+                          99,
+                          100,
+                          101
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "WithdrawToHolder(address,uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "Holders[_addr] -= _wei",
+              "source_mapping": {
+                "start": 1690,
+                "length": 20,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "is_dependency": false,
+                "lines": [
+                  96
+                ],
+                "starting_column": 17,
+                "ending_column": 37
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "WithdrawToHolder",
+                  "source_mapping": {
+                    "start": 1443,
+                    "length": 298,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "TokenBank",
+                      "source_mapping": {
+                        "start": 740,
+                        "length": 1003,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          47,
+                          48,
+                          49,
+                          50,
+                          51,
+                          52,
+                          53,
+                          54,
+                          55,
+                          56,
+                          57,
+                          58,
+                          59,
+                          60,
+                          61,
+                          62,
+                          63,
+                          64,
+                          65,
+                          66,
+                          67,
+                          68,
+                          69,
+                          70,
+                          71,
+                          72,
+                          73,
+                          74,
+                          75,
+                          76,
+                          77,
+                          78,
+                          79,
+                          80,
+                          81,
+                          82,
+                          83,
+                          84,
+                          85,
+                          86,
+                          87,
+                          88,
+                          89,
+                          90,
+                          91,
+                          92,
+                          93,
+                          94,
+                          95,
+                          96,
+                          97,
+                          98,
+                          99,
+                          100,
+                          101
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "WithdrawToHolder(address,uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "Holders"
+              }
+            }
+          ],
+          "description": "Reentrancy in TokenBank.WithdrawToHolder(address,uint256) (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#86-99):\n\tExternal calls:\n\t- _addr.call.value(_wei)() (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#94)\n\tState variables written after the call(s):\n\t- Holders[_addr] -= _wei (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#96)\n\tTokenBank.Holders (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#50) can be used in cross function reentrancies:\n\t- TokenBank.Deposit() (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#66-73)\n\t- TokenBank.Holders (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#50)\n\t- TokenBank.WitdrawTokenToHolder(address,address,uint256) (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#75-84)\n\t- TokenBank.WithdrawToHolder(address,uint256) (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#86-99)\n",
+          "markdown": "Reentrancy in [TokenBank.WithdrawToHolder(address,uint256)](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L86-L99):\n\tExternal calls:\n\t- [_addr.call.value(_wei)()](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L94)\n\tState variables written after the call(s):\n\t- [Holders[_addr] -= _wei](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L96)\n\t[TokenBank.Holders](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L50) can be used in cross function reentrancies:\n\t- [TokenBank.Deposit()](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L66-L73)\n\t- [TokenBank.Holders](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L50)\n\t- [TokenBank.WitdrawTokenToHolder(address,address,uint256)](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L75-L84)\n\t- [TokenBank.WithdrawToHolder(address,uint256)](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L86-L99)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L86-L99",
+          "id": "e92fac90b7577f1cf1b270e4b55d30a10c4e304f6ee0850aa8f27adae547369a",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        },
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "WithdrawToken",
+              "source_mapping": {
+                "start": 560,
+                "length": 176,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "is_dependency": false,
+                "lines": [
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Token",
+                  "source_mapping": {
+                    "start": 496,
+                    "length": 242,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "WithdrawToken(address,uint256,address)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "token.call(bytes4(sha3()(transfer(address,uint256))),to,amount)",
+              "source_mapping": {
+                "start": 665,
+                "length": 63,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                "is_dependency": false,
+                "lines": [
+                  43
+                ],
+                "starting_column": 9,
+                "ending_column": 72
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "WithdrawToken",
+                  "source_mapping": {
+                    "start": 560,
+                    "length": 176,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Token",
+                      "source_mapping": {
+                        "start": 496,
+                        "length": 242,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          36,
+                          37,
+                          38,
+                          39,
+                          40,
+                          41,
+                          42,
+                          43,
+                          44,
+                          45
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "WithdrawToken(address,uint256,address)"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "Token.WithdrawToken(address,uint256,address) (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#39-44) ignores return value by token.call(bytes4(sha3()(transfer(address,uint256))),to,amount) (data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#43)\n",
+          "markdown": "[Token.WithdrawToken(address,uint256,address)](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L39-L44) ignores return value by [token.call(bytes4(sha3()(transfer(address,uint256))),to,amount)](data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L43)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol#L39-L44",
+          "id": "5716a82659373f9ad0ae446983d8a1ff1b799ca624bfa830bfe3c64bb7fe77d5",
+          "check": "unchecked-lowlevel",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-low-level-calls"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

@@ -5,6 +5,9 @@ __pycache__/
 *.pyd
 .Python
 venv/
+.venv/
+tools/solc-js/node_modules/
+tmp/pdfs/
 env/
 .env
 
@@ -17,3 +20,4 @@ results/logs/
 experiment_run.log
 .idea/
 .vscode/
+.pytest_cache/

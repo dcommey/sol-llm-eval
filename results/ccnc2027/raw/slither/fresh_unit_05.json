@@ -1,0 +1,213 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdraw",
+              "source_mapping": {
+                "start": 169,
+                "length": 243,
+                "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                "is_dependency": false,
+                "lines": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Unit",
+                  "source_mapping": {
+                    "start": 25,
+                    "length": 394,
+                    "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "withdraw()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "(ok,None) = recipient.call{value: amount}()",
+              "source_mapping": {
+                "start": 323,
+                "length": 46,
+                "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                "is_dependency": false,
+                "lines": [
+                  7
+                ],
+                "starting_column": 58,
+                "ending_column": 104
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 169,
+                    "length": 243,
+                    "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      5,
+                      6,
+                      7,
+                      8
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Unit",
+                      "source_mapping": {
+                        "start": 25,
+                        "length": 394,
+                        "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                        "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                        "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "credit[msg.sender] = 0",
+              "source_mapping": {
+                "start": 383,
+                "length": 22,
+                "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                "is_dependency": false,
+                "lines": [
+                  7
+                ],
+                "starting_column": 118,
+                "ending_column": 140
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 169,
+                    "length": 243,
+                    "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      5,
+                      6,
+                      7,
+                      8
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Unit",
+                      "source_mapping": {
+                        "start": 25,
+                        "length": 394,
+                        "filename_relative": "data/fresh-ccnc2027/unit_05.sol",
+                        "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_05.sol",
+                        "filename_short": "data/fresh-ccnc2027/unit_05.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "credit"
+              }
+            }
+          ],
+          "description": "Reentrancy in Unit.withdraw() (data/fresh-ccnc2027/unit_05.sol#5-8):\n\tExternal calls:\n\t- (ok,None) = recipient.call{value: amount}() (data/fresh-ccnc2027/unit_05.sol#7)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/fresh-ccnc2027/unit_05.sol#7)\n\tUnit.credit (data/fresh-ccnc2027/unit_05.sol#3) can be used in cross function reentrancies:\n\t- Unit.credit (data/fresh-ccnc2027/unit_05.sol#3)\n\t- Unit.deposit() (data/fresh-ccnc2027/unit_05.sol#4)\n\t- Unit.withdraw() (data/fresh-ccnc2027/unit_05.sol#5-8)\n",
+          "markdown": "Reentrancy in [Unit.withdraw()](data/fresh-ccnc2027/unit_05.sol#L5-L8):\n\tExternal calls:\n\t- [(ok,None) = recipient.call{value: amount}()](data/fresh-ccnc2027/unit_05.sol#L7)\n\tState variables written after the call(s):\n\t- [credit[msg.sender] = 0](data/fresh-ccnc2027/unit_05.sol#L7)\n\t[Unit.credit](data/fresh-ccnc2027/unit_05.sol#L3) can be used in cross function reentrancies:\n\t- [Unit.credit](data/fresh-ccnc2027/unit_05.sol#L3)\n\t- [Unit.deposit()](data/fresh-ccnc2027/unit_05.sol#L4)\n\t- [Unit.withdraw()](data/fresh-ccnc2027/unit_05.sol#L5-L8)\n",
+          "first_markdown_element": "data/fresh-ccnc2027/unit_05.sol#L5-L8",
+          "id": "f821de5c397b41e8a0dbe64d55f1a4b35e23b682a185e6b565022182c6031782",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

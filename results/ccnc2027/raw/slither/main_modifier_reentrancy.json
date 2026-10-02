@@ -1,0 +1,328 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "airDrop",
+              "source_mapping": {
+                "start": 429,
+                "length": 94,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "is_dependency": false,
+                "lines": [
+                  15,
+                  16,
+                  17
+                ],
+                "starting_column": 3,
+                "ending_column": 4
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "ModifierEntrancy",
+                  "source_mapping": {
+                    "start": 200,
+                    "length": 641,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "airDrop()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "supportsToken()",
+              "source_mapping": {
+                "start": 461,
+                "length": 13,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "is_dependency": false,
+                "lines": [
+                  15
+                ],
+                "starting_column": 35,
+                "ending_column": 48
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "airDrop",
+                  "source_mapping": {
+                    "start": 429,
+                    "length": 94,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      15,
+                      16,
+                      17
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ModifierEntrancy",
+                      "source_mapping": {
+                        "start": 200,
+                        "length": 641,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "airDrop()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "require(bool)(keccak256()(abi.encodePacked(Nu Token)) == Bank(msg.sender).supportsToken())",
+              "source_mapping": {
+                "start": 612,
+                "length": 84,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "is_dependency": false,
+                "lines": [
+                  21
+                ],
+                "starting_column": 5,
+                "ending_column": 89
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "supportsToken",
+                  "source_mapping": {
+                    "start": 581,
+                    "length": 127,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      20,
+                      21,
+                      22,
+                      23
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ModifierEntrancy",
+                      "source_mapping": {
+                        "start": 200,
+                        "length": 641,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "supportsToken()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls_sending_eth"
+              }
+            },
+            {
+              "type": "node",
+              "name": "tokenBalance[msg.sender] += 20",
+              "source_mapping": {
+                "start": 488,
+                "length": 30,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                "is_dependency": false,
+                "lines": [
+                  16
+                ],
+                "starting_column": 5,
+                "ending_column": 35
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "airDrop",
+                  "source_mapping": {
+                    "start": 429,
+                    "length": 94,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      15,
+                      16,
+                      17
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ModifierEntrancy",
+                      "source_mapping": {
+                        "start": 200,
+                        "length": 641,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "airDrop()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "tokenBalance"
+              }
+            }
+          ],
+          "description": "Reentrancy in ModifierEntrancy.airDrop() (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#15-17):\n\tExternal calls:\n\t- supportsToken() (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#15)\n\t\t- require(bool)(keccak256()(abi.encodePacked(Nu Token)) == Bank(msg.sender).supportsToken()) (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#21)\n\tState variables written after the call(s):\n\t- tokenBalance[msg.sender] += 20 (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#16)\n\tModifierEntrancy.tokenBalance (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#10) can be used in cross function reentrancies:\n\t- ModifierEntrancy.airDrop() (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#15-17)\n\t- ModifierEntrancy.hasNoBalance() (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#25-28)\n\t- ModifierEntrancy.tokenBalance (data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#10)\n",
+          "markdown": "Reentrancy in [ModifierEntrancy.airDrop()](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L15-L17):\n\tExternal calls:\n\t- [supportsToken()](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L15)\n\t\t- [require(bool)(keccak256()(abi.encodePacked(Nu Token)) == Bank(msg.sender).supportsToken())](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L21)\n\tState variables written after the call(s):\n\t- [tokenBalance[msg.sender] += 20](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L16)\n\t[ModifierEntrancy.tokenBalance](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L10) can be used in cross function reentrancies:\n\t- [ModifierEntrancy.airDrop()](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L15-L17)\n\t- [ModifierEntrancy.hasNoBalance()](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L25-L28)\n\t- [ModifierEntrancy.tokenBalance](data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L10)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/modifier_reentrancy.sol#L15-L17",
+          "id": "5d7e476f98bd1b9b005ad45d34a0dfc769b8220b775a8174065523180d25cae6",
+          "check": "reentrancy-no-eth",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

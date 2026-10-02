@@ -6,11 +6,50 @@ and clean (OpenZeppelin) contracts for proper FPR calculation.
 import os
 import json
 import random
+import re
 import logging
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 
 logger = logging.getLogger(__name__)
+
+SMARTBUGS_ANNOTATION = re.compile(
+    r'^\s*(?://|\*)\s*(?:@vulnerable_at_lines\s*:|<yes>\s*<report>)',
+    flags=re.IGNORECASE,
+)
+
+
+def strip_smartbugs_annotations(code: str) -> str:
+    """Remove benchmark answer annotations while preserving line numbers."""
+    return '\n'.join(
+        '' if SMARTBUGS_ANNOTATION.match(line) else line
+        for line in code.split('\n')
+    )
+
+
+def consolidate_duplicate_contracts(contracts: List[Dict]) -> List[Dict]:
+    """Merge semantically identical benchmark copies and union their labels."""
+    consolidated = {}
+    order = []
+    for contract in contracts:
+        normalized_code = ''.join(contract['contract_code'].split())
+        key = (contract.get('source'), contract['contract_name'], normalized_code)
+        if key not in consolidated:
+            consolidated[key] = {**contract}
+            consolidated[key]['ground_truth_vulnerabilities'] = list(
+                contract.get('ground_truth_vulnerabilities', [])
+            )
+            order.append(key)
+            continue
+
+        existing = consolidated[key]
+        existing['ground_truth_vulnerabilities'] = sorted(set(
+            existing['ground_truth_vulnerabilities']
+            + contract.get('ground_truth_vulnerabilities', [])
+        ))
+        existing['vulnerability_type'] = 'multi_label'
+
+    return [consolidated[key] for key in order]
 
 
 def load_smartbugs_vulnerable(base_path: str, vuln_types: List[str]) -> List[Dict]:
@@ -36,7 +75,7 @@ def load_smartbugs_vulnerable(base_path: str, vuln_types: List[str]) -> List[Dic
         for sol_file in vuln_path.glob("*.sol"):
             try:
                 with open(sol_file, 'r', encoding='utf-8', errors='ignore') as f:
-                    code = f.read()
+                    code = strip_smartbugs_annotations(f.read())
                 
                 contracts.append({
                     'contract_name': sol_file.stem,
@@ -56,63 +95,46 @@ def load_smartbugs_vulnerable(base_path: str, vuln_types: List[str]) -> List[Dic
 
 
 def load_openzeppelin_clean(base_path: str, max_contracts: int = 100) -> List[Dict]:
-    """Load clean/safe contracts from OpenZeppelin."""
-    contracts = []
+    """Select contract/library-containing OpenZeppelin reference-negative sources.
+
+    Target-category negatives are an evaluation assumption, not a security audit.
+    Sampling follows eligibility checks and is independent of filesystem order
+    and the caller's global random state. Existing frozen datasets are unchanged.
+    """
     oz_path = Path(base_path)
-    
     if not oz_path.exists():
         logger.warning(f"OpenZeppelin path not found: {oz_path}")
-        return contracts
-    
-    # Find production contracts (exclude mocks, tests, interfaces-only)
-    sol_files = list(oz_path.glob("contracts/**/*.sol"))
-    
-    # Filter out mocks, tests, and interface-only files
-    filtered_files = []
-    for f in sol_files:
-        path_str = str(f).lower()
-        name = f.name.lower()
-        
-        # Skip mocks and tests
-        if 'mock' in path_str or 'test' in path_str:
+        return []
+    if max_contracts < 0:
+        raise ValueError("max_contracts must be nonnegative")
+    contracts = []
+    non_code = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*[\s\S]*?\*/')
+    for sol_file in sorted(oz_path.glob("contracts/**/*.sol")):
+        relative_parts = sol_file.relative_to(oz_path / "contracts").parts
+        if any(part.lower() in {"mock", "mocks", "test", "tests"} for part in relative_parts[:-1]):
             continue
-        
-        # Skip pure interfaces (usually just IXXXX.sol)
-        if name.startswith('i') and name[1].isupper():
+        if "mock" in sol_file.stem.lower() or sol_file.stem.lower().startswith("test"):
             continue
-        
-        filtered_files.append(f)
-    
-    logger.info(f"Found {len(filtered_files)} OpenZeppelin production contracts")
-    
-    # Sample if needed
-    if len(filtered_files) > max_contracts:
-        random.seed(42)  # Reproducibility
-        filtered_files = random.sample(filtered_files, max_contracts)
-    
-    for sol_file in filtered_files:
         try:
-            with open(sol_file, 'r', encoding='utf-8', errors='ignore') as f:
-                code = f.read()
-            
-            # Skip very short files (likely just imports/interfaces)
-            if len(code.split('\n')) < 20:
+            code = sol_file.read_text(encoding="utf-8", errors="ignore")
+            structural = non_code.sub(" ", code)
+            if not re.search(r'\b(?:contract|library)\s+[A-Za-z_$][A-Za-z0-9_$]*', structural):
                 continue
-            
             contracts.append({
                 'contract_name': sol_file.stem,
                 'contract_path': str(sol_file),
                 'contract_code': code,
                 'num_lines': len(code.split('\n')),
                 'vulnerability_type': 'none',
-                'ground_truth_vulnerabilities': [],  # Empty = no vulnerabilities
+                'ground_truth_vulnerabilities': [],
                 'is_vulnerable': False,
                 'source': 'openzeppelin'
             })
-        except Exception as e:
-            logger.warning(f"Error loading {sol_file}: {e}")
-    
-    logger.info(f"Loaded {len(contracts)} clean contracts from OpenZeppelin")
+        except Exception as error:
+            logger.warning(f"Error loading {sol_file}: {error}")
+    if len(contracts) > max_contracts:
+        contracts = random.Random(42).sample(contracts, max_contracts)
+    logger.info(f"Loaded {len(contracts)} OpenZeppelin contract/library reference negatives")
     return contracts
 
 
@@ -145,6 +167,8 @@ def create_combined_dataset(
     if len(vulnerable) > n_vulnerable:
         random.seed(42)
         vulnerable = random.sample(vulnerable, n_vulnerable)
+
+    vulnerable = consolidate_duplicate_contracts(vulnerable)
     
     # Load clean contracts
     clean = load_openzeppelin_clean(openzeppelin_path, n_clean)

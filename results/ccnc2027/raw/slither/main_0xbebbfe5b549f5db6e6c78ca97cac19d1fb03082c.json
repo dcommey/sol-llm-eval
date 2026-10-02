@@ -1,0 +1,137 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "proxy",
+              "source_mapping": {
+                "start": 288,
+                "length": 154,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "is_dependency": false,
+                "lines": [
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Proxy",
+                  "source_mapping": {
+                    "start": 102,
+                    "length": 342,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "proxy(address,bytes)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "target.call.value(msg.value)(data)",
+              "source_mapping": {
+                "start": 401,
+                "length": 34,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                "is_dependency": false,
+                "lines": [
+                  14
+                ],
+                "starting_column": 9,
+                "ending_column": 43
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "proxy",
+                  "source_mapping": {
+                    "start": 288,
+                    "length": 154,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      12,
+                      13,
+                      14,
+                      15
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Proxy",
+                      "source_mapping": {
+                        "start": 102,
+                        "length": 342,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "proxy(address,bytes)"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "Proxy.proxy(address,bytes) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol#12-15) ignores return value by target.call.value(msg.value)(data) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol#14)\n",
+          "markdown": "[Proxy.proxy(address,bytes)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol#L12-L15) ignores return value by [target.call.value(msg.value)(data)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol#L14)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol#L12-L15",
+          "id": "e6603b7528583639c127b8ff941e62c0d72c82ef274e81289c3bd7a0958c4ccf",
+          "check": "unchecked-lowlevel",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-low-level-calls"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

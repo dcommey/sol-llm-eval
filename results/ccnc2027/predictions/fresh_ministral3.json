@@ -1,0 +1,380 @@
+[
+  {
+    "contract_name": "unit_01",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14, 15],\n        \"severity\": \"high\",\n        \"explanation\": \"The `withdraw` function allows external calls to `msg.sender` after updating the contract's state (setting `credit[msg.sender] = 0`). This creates a reentrancy vulnerability where an attacker could call the contract recursively, draining funds before the state update completes. The `call` is unchecked, and no reentrancy guard (e.g., `nonReentrant` modifier or checks-effects-interactions pattern) is present.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The `msg.sender.call{value: amount}(\"\")` is a low-level call without explicit failure handling. If the call fails (e.g., due to insufficient gas or contract rejection), the function proceeds to set `credit[msg.sender] = 0` without reverting, leading to inconsistent state. The `require(ok)` check is insufficient because it only verifies the call's success but does not revert on failure (though in this case, it does revert if `ok` is false). However, the broader issue is the lack of explicit error handling for the call itself (e.g., using `address.call{value: amount}(\"\")` with a revert on failure).\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 12 column 62 (char 741)",
+    "inference_time": 13.221064041979844,
+    "timestamp": "2026-10-01T20:53:45.591406+00:00",
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 13215726750,
+      "load_duration": 9140208,
+      "prompt_eval_count": 262,
+      "prompt_eval_duration": 432247000,
+      "eval_count": 326,
+      "eval_duration": 12767690000
+    }
+  },
+  {
+    "contract_name": "unit_02",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [16],\n        \"severity\": \"high\",\n        \"explanation\": \"The `withdraw` function allows external calls to `msg.sender` with ETH before updating the `credit` mapping to 0. This creates a reentrancy vulnerability where a malicious contract could recursively call `withdraw` before the state is updated, draining funds.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [16],\n        \"severity\": \"high\",\n        \"explanation\": \"The low-level call to `msg.sender.call{value: amount}(\"\")` is not checked for failure (return value `ok` is only used in a `require` after the call). If the call fails, the function still proceeds, potentially leaving the contract in an inconsistent state (e.g., `credit` not updated).\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 12 column 80 (char 604)",
+    "inference_time": 8.41331220799475,
+    "timestamp": "2026-10-01T20:53:54.006454+00:00",
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 8408483375,
+      "load_duration": 6237791,
+      "prompt_eval_count": 262,
+      "prompt_eval_duration": 138045000,
+      "eval_count": 212,
+      "eval_duration": 8243966000
+    }
+  },
+  {
+    "contract_name": "unit_03",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [18],\n        \"severity\": \"high\",\n        \"explanation\": \"The `withdraw` function allows external calls to `msg.sender.call` (via `_pay`) while the contract's state (credit balance) is still modified. This creates a reentrancy vulnerability where a malicious contract could recursively call `withdraw` before the state update completes, draining the contract's funds.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [18],\n        \"severity\": \"high\",\n        \"explanation\": \"The low-level call in `_pay` is not checked for failure beyond the return value of the call. While the `require(ok)` ensures the call succeeded, the contract does not verify the recipient's contract behavior (e.g., reentrancy) or handle potential failures like insufficient gas or contract errors. This is not a direct vulnerability in this case due to the `require(ok)`, but the lack of additional checks (e.g., `address(this).balance`) or reentrancy guards makes it a risk.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 15 column 1 (char 1084)",
+    "inference_time": 10.235802167007932,
+    "timestamp": "2026-10-01T20:54:04.243561+00:00",
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10232387250,
+      "load_duration": 1389375,
+      "prompt_eval_count": 277,
+      "prompt_eval_duration": 140741000,
+      "eval_count": 258,
+      "eval_duration": 10077742000
+    }
+  },
+  {
+    "contract_name": "unit_04",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [20],\n        \"severity\": \"high\",\n        \"explanation\": \"The `_pay` function performs a low-level call to `msg.sender.call` without checking if the recipient contract is reentrant. If the recipient contract is malicious and reenters the `withdraw` function before the state update (credit[msg.sender] = 0) completes, it could drain the contract's funds. The state update occurs after the external call, violating the Checks-Effects-Interactions pattern.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [20],\n        \"severity\": \"high\",\n        \"explanation\": \"The `_pay` function uses a low-level call (`msg.sender.call`) without proper failure handling. While the `require(ok)` checks the success of the call, the contract does not revert if the call fails (e.g., due to insufficient gas or contract rejection). This could lead to partial state changes (e.g., `credit[msg.sender] = 0` is executed but funds are not transferred) or unexpected behavior. While the `require(ok)` mitigates some risks, it is not a complete solution for all failure scenarios (e.g., gas limits).\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 15 column 1 (char 1210)",
+    "inference_time": 11.749800791993039,
+    "timestamp": "2026-10-01T20:54:15.995477+00:00",
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 11746155958,
+      "load_duration": 1233167,
+      "prompt_eval_count": 277,
+      "prompt_eval_duration": 138216000,
+      "eval_count": 292,
+      "eval_duration": 11592366000
+    }
+  },
+  {
+    "contract_name": "unit_05",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [16, 17],\n        \"severity\": \"high\",\n        \"explanation\": \"The `withdraw` function allows a reentrancy attack because it sends Ether to the caller before clearing their balance. If the recipient contract calls back into `withdraw` before the first call completes, it can drain the contract's funds. The `call` is unchecked, and there's no reentrancy guard (e.g., `nonReentrant` modifier or checks-effects-interactions pattern).\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [17],\n        \"severity\": \"high\",\n        \"explanation\": \"The low-level `call` in `withdraw` is unchecked for failure (no `require(ok)` check for success). While the code does check `ok` for reentrancy, the lack of explicit success validation for the `call` itself is a best-practice violation. However, this is not a direct vulnerability since the contract still reverts if the call fails (e.g., due to insufficient gas or invalid recipient).\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 15 column 1 (char 1057)",
+    "inference_time": 11.009370832995046,
+    "timestamp": "2026-10-01T20:54:27.007080+00:00",
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 11005608375,
+      "load_duration": 8131084,
+      "prompt_eval_count": 271,
+      "prompt_eval_duration": 140763000,
+      "eval_count": 268,
+      "eval_duration": 10840566000
+    }
+  },
+  {
+    "contract_name": "unit_06",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [25],\n        \"severity\": \"high\",\n        \"explanation\": \"The `withdraw` function allows a reentrancy attack because it sends Ether to the caller before updating the `credit` mapping to zero. If the recipient contract calls back into `withdraw` before the state update completes, it could drain the contract's funds. The `call` is unchecked, and there's no reentrancy guard (e.g., `nonReentrant` modifier or checks-effects-interactions pattern).\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [25],\n        \"severity\": \"high\",\n        \"explanation\": \"The `recipient.call{value: amount}(\"\")` is a low-level call without explicit failure handling. While the `require(ok)` checks the return value, the contract does not revert if the call fails (e.g., due to insufficient gas or contract failure), leaving the `credit` mapping in an inconsistent state (e.g., `credit[msg.sender]` remains > 0).\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 12 column 61 (char 713)",
+    "inference_time": 10.779513375018723,
+    "timestamp": "2026-10-01T20:54:37.788448+00:00",
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10774672625,
+      "load_duration": 5763167,
+      "prompt_eval_count": 271,
+      "prompt_eval_duration": 137920000,
+      "eval_count": 260,
+      "eval_duration": 10615984000
+    }
+  },
+  {
+    "contract_name": "unit_07",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [4],\n        \"severity\": \"high\",\n        \"explanation\": \"The `unchecked` block around `used += amount` does not prevent integer overflow/underflow, even though Solidity 0.8+ has checked arithmetic by default. While this is technically not a low-level call, the `unchecked` block itself is unnecessary and could lead to unintended behavior if arithmetic were unchecked (e.g., if the pragma were downgraded or modified). This is a potential code smell for future maintainability and correctness.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 594)",
+    "inference_time": 5.747042707982473,
+    "timestamp": "2026-10-01T20:54:43.537365+00:00",
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5742538959,
+      "load_duration": 6173750,
+      "prompt_eval_count": 199,
+      "prompt_eval_duration": 136936000,
+      "eval_count": 138,
+      "eval_duration": 5583510000
+    }
+  },
+  {
+    "contract_name": "unit_08",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"integer_overflow\",\n        \"line_numbers\": [5],\n        \"severity\": \"high\",\n        \"explanation\": \"The `used` variable is a `uint8`, which has a maximum value of 255. The `add` function increments `used` by `amount` without checking for overflow. If `used` is already 255 and `amount` is greater than 0, the operation will wrap around to 0 or another unexpected value due to unchecked arithmetic (even though Solidity 0.8+ has checked arithmetic by default, `uint8` is an exception as it is not a full-width type). This can lead to incorrect state or unexpected behavior.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 621)",
+    "inference_time": 6.832939415995497,
+    "timestamp": "2026-10-01T20:54:50.371080+00:00",
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6830320541,
+      "load_duration": 1186583,
+      "prompt_eval_count": 195,
+      "prompt_eval_duration": 133556000,
+      "eval_count": 162,
+      "eval_duration": 6693678000
+    }
+  },
+  {
+    "contract_name": "unit_09",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [4],\n        \"severity\": \"high\",\n        \"explanation\": \"The `unchecked` block around `remaining -= amount` does not prevent integer underflow if `amount` exceeds `remaining`. While Solidity 0.8+ has checked arithmetic by default, the `unchecked` block explicitly disables this protection, making underflow possible. This can lead to incorrect state updates or unexpected behavior, such as negative balances or incorrect remaining values.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 539)",
+    "inference_time": 5.1708540830004495,
+    "timestamp": "2026-10-01T20:54:55.543932+00:00",
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5166443834,
+      "load_duration": 1206875,
+      "prompt_eval_count": 207,
+      "prompt_eval_duration": 139300000,
+      "eval_count": 120,
+      "eval_duration": 5019820000
+    }
+  },
+  {
+    "contract_name": "unit_10",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"integer_overflow\",\n        \"line_numbers\": [4],\n        \"severity\": \"high\",\n        \"explanation\": \"The subtraction operation `remaining -= amount` can lead to an underflow if `amount` is greater than `remaining`. Although Solidity 0.8+ has checked arithmetic by default, this is not enforced inside unchecked blocks or when using low-level operations. Here, the operation is a direct arithmetic operation without explicit checks, making it vulnerable to underflow if `amount` exceeds `remaining`.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 546)",
+    "inference_time": 5.215301541989902,
+    "timestamp": "2026-10-01T20:55:00.761569+00:00",
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5211010125,
+      "load_duration": 1239292,
+      "prompt_eval_count": 203,
+      "prompt_eval_duration": 132651000,
+      "eval_count": 124,
+      "eval_duration": 5075290000
+    }
+  },
+  {
+    "contract_name": "unit_11",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [5],\n        \"severity\": \"high\",\n        \"explanation\": \"The `unchecked` block around the arithmetic operation (`quantity * unitPrice`) does not inherently cause a low-level call vulnerability, but it does allow for integer overflow/underflow if the multiplication exceeds the `uint256` limit. While Solidity 0.8+ has checked arithmetic by default, the `unchecked` block explicitly disables this protection, making this a potential integer overflow/underflow risk. This is not a low-level call vulnerability per se, but the `unchecked` block itself is a direct violation of the default checked arithmetic behavior, which could lead to unintended overflow/underflow. If this were a low-level call (e.g., `call.value(...)`), it would be flagged under `unchecked_low_level_calls` for lack of failure handling. Here, the issue is the explicit `unchecked` block.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 958)",
+    "inference_time": 9.231088958011242,
+    "timestamp": "2026-10-01T20:55:09.994987+00:00",
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 9226212125,
+      "load_duration": 1283375,
+      "prompt_eval_count": 213,
+      "prompt_eval_duration": 139975000,
+      "eval_count": 217,
+      "eval_duration": 9083121000
+    }
+  },
+  {
+    "contract_name": "unit_12",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [4],\n        \"severity\": \"medium\",\n        \"explanation\": \"The contract does not perform any low-level calls (e.g., `call`, `send`, `delegatecall`), so this is not a direct issue. However, the function `price` modifies the state (`total`) based on unchecked arithmetic (even though Solidity 0.8+ has checked arithmetic by default, the multiplication could still be problematic if the result exceeds `uint256` bounds due to external factors like front-running or malicious input). While this is not a direct `unchecked_low_level_call` vulnerability, the lack of explicit checks on `quantity` or `unitPrice` could lead to unintended overflows if inputs are manipulated (e.g., `quantity * unitPrice` could overflow if inputs are large). This is more of a design consideration than a direct vulnerability in the requested categories.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 930)",
+    "inference_time": 8.87543766698218,
+    "timestamp": "2026-10-01T20:55:18.872690+00:00",
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 8867008292,
+      "load_duration": 1310500,
+      "prompt_eval_count": 209,
+      "prompt_eval_duration": 135331000,
+      "eval_count": 210,
+      "eval_duration": 8714979000
+    }
+  },
+  {
+    "contract_name": "unit_13",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [6],\n        \"severity\": \"high\",\n        \"explanation\": \"The low-level call to `receiver.call{value: msg.value}(\"\")` does not check the return value for success/failure. If the call fails (e.g., due to insufficient gas, contract rejection, or invalid address), the funds sent via `msg.value` are permanently lost. This is a classic reentrancy-like risk if the called contract is malicious or misbehaves, as the sender's funds are irrecoverable.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 81 (char 204)",
+    "inference_time": 5.707203333004145,
+    "timestamp": "2026-10-01T20:55:24.582413+00:00",
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5701990833,
+      "load_duration": 1188250,
+      "prompt_eval_count": 218,
+      "prompt_eval_duration": 142646000,
+      "eval_count": 137,
+      "eval_duration": 5545591000
+    }
+  },
+  {
+    "contract_name": "unit_14",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [10],\n        \"severity\": \"high\",\n        \"explanation\": \"The `receiver.call{value: msg.value}(\"\")` low-level call does not handle potential failure cases (e.g., if the receiver contract reverts or fails). While the `require(ok)` checks for success, it does not account for cases where the call might fail due to reasons like insufficient gas, contract reversion, or other unexpected issues. This could lead to loss of funds if the call fails and the funds are not recoverable.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 63 (char 187)",
+    "inference_time": 5.772034291992895,
+    "timestamp": "2026-10-01T20:55:30.356736+00:00",
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5768364750,
+      "load_duration": 1656500,
+      "prompt_eval_count": 220,
+      "prompt_eval_duration": 133852000,
+      "eval_count": 138,
+      "eval_duration": 5630579000
+    }
+  },
+  {
+    "contract_name": "unit_15",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [5],\n        \"severity\": \"high\",\n        \"explanation\": \"The `receiver.send(msg.value)` call is a low-level call without proper failure handling. If the call fails (e.g., due to insufficient balance or contract rejection), the funds are lost, and the contract state (`completed`) is still updated. This violates the 'Checks-Effects-Interactions' pattern and can lead to loss of funds.\"\n    }\n]\n```",
+    "parse_error": "Extra data: line 9 column 1 (char 485)",
+    "inference_time": 4.849024041002849,
+    "timestamp": "2026-10-01T20:55:35.208310+00:00",
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 4845115125,
+      "load_duration": 1013875,
+      "prompt_eval_count": 211,
+      "prompt_eval_duration": 139550000,
+      "eval_count": 117,
+      "eval_duration": 4703053000
+    }
+  },
+  {
+    "contract_name": "unit_16",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [6],\n        \"severity\": \"high\",\n        \"explanation\": \"The `receiver.send(msg.value)` call is a low-level call without proper failure handling. While the `require(ok)` check ensures the call succeeded, the `send` function itself is deprecated in favor of `call` or `transfer` for security reasons. If the call fails (e.g., due to insufficient balance or contract restrictions), the `ok` check will catch it, but the deprecated nature of `send` introduces unnecessary risk. Use `payable(receiver).call{value: msg.value}(\"\")` or `payable(receiver).transfer(msg.value)` instead.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 490 (char 613)",
+    "inference_time": 6.816699667018838,
+    "timestamp": "2026-10-01T20:55:42.027201+00:00",
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6813645625,
+      "load_duration": 1421958,
+      "prompt_eval_count": 213,
+      "prompt_eval_duration": 135161000,
+      "eval_count": 165,
+      "eval_duration": 6675311000
+    }
+  },
+  {
+    "contract_name": "unit_17",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [15],\n        \"severity\": \"high\",\n        \"explanation\": \"The `receiver.call{value: value}(\"\")` in `_deliver` is an unchecked low-level call that does not verify the return value or handle potential reentrancy risks. If the call fails (e.g., due to insufficient balance, invalid contract, or other reasons), the function will not revert, leading to lost funds. Additionally, the lack of reentrancy guard (e.g., `nonReentrant` modifier or checks-effects-interactions pattern) exposes the contract to reentrancy attacks if the `receiver` is a malicious contract that reenters during the call.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 59 (char 183)",
+    "inference_time": 7.060790125018684,
+    "timestamp": "2026-10-01T20:55:49.089067+00:00",
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7058084834,
+      "load_duration": 1069167,
+      "prompt_eval_count": 253,
+      "prompt_eval_duration": 144253000,
+      "eval_count": 171,
+      "eval_duration": 6910915000
+    }
+  },
+  {
+    "contract_name": "unit_18",
+    "model": "ministral3",
+    "display_name": "Ministral3-8B",
+    "vulnerabilities": [],
+    "raw_response": "[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [20],\n        \"severity\": \"high\",\n        \"explanation\": \"The `receiver.call{value: value}(\"\")` in `_deliver` is an unchecked low-level call that can fail (e.g., due to insufficient gas, invalid contract, or other reasons). The failure is not handled, which could lead to loss of funds if the call reverts. The `require(ok)` only checks if the call succeeded, but the funds are already sent in the call, and reverts after the fact do not refund the sent value. This is a classic reentrancy-like issue where the contract loses funds if the call fails.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 59 (char 183)",
+    "inference_time": 6.710258749983041,
+    "timestamp": "2026-10-01T20:55:55.801206+00:00",
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6706603542,
+      "load_duration": 1070625,
+      "prompt_eval_count": 255,
+      "prompt_eval_duration": 139972000,
+      "eval_count": 164,
+      "eval_duration": 6555493000
+    }
+  }
+]

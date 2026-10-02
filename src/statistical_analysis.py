@@ -11,6 +11,53 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+def normalize_vulnerability_type(vuln_type: str) -> str:
+    """Normalize report labels to the benchmark's canonical categories."""
+    value = vuln_type.lower().strip()
+    value = value.replace('vulnerability', '').replace('attack', '').strip()
+    mappings = {
+        'reentrancy': [
+            'reentrancy', 'reentrant', 're-entrancy', 're entrancy',
+            'recursive call', 'callback',
+        ],
+        'integer_overflow': [
+            'integer_overflow', 'integer overflow', 'arithmetic', 'overflow',
+            'underflow', 'integer underflow', 'arithmetic overflow',
+            'integer wraparound', 'wraparound',
+        ],
+        'unchecked_low_level_calls': [
+            'unchecked_low_level_calls', 'unchecked low level calls',
+            'unchecked-send', 'unchecked send', 'unchecked_call',
+            'unchecked external call', 'unchecked return value',
+            'unchecked call return', 'low level call',
+            'unchecked low-level call', 'unchecked transfer',
+            'unsafe external call', 'unhandled exception',
+            'missing return check', 'call return not checked',
+            'unchecked call', 'external call',
+        ],
+    }
+    for canonical, variants in mappings.items():
+        if any(variant in value or value in variant for variant in variants):
+            return canonical
+    return value
+
+
+def prediction_types(prediction: Dict) -> set:
+    return {
+        normalize_vulnerability_type(report.get('vulnerability_type', ''))
+        for report in prediction.get('vulnerabilities', [])
+        if report.get('vulnerability_type')
+    }
+
+
+def ground_truth_types(ground_truth: Dict) -> set:
+    labels = ground_truth.get(
+        'ground_truth_vulnerabilities',
+        ground_truth.get('vulnerability_types', []),
+    )
+    return {normalize_vulnerability_type(label) for label in labels}
+
+
 def bootstrap_confidence_interval(
     data: List[float], 
     n_bootstrap: int = 1000, 
@@ -60,8 +107,8 @@ def bootstrap_f1_confidence_interval(
     # Calculate per-contract TP/FP/FN
     per_contract_metrics = []
     for pred, gt in zip(predictions, ground_truth):
-        pred_vulns = set(v.get('vulnerability_type', '') for v in pred.get('vulnerabilities', []))
-        gt_vulns = set(gt.get('vulnerability_types', []))
+        pred_vulns = prediction_types(pred)
+        gt_vulns = ground_truth_types(gt)
         
         tp = len(pred_vulns & gt_vulns)
         fp = len(pred_vulns - gt_vulns)
@@ -110,6 +157,58 @@ def mcnemar_test(model1_correct: List[bool], model2_correct: List[bool]) -> Tupl
     p_value = 1 - stats.chi2.cdf(chi2, df=1)
     
     return (chi2, p_value)
+
+
+def paired_bootstrap_f1_difference(
+    predictions1: List[Dict],
+    predictions2: List[Dict],
+    ground_truth: List[Dict],
+    n_bootstrap: int = 10000,
+    confidence: float = 0.95,
+    seed: int = 42,
+) -> Dict[str, float]:
+    """Estimate the paired micro-F1 difference by resampling contracts."""
+    if not (len(predictions1) == len(predictions2) == len(ground_truth)):
+        raise ValueError('Predictions and ground truth must have equal lengths')
+
+    def per_contract(predictions):
+        counts = []
+        for prediction, truth in zip(predictions, ground_truth):
+            predicted = prediction_types(prediction)
+            expected = ground_truth_types(truth)
+            counts.append((
+                len(predicted & expected),
+                len(predicted - expected),
+                len(expected - predicted),
+            ))
+        return counts
+
+    def micro_f1(counts, indices):
+        tp = sum(counts[index][0] for index in indices)
+        fp = sum(counts[index][1] for index in indices)
+        fn = sum(counts[index][2] for index in indices)
+        denominator = 2 * tp + fp + fn
+        return 2 * tp / denominator if denominator else 0.0
+
+    counts1 = per_contract(predictions1)
+    counts2 = per_contract(predictions2)
+    all_indices = np.arange(len(ground_truth))
+    observed = micro_f1(counts1, all_indices) - micro_f1(counts2, all_indices)
+
+    rng = np.random.default_rng(seed)
+    differences = []
+    for _ in range(n_bootstrap):
+        indices = rng.integers(0, len(ground_truth), size=len(ground_truth))
+        differences.append(
+            micro_f1(counts1, indices) - micro_f1(counts2, indices)
+        )
+
+    alpha = (1 - confidence) / 2
+    return {
+        'difference': observed,
+        'ci_lower': float(np.quantile(differences, alpha)),
+        'ci_upper': float(np.quantile(differences, 1 - alpha)),
+    }
 
 
 def cohens_kappa(y_true: List[int], y_pred: List[int]) -> float:
@@ -183,14 +282,13 @@ def calculate_all_statistics(
             correct2 = []
             
             for p1, p2, gt in zip(preds1, preds2, ground_truth):
-                gt_vulns = set(gt.get('vulnerability_types', []))
-                
-                pred1_vulns = set(v.get('vulnerability_type', '') for v in p1.get('vulnerabilities', []))
-                pred2_vulns = set(v.get('vulnerability_type', '') for v in p2.get('vulnerabilities', []))
-                
-                # Correct if any ground truth vulnerability detected
-                correct1.append(len(pred1_vulns & gt_vulns) > 0)
-                correct2.append(len(pred2_vulns & gt_vulns) > 0)
+                gt_vulns = ground_truth_types(gt)
+                pred1_vulns = prediction_types(p1)
+                pred2_vulns = prediction_types(p2)
+
+                # Per-contract exact label-set correctness includes clean cases.
+                correct1.append(pred1_vulns == gt_vulns)
+                correct2.append(pred2_vulns == gt_vulns)
             
             chi2, p_value = mcnemar_test(correct1, correct2)
             

@@ -1,0 +1,419 @@
+[
+  {
+    "contract_name": "unit_01",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "detector": "reentrancy-eth",
+        "severity": "High",
+        "explanation": "Reentrancy in Unit.withdraw() (data/fresh-ccnc2027/unit_01.sol#5-8):\n\tExternal calls:\n\t- (ok,None) = msg.sender.call{value: amount}() (data/fresh-ccnc2027/unit_01.sol#7)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/fresh-ccnc2027/unit_01.sol#7)\n\tUnit.credit (data/fresh-ccnc2027/unit_01.sol#3) can be used in cross function reentrancies:\n\t- Unit.credit (data/fresh-ccnc2027/unit_01.sol#3)\n\t- Unit.deposit() (data/fresh-ccnc2027/unit_01.sol#4)\n\t- Unit.withdraw() (data/fresh-ccnc2027/unit_01.sol#5-8)\n"
+      }
+    ],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.5969452500285115,
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_01.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_02",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6743694159958977,
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_02.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_03",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "detector": "reentrancy-eth",
+        "severity": "High",
+        "explanation": "Reentrancy in Unit.withdraw() (data/fresh-ccnc2027/unit_03.sol#5-8):\n\tExternal calls:\n\t- _pay(amount) (data/fresh-ccnc2027/unit_03.sol#7)\n\t\t- (ok,None) = msg.sender.call{value: amount}() (data/fresh-ccnc2027/unit_03.sol#9)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/fresh-ccnc2027/unit_03.sol#7)\n\tUnit.credit (data/fresh-ccnc2027/unit_03.sol#3) can be used in cross function reentrancies:\n\t- Unit.credit (data/fresh-ccnc2027/unit_03.sol#3)\n\t- Unit.deposit() (data/fresh-ccnc2027/unit_03.sol#4)\n\t- Unit.withdraw() (data/fresh-ccnc2027/unit_03.sol#5-8)\n"
+      }
+    ],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6058860409830231,
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_03.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_04",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6840342910145409,
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_04.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_05",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "detector": "reentrancy-eth",
+        "severity": "High",
+        "explanation": "Reentrancy in Unit.withdraw() (data/fresh-ccnc2027/unit_05.sol#5-8):\n\tExternal calls:\n\t- (ok,None) = recipient.call{value: amount}() (data/fresh-ccnc2027/unit_05.sol#7)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/fresh-ccnc2027/unit_05.sol#7)\n\tUnit.credit (data/fresh-ccnc2027/unit_05.sol#3) can be used in cross function reentrancies:\n\t- Unit.credit (data/fresh-ccnc2027/unit_05.sol#3)\n\t- Unit.deposit() (data/fresh-ccnc2027/unit_05.sol#4)\n\t- Unit.withdraw() (data/fresh-ccnc2027/unit_05.sol#5-8)\n"
+      }
+    ],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6510174169961829,
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_05.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_06",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6072918749996461,
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_06.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_07",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.5897681250062305,
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_07.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_08",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6167671250004787,
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_08.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_09",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.609226666012546,
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_09.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_10",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.5853476659976877,
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_10.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_11",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.599379040999338,
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_11.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_12",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.5990634170011617,
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_12.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_13",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6271899169951212,
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_13.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_14",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6323520000150893,
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_14.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_15",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.5869127080077305,
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_15.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_16",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6095643749868032,
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_16.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_17",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.592560625023907,
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_17.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  },
+  {
+    "contract_name": "unit_18",
+    "vulnerabilities": [],
+    "success": true,
+    "compiler_version": "0.8.27",
+    "inference_time": 0.6081081660231575,
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "error": null,
+    "command": [
+      "slither",
+      "<repo>/data/fresh-ccnc2027/unit_18.sol",
+      "--compile-force-framework",
+      "solc",
+      "--solc",
+      "<repo>/tools/solc-js/solc-bridge.cjs",
+      "--detect",
+      "reentrancy-eth,reentrancy-no-eth,unchecked-lowlevel,unchecked-send",
+      "--json",
+      "-",
+      "--fail-none"
+    ]
+  }
+]

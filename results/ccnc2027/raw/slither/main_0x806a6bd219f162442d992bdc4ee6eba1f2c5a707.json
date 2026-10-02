@@ -1,0 +1,207 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "Command",
+              "source_mapping": {
+                "start": 7293,
+                "length": 199,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "is_dependency": false,
+                "lines": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Pie",
+                  "source_mapping": {
+                    "start": 102,
+                    "length": 7392,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 0
+                  }
+                },
+                "signature": "Command(address,bytes)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "adr.call.value(msg.value)(data)",
+              "source_mapping": {
+                "start": 7454,
+                "length": 31,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                "is_dependency": false,
+                "lines": [
+                  44
+                ],
+                "starting_column": 9,
+                "ending_column": 40
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "Command",
+                  "source_mapping": {
+                    "start": 7293,
+                    "length": 199,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Pie",
+                      "source_mapping": {
+                        "start": 102,
+                        "length": 7392,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29,
+                          30,
+                          31,
+                          32,
+                          33,
+                          34,
+                          35,
+                          36,
+                          37,
+                          38,
+                          39,
+                          40,
+                          41,
+                          42,
+                          43,
+                          44,
+                          45,
+                          46,
+                          47
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "Command(address,bytes)"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "Pie.Command(address,bytes) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol#38-45) ignores return value by adr.call.value(msg.value)(data) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol#44)\n",
+          "markdown": "[Pie.Command(address,bytes)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol#L38-L45) ignores return value by [adr.call.value(msg.value)(data)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol#L44)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol#L38-L45",
+          "id": "fc4430b473529950f80edf19b5456e98645fea240afeca7fc3136deb827b5539",
+          "check": "unchecked-lowlevel",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-low-level-calls"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

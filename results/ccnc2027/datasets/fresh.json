@@ -1,0 +1,200 @@
+[
+  {
+    "contract_name": "unit_01",
+    "contract_path": "data/fresh-ccnc2027/unit_01.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        (bool ok,) = msg.sender.call{value: amount}(\"\"); require(ok);credit[msg.sender] = 0;\n    }\n    \n}\n",
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "reentrancy"
+    ],
+    "pair_id": "reentrancy_0",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_02",
+    "contract_path": "data/fresh-ccnc2027/unit_02.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        credit[msg.sender] = 0;(bool ok,) = msg.sender.call{value: amount}(\"\"); require(ok);\n    }\n    \n}\n",
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "reentrancy_0",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_03",
+    "contract_path": "data/fresh-ccnc2027/unit_03.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        _pay(amount);credit[msg.sender] = 0;\n    }\n    function _pay(uint256 amount) internal { (bool ok,) = msg.sender.call{value: amount}(\"\"); require(ok); }\n}\n",
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "reentrancy"
+    ],
+    "pair_id": "reentrancy_1",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_04",
+    "contract_path": "data/fresh-ccnc2027/unit_04.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        credit[msg.sender] = 0;_pay(amount);\n    }\n    function _pay(uint256 amount) internal { (bool ok,) = msg.sender.call{value: amount}(\"\"); require(ok); }\n}\n",
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "reentrancy_1",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_05",
+    "contract_path": "data/fresh-ccnc2027/unit_05.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        address payable recipient = payable(msg.sender); (bool ok,) = recipient.call{value: amount}(\"\"); require(ok);credit[msg.sender] = 0;\n    }\n    \n}\n",
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "reentrancy"
+    ],
+    "pair_id": "reentrancy_2",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_06",
+    "contract_path": "data/fresh-ccnc2027/unit_06.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    mapping(address => uint256) public credit;\n    function deposit() external payable { credit[msg.sender] += msg.value; }\n    function withdraw() external {\n        uint256 amount = credit[msg.sender]; require(amount > 0);\n        credit[msg.sender] = 0;address payable recipient = payable(msg.sender); (bool ok,) = recipient.call{value: amount}(\"\"); require(ok);\n    }\n    \n}\n",
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "reentrancy_2",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_07",
+    "contract_path": "data/fresh-ccnc2027/unit_07.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint8 public used;\n    function add(uint8 amount) external { unchecked { used += amount; } }\n}\n",
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "integer_overflow"
+    ],
+    "pair_id": "integer_overflow_0",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_08",
+    "contract_path": "data/fresh-ccnc2027/unit_08.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint8 public used;\n    function add(uint8 amount) external { used += amount; }\n}\n",
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "integer_overflow_0",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_09",
+    "contract_path": "data/fresh-ccnc2027/unit_09.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint256 public remaining = 20;\n    function reserve(uint256 amount) external { unchecked { remaining -= amount; } }\n}\n",
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "integer_overflow"
+    ],
+    "pair_id": "integer_overflow_1",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_10",
+    "contract_path": "data/fresh-ccnc2027/unit_10.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint256 public remaining = 20;\n    function reserve(uint256 amount) external { remaining -= amount; }\n}\n",
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "integer_overflow_1",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_11",
+    "contract_path": "data/fresh-ccnc2027/unit_11.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint256 public total;\n    function price(uint256 quantity, uint256 unitPrice) external { unchecked { total = quantity * unitPrice; } }\n}\n",
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "integer_overflow"
+    ],
+    "pair_id": "integer_overflow_2",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_12",
+    "contract_path": "data/fresh-ccnc2027/unit_12.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    uint256 public total;\n    function price(uint256 quantity, uint256 unitPrice) external { total = quantity * unitPrice; }\n}\n",
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "integer_overflow_2",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_13",
+    "contract_path": "data/fresh-ccnc2027/unit_13.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; (bool ok,) = receiver.call{value: msg.value}(\"\"); \n    }\n    \n}\n",
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "unchecked_low_level_calls"
+    ],
+    "pair_id": "unchecked_low_level_calls_0",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_14",
+    "contract_path": "data/fresh-ccnc2027/unit_14.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; (bool ok,) = receiver.call{value: msg.value}(\"\"); require(ok);\n    }\n    \n}\n",
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "unchecked_low_level_calls_0",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_15",
+    "contract_path": "data/fresh-ccnc2027/unit_15.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; bool ok = receiver.send(msg.value); \n    }\n    \n}\n",
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "unchecked_low_level_calls"
+    ],
+    "pair_id": "unchecked_low_level_calls_1",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_16",
+    "contract_path": "data/fresh-ccnc2027/unit_16.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; bool ok = receiver.send(msg.value); require(ok);\n    }\n    \n}\n",
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "unchecked_low_level_calls_1",
+    "is_vulnerable": false
+  },
+  {
+    "contract_name": "unit_17",
+    "contract_path": "data/fresh-ccnc2027/unit_17.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; bool ok = _deliver(receiver, msg.value); \n    }\n    function _deliver(address payable receiver, uint256 value) internal returns (bool) { (bool ok,) = receiver.call{value: value}(\"\"); return ok; }\n}\n",
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [
+      "unchecked_low_level_calls"
+    ],
+    "pair_id": "unchecked_low_level_calls_2",
+    "is_vulnerable": true
+  },
+  {
+    "contract_name": "unit_18",
+    "contract_path": "data/fresh-ccnc2027/unit_18.sol",
+    "contract_code": "pragma solidity ^0.8.27;\ncontract Unit {\n    bool public completed;\n    function execute(address payable receiver) external payable {\n        completed = true; bool ok = _deliver(receiver, msg.value); require(ok);\n    }\n    function _deliver(address payable receiver, uint256 value) internal returns (bool) { (bool ok,) = receiver.call{value: value}(\"\"); return ok; }\n}\n",
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "source": "fresh_synthetic",
+    "ground_truth_vulnerabilities": [],
+    "pair_id": "unchecked_low_level_calls_2",
+    "is_vulnerable": false
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "transfer",
+              "source_mapping": {
+                "start": 130,
+                "length": 441,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "is_dependency": false,
+                "lines": [
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "airDrop",
+                  "source_mapping": {
+                    "start": 103,
+                    "length": 470,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 0
+                  }
+                },
+                "signature": "transfer(address,address,address[],uint256,uint256)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "caddress.call(id,from,_tos[i],_value)",
+              "source_mapping": {
+                "start": 496,
+                "length": 37,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                "is_dependency": false,
+                "lines": [
+                  17
+                ],
+                "starting_column": 13,
+                "ending_column": 50
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "transfer",
+                  "source_mapping": {
+                    "start": 130,
+                    "length": 441,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "airDrop",
+                      "source_mapping": {
+                        "start": 103,
+                        "length": 470,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "transfer(address,address,address[],uint256,uint256)"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "airDrop.transfer(address,address,address[],uint256,uint256) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol#11-20) ignores return value by caddress.call(id,from,_tos[i],_value) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol#17)\n",
+          "markdown": "[airDrop.transfer(address,address,address[],uint256,uint256)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol#L11-L20) ignores return value by [caddress.call(id,from,_tos[i],_value)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol#L17)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol#L11-L20",
+          "id": "2549f71607a4ffa9a559415a1c7523a0e4a844673c4d4ce7b2d61241103cb13a",
+          "check": "unchecked-lowlevel",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-low-level-calls"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

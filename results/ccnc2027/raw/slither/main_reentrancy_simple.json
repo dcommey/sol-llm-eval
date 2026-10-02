@@ -1,0 +1,264 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdrawBalance",
+              "source_mapping": {
+                "start": 447,
+                "length": 349,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "is_dependency": false,
+                "lines": [
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "starting_column": 6,
+                "ending_column": 7
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Reentrance",
+                  "source_mapping": {
+                    "start": 182,
+                    "length": 617,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29
+                    ],
+                    "starting_column": 2,
+                    "ending_column": 3
+                  }
+                },
+                "signature": "withdrawBalance()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "! (msg.sender.call.value(userBalance[msg.sender])())",
+              "source_mapping": {
+                "start": 664,
+                "length": 53,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "is_dependency": false,
+                "lines": [
+                  24
+                ],
+                "starting_column": 14,
+                "ending_column": 67
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawBalance",
+                  "source_mapping": {
+                    "start": 447,
+                    "length": 349,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28
+                    ],
+                    "starting_column": 6,
+                    "ending_column": 7
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Reentrance",
+                      "source_mapping": {
+                        "start": 182,
+                        "length": 617,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29
+                        ],
+                        "starting_column": 2,
+                        "ending_column": 3
+                      }
+                    },
+                    "signature": "withdrawBalance()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "userBalance[msg.sender] = 0",
+              "source_mapping": {
+                "start": 761,
+                "length": 27,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                "is_dependency": false,
+                "lines": [
+                  27
+                ],
+                "starting_column": 10,
+                "ending_column": 37
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawBalance",
+                  "source_mapping": {
+                    "start": 447,
+                    "length": 349,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28
+                    ],
+                    "starting_column": 6,
+                    "ending_column": 7
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Reentrance",
+                      "source_mapping": {
+                        "start": 182,
+                        "length": 617,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29
+                        ],
+                        "starting_column": 2,
+                        "ending_column": 3
+                      }
+                    },
+                    "signature": "withdrawBalance()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "userBalance"
+              }
+            }
+          ],
+          "description": "Reentrancy in Reentrance.withdrawBalance() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#20-28):\n\tExternal calls:\n\t- ! (msg.sender.call.value(userBalance[msg.sender])()) (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#24)\n\tState variables written after the call(s):\n\t- userBalance[msg.sender] = 0 (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#27)\n\tReentrance.userBalance (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#10) can be used in cross function reentrancies:\n\t- Reentrance.addToBalance() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#16-18)\n\t- Reentrance.getBalance(address) (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#12-14)\n\t- Reentrance.withdrawBalance() (data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#20-28)\n",
+          "markdown": "Reentrancy in [Reentrance.withdrawBalance()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L20-L28):\n\tExternal calls:\n\t- [! (msg.sender.call.value(userBalance[msg.sender])())](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L24)\n\tState variables written after the call(s):\n\t- [userBalance[msg.sender] = 0](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L27)\n\t[Reentrance.userBalance](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L10) can be used in cross function reentrancies:\n\t- [Reentrance.addToBalance()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L16-L18)\n\t- [Reentrance.getBalance(address)](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L12-L14)\n\t- [Reentrance.withdrawBalance()](data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L20-L28)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/reentrancy_simple.sol#L20-L28",
+          "id": "686dff7da9716e78a4621c05576bf0aab9548c58f3df70d43c652c5db0ff6f2e",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

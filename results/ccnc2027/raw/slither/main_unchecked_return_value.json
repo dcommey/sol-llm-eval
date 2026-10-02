@@ -1,0 +1,143 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "callnotchecked",
+              "source_mapping": {
+                "start": 286,
+                "length": 113,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "is_dependency": false,
+                "lines": [
+                  15,
+                  16,
+                  17,
+                  18
+                ],
+                "starting_column": 3,
+                "ending_column": 4
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "ReturnValue",
+                  "source_mapping": {
+                    "start": 179,
+                    "length": 222,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "callnotchecked(address)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "callee.call()",
+              "source_mapping": {
+                "start": 381,
+                "length": 13,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                "is_dependency": false,
+                "lines": [
+                  17
+                ],
+                "starting_column": 5,
+                "ending_column": 18
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "callnotchecked",
+                  "source_mapping": {
+                    "start": 286,
+                    "length": 113,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      15,
+                      16,
+                      17,
+                      18
+                    ],
+                    "starting_column": 3,
+                    "ending_column": 4
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ReturnValue",
+                      "source_mapping": {
+                        "start": 179,
+                        "length": 222,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "callnotchecked(address)"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "ReturnValue.callnotchecked(address) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol#15-18) ignores return value by callee.call() (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol#17)\n",
+          "markdown": "[ReturnValue.callnotchecked(address)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol#L15-L18) ignores return value by [callee.call()](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol#L17)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value.sol#L15-L18",
+          "id": "7dd2e56633cc960241c05602c040cd41811f4b4ac0dac2fee1721e5d8ebd7933",
+          "check": "unchecked-lowlevel",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-low-level-calls"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

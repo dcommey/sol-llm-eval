@@ -1,0 +1,941 @@
+[
+  {
+    "contract_name": "unit_02",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "The contract has none of the three target vulnerabilities, so the result is an empty array.\n\n- **Reentrancy:** `withdraw()` sets `credit[msg.sender] = 0` before the external call (checks-effects-interactions). A reentrant call would read a balance of 0 and fail the `require(amount > 0)` check.\n- **Integer overflow/underflow:** The pragma is `^0.8.27`, so arithmetic is checked by default. `credit[msg.sender] += msg.value` would revert on overflow, and there are no `unchecked` blocks.\n- **Unchecked low-level calls:** The `call` return value is captured in `ok` and verified with `require(ok)`, so a failure is handled.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.203869416989619,
+    "timestamp": "2026-10-02T06:20:38.090459+00:00",
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2366,
+      "duration_api_ms": 2360,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 542,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 244,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 542,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 244,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 542,
+          "webSearchRequests": 0,
+          "costUSD": 0.0057044999999999995,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "43838923-6282-48fe-9542-c55242745a1d"
+    }
+  },
+  {
+    "contract_name": "unit_01",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          6,
+          7
+        ],
+        "severity": "high",
+        "explanation": "withdraw() violates checks-effects-interactions. It sends ETH to msg.sender via a low-level call (line 7) before zeroing credit[msg.sender] (also line 7, after the require). A malicious contract can re-enter withdraw() from its receive/fallback function. Because the balance is still non-zero, each re-entrant call passes the require(amount > 0) check and sends another payout. This repeats until the contract's ETH is drained, so an attacker who deposits a small amount can steal all funds held by the contract. The fix is to set credit[msg.sender] = 0 before the external call, or to add a reentrancy guard such as nonReentrant."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [6, 7],\n    \"severity\": \"high\",\n    \"explanation\": \"withdraw() violates checks-effects-interactions. It sends ETH to msg.sender via a low-level call (line 7) before zeroing credit[msg.sender] (also line 7, after the require). A malicious contract can re-enter withdraw() from its receive/fallback function. Because the balance is still non-zero, each re-entrant call passes the require(amount > 0) check and sends another payout. This repeats until the contract's ETH is drained, so an attacker who deposits a small amount can steal all funds held by the contract. The fix is to set credit[msg.sender] = 0 before the external call, or to add a reentrancy guard such as nonReentrant.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 3.953591792000225,
+    "timestamp": "2026-10-02T06:20:38.837717+00:00",
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 3124,
+      "duration_api_ms": 3119,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 542,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 279,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 542,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 279,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 542,
+          "webSearchRequests": 0,
+          "costUSD": 0.0062295,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "6e1a944a-98f1-404b-9a63-34db636a1c80"
+    }
+  },
+  {
+    "contract_name": "unit_03",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Line numbering, with the source's first line (`pragma`) as line 1:\n\n1. pragma\n2. contract Unit {\n3. mapping\n4. deposit\n5. function withdraw()\n6. uint256 amount...; require\n7. _pay(amount); credit[msg.sender] = 0;\n8. }\n9. function _pay ...\n10. }\n\n`withdraw` calls `_pay`, which makes an external call to `msg.sender`, before `credit[msg.sender]` is set to 0. This is a classic reentrancy: the attacker's fallback re-enters `withdraw()` while the balance is still non-zero and drains the contract.\n\nThe low-level call's return value is checked with `require(ok)`, so there is no unchecked-call issue. Arithmetic is checked under Solidity 0.8 and there are no `unchecked` blocks, so there is no overflow issue.\n\n```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [7, 9],\n    \"severity\": \"high\",\n    \"explanation\": \"withdraw() calls _pay(), which sends ETH to msg.sender via a low-level call, before credit[msg.sender] is zeroed (checks-effects-interactions violated). A malicious contract can re-enter withdraw() from its receive/fallback function while its credit is still non-zero, repeatedly withdrawing the same balance and draining the contract's funds.\"\n  }\n]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 4.800289957987843,
+    "timestamp": "2026-10-02T06:20:39.686449+00:00",
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 3880,
+      "duration_api_ms": 3875,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 565,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 470,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 565,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 470,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 565,
+          "webSearchRequests": 0,
+          "costUSD": 0.00918075,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "351385a6-8152-4a6d-aad8-e7eafae6e8fa"
+    }
+  },
+  {
+    "contract_name": "unit_04",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "The contract has none of the three target vulnerabilities, so I am returning an empty array.\n\n- **Reentrancy:** `withdraw` zeroes `credit[msg.sender]` before calling `_pay`, so it follows checks-effects-interactions. A re-entrant call to `withdraw` would find a zero balance and fail the `require(amount > 0)` check.\n- **Integer overflow:** The pragma is `^0.8.27`, so arithmetic is checked by default, and the contract has no `unchecked` blocks. The `+=` in `deposit` reverts on overflow.\n- **Unchecked low-level call:** The `call` in `_pay` captures its return value, and `require(ok)` reverts on failure, so the failure is handled.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.435702582995873,
+    "timestamp": "2026-10-02T06:20:41.524030+00:00",
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2675,
+      "duration_api_ms": 2668,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 565,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 254,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 565,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 254,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 565,
+          "webSearchRequests": 0,
+          "costUSD": 0.00594075,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "d1c8d4bf-7ec4-4070-a131-98c46a46a5c5"
+    }
+  },
+  {
+    "contract_name": "unit_06",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "The contract has no target vulnerabilities, so I am returning an empty array.\n\n- **Reentrancy:** `withdraw` zeroes `credit[msg.sender]` before the external call, following checks-effects-interactions. A reentrant call would read a balance of 0 and fail the `require(amount > 0)` check.\n- **Integer overflow/underflow:** The pragma is `^0.8.27`, so arithmetic is checked by default. There are no `unchecked` blocks, so `credit[msg.sender] += msg.value` reverts on overflow.\n- **Unchecked low-level call:** The return value of `recipient.call` is captured in `ok` and enforced with `require(ok)`, so a failed call reverts the whole transaction, including the balance reset.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.388505292008631,
+    "timestamp": "2026-10-02T06:20:43.075182+00:00",
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2698,
+      "duration_api_ms": 2692,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 556,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 260,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 556,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 260,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 556,
+          "webSearchRequests": 0,
+          "costUSD": 0.005997,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "c76b8bea-df48-4b92-9055-06141a26c6f8"
+    }
+  },
+  {
+    "contract_name": "unit_05",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          6,
+          7
+        ],
+        "severity": "high",
+        "explanation": "withdraw() reads the caller's credit on line 6 and sends ETH with an external call on line 7 before zeroing credit[msg.sender], which also happens on line 7. This breaks the checks-effects-interactions pattern. A malicious contract can re-enter withdraw() from its receive/fallback function while its credit is still non-zero. Each re-entry passes the require(amount > 0) check and sends the full amount again, so the attacker can drain the contract's ETH, including other users' deposits. The fix is to set credit[msg.sender] = 0 before the call, or to add a reentrancy guard."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [6, 7],\n    \"severity\": \"high\",\n    \"explanation\": \"withdraw() reads the caller's credit on line 6 and sends ETH with an external call on line 7 before zeroing credit[msg.sender], which also happens on line 7. This breaks the checks-effects-interactions pattern. A malicious contract can re-enter withdraw() from its receive/fallback function while its credit is still non-zero. Each re-entry passes the require(amount > 0) check and sends the full amount again, so the attacker can drain the contract's ETH, including other users' deposits. The fix is to set credit[msg.sender] = 0 before the call, or to add a reentrancy guard.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 5.424149083002703,
+    "timestamp": "2026-10-02T06:20:44.262082+00:00",
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 4423,
+      "duration_api_ms": 4415,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 556,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 481,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 556,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 481,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 556,
+          "webSearchRequests": 0,
+          "costUSD": 0.009312,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "cc0dfa79-959e-4c7a-bfea-097e4aa9b4e6"
+    }
+  },
+  {
+    "contract_name": "unit_07",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          4
+        ],
+        "severity": "high",
+        "explanation": "The `add` function performs `used += amount` on a `uint8` inside an `unchecked` block, which disables Solidity 0.8's built-in overflow checks. Because `used` is only 8 bits wide (max 255), any call where `used + amount > 255` silently wraps around modulo 256. For example, if `used` is 250 and `amount` is 10, `used` becomes 4. The function is `external` with no access control, so any caller can trigger the wrap-around and corrupt or reset the public `used` counter. Removing the `unchecked` block would restore the default revert-on-overflow behavior, or the contract should explicitly validate that `used + amount` does not exceed 255."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [4],\n    \"severity\": \"high\",\n    \"explanation\": \"The `add` function performs `used += amount` on a `uint8` inside an `unchecked` block, which disables Solidity 0.8's built-in overflow checks. Because `used` is only 8 bits wide (max 255), any call where `used + amount > 255` silently wraps around modulo 256. For example, if `used` is 250 and `amount` is 10, `used` becomes 4. The function is `external` with no access control, so any caller can trigger the wrap-around and corrupt or reset the public `used` counter. Removing the `unchecked` block would restore the default revert-on-overflow behavior, or the contract should explicitly validate that `used + amount` does not exceed 255.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 3.2212628749839496,
+    "timestamp": "2026-10-02T06:20:44.746843+00:00",
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2467,
+      "duration_api_ms": 2461,
+      "usage": {
+        "input_tokens": 452,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 283,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 452,
+          "outputTokens": 283,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.005601,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "66b48d0c-f5de-49ed-bba8-162f61367f35"
+    }
+  },
+  {
+    "contract_name": "unit_08",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Pragma is ^0.8.27, so arithmetic is checked by default. `used += amount` on a uint8 reverts on overflow rather than wrapping, and there is no unchecked block. There are no external calls, so there is no reentrancy or unchecked low-level call risk.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 2.312046000006376,
+    "timestamp": "2026-10-02T06:20:45.387343+00:00",
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 1522,
+      "duration_api_ms": 1516,
+      "usage": {
+        "input_tokens": 446,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 100,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 446,
+          "outputTokens": 100,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0028380000000000002,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "d36c57da-1709-40ad-a8bf-0b102fe44b3a"
+    }
+  },
+  {
+    "contract_name": "unit_10",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Pragma ^0.8.27 means checked arithmetic is the default. The `remaining -= amount` on line 4 is not inside an `unchecked` block, so an underflow reverts instead of wrapping. There is no external call, so there is no reentrancy and no unchecked low-level call.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 2.172031499998411,
+    "timestamp": "2026-10-02T06:20:46.917596+00:00",
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 1494,
+      "duration_api_ms": 1490,
+      "usage": {
+        "input_tokens": 456,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 104,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 456,
+          "outputTokens": 104,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.002928,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "54c0af97-5d06-4f7e-868a-429d9768f9b1"
+    }
+  },
+  {
+    "contract_name": "unit_09",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "The contract has an integer underflow in `reserve`. The subtraction sits inside an `unchecked` block, so it wraps instead of reverting. There is no reentrancy and there are no low-level calls.\n\nLine numbers refer to the source as given: line 1 is the pragma, line 2 is the contract declaration, line 3 is `remaining`, and line 4 is `reserve`.\n\n```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [4],\n    \"severity\": \"high\",\n    \"explanation\": \"In `reserve`, `remaining -= amount` runs inside an `unchecked` block, which disables Solidity 0.8's built-in underflow checks. `remaining` starts at 20 and there is no check that `amount <= remaining`, so any caller can pass an `amount` larger than `remaining`. The subtraction then wraps around to a value near 2^256 - 1. For example, `reserve(21)` sets `remaining` to 2^256 - 1. This corrupts the accounting, since the remaining supply appears to be huge, and anyone can trigger it because the function is external and has no access control.\"\n  }\n]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 4.2233593330020085,
+    "timestamp": "2026-10-02T06:20:48.485473+00:00",
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 3465,
+      "duration_api_ms": 3459,
+      "usage": {
+        "input_tokens": 462,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 382,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 462,
+          "outputTokens": 382,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.007116,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "4ddbd56a-7594-4e03-8bc6-44679ccfee9b"
+    }
+  },
+  {
+    "contract_name": "unit_11",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Line numbers are counted from the first line of the contract source, where `pragma` is line 1.\n\n```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [5],\n    \"severity\": \"high\",\n    \"explanation\": \"In `price`, the multiplication `quantity * unitPrice` sits inside an `unchecked` block. Solidity 0.8 normally reverts on overflow, but `unchecked` disables that check, so the product silently wraps modulo 2^256 when it exceeds the uint256 maximum. Both parameters are caller-controlled and unvalidated, so anyone can pick values that wrap (e.g. quantity = 2^128, unitPrice = 2^128 gives 0). The wrapped result is written to the public `total` variable, so the stored value can be far smaller than the true product. If `total` is used for pricing or payment elsewhere, this lets callers underpay or corrupt accounting.\"\n  }\n]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.280413000000408,
+    "timestamp": "2026-10-02T06:20:48.668902+00:00",
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2518,
+      "duration_api_ms": 2511,
+      "usage": {
+        "input_tokens": 470,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 320,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 470,
+          "outputTokens": 320,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.00621,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "b4a59bd0-fdee-4d65-8c07-5a541e39f6f5"
+    }
+  },
+  {
+    "contract_name": "unit_12",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Pragma is ^0.8.27, so arithmetic is checked by default. The multiplication on line 4 has no unchecked block, so an overflow reverts instead of wrapping. The contract makes no external or low-level calls, so reentrancy and unchecked low-level calls do not apply.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 2.7726513750094455,
+    "timestamp": "2026-10-02T06:20:49.690539+00:00",
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2011,
+      "duration_api_ms": 2006,
+      "usage": {
+        "input_tokens": 464,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 104,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 464,
+          "outputTokens": 104,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0029519999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "d1cd0859-9618-45b8-b737-312ae1791109"
+    }
+  },
+  {
+    "contract_name": "unit_14",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "[]",
+    "parse_error": null,
+    "inference_time": 3.135398292011814,
+    "timestamp": "2026-10-02T06:20:51.803477+00:00",
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2405,
+      "duration_api_ms": 2398,
+      "usage": {
+        "input_tokens": 483,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 122,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 483,
+          "outputTokens": 122,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.003279,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "5b423b86-4bd2-489b-9f9d-83bee098fd29"
+    }
+  },
+  {
+    "contract_name": "unit_13",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          5
+        ],
+        "severity": "medium",
+        "explanation": "The low-level call `receiver.call{value: msg.value}(\"\")` stores its success flag in `ok`, but the code never checks it. If the call fails (the receiver reverts, is a contract with no payable receive/fallback, or runs out of gas), `execute` still succeeds. `completed` is set to true even though the transfer did not happen. The caller's ETH also stays in the contract, which has no withdrawal function, so it is permanently locked. The fix is to add `require(ok)` or revert on failure."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"unchecked_low_level_calls\",\n    \"line_numbers\": [5],\n    \"severity\": \"medium\",\n    \"explanation\": \"The low-level call `receiver.call{value: msg.value}(\\\"\\\")` stores its success flag in `ok`, but the code never checks it. If the call fails (the receiver reverts, is a contract with no payable receive/fallback, or runs out of gas), `execute` still succeeds. `completed` is set to true even though the transfer did not happen. The caller's ETH also stays in the contract, which has no withdrawal function, so it is permanently locked. The fix is to add `require(ok)` or revert on failure.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 4.876442207983928,
+    "timestamp": "2026-10-02T06:20:53.362208+00:00",
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 4079,
+      "duration_api_ms": 4075,
+      "usage": {
+        "input_tokens": 479,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 485,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 479,
+          "outputTokens": 485,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.008712000000000001,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "89174c03-169e-4da5-8806-af239153b282"
+    }
+  },
+  {
+    "contract_name": "unit_15",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          5
+        ],
+        "severity": "medium",
+        "explanation": "`receiver.send(msg.value)` returns a bool, which is stored in `ok` but never checked. `send` does not revert on failure. If the receiver is a contract that reverts, runs out of the 2300-gas stipend, or otherwise rejects the transfer, `execute` still succeeds. `completed` stays true and the caller's ETH remains in the contract with no indication of failure. The call needs a `require(ok)` or a revert on failure."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"unchecked_low_level_calls\",\n    \"line_numbers\": [5],\n    \"severity\": \"medium\",\n    \"explanation\": \"`receiver.send(msg.value)` returns a bool, which is stored in `ok` but never checked. `send` does not revert on failure. If the receiver is a contract that reverts, runs out of the 2300-gas stipend, or otherwise rejects the transfer, `execute` still succeeds. `completed` stays true and the caller's ETH remains in the contract with no indication of failure. The call needs a `require(ok)` or a revert on failure.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 4.618482457997743,
+    "timestamp": "2026-10-02T06:20:54.309458+00:00",
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 3899,
+      "duration_api_ms": 3891,
+      "usage": {
+        "input_tokens": 471,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 493,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 471,
+          "outputTokens": 493,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.008807999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "b04ad351-fd6e-47af-af97-91841b83a445"
+    }
+  },
+  {
+    "contract_name": "unit_16",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Analysis of the contract:\n\n- **Reentrancy**: `send` forwards only 2300 gas, which prevents meaningful reentrancy. State (`completed = true`) is also set before the external call, following checks-effects-interactions. No reentrancy issue.\n- **Integer overflow**: There is no arithmetic and no `unchecked` block. Solidity 0.8.27 uses checked arithmetic by default. No issue.\n- **Unchecked low-level calls**: `receiver.send(msg.value)` returns a bool, which is captured in `ok` and checked with `require(ok)`. The failure is handled, so this is not a vulnerability.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.3184406249783933,
+    "timestamp": "2026-10-02T06:20:55.122056+00:00",
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2540,
+      "duration_api_ms": 2537,
+      "usage": {
+        "input_tokens": 475,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 224,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 475,
+          "outputTokens": 224,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.004785,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "1dc200ae-5fb6-48bd-8ed2-6b2ee8266b2a"
+    }
+  },
+  {
+    "contract_name": "unit_18",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [],
+    "raw_response": "Analysis of the contract:\n\n- `execute` sets `completed = true` before making the external call (checks-effects-interactions is followed). It forwards `msg.value` to the receiver, so there is no contract balance to drain via reentrancy. A reentrant call to `execute` would only set `completed = true` again and forward its own `msg.value`. No exploitable state inconsistency exists.\n- The low-level call's return value is captured in `ok`, returned, and checked with `require(ok)`. The failure is handled, so this is not an unchecked low-level call.\n- Pragma ^0.8.27 gives checked arithmetic, and the contract contains no arithmetic or `unchecked` blocks, so there is no overflow or underflow.\n\n```json\n[]\n```",
+    "parse_error": "Expecting value: line 1 column 1 (char 0)",
+    "inference_time": 3.122752875002334,
+    "timestamp": "2026-10-02T06:20:57.431983+00:00",
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 2344,
+      "duration_api_ms": 2340,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 528,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 247,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 528,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 247,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 528,
+          "webSearchRequests": 0,
+          "costUSD": 0.005697,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "b78bc0c5-6948-447c-8cb1-f57160473b30"
+    }
+  },
+  {
+    "contract_name": "unit_17",
+    "model": "claude",
+    "display_name": "Claude Sonnet 5.5",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          5,
+          7
+        ],
+        "severity": "medium",
+        "explanation": "_deliver (line 7) performs receiver.call{value: value}(\"\") and returns the success flag. execute (line 5) stores that flag in a local variable `ok` and never checks it or reverts on failure. If the call fails (the receiver reverts, runs out of gas, or is a contract with no payable fallback), execution continues. `completed` is still set to true and the transaction succeeds, so msg.value stays in the contract and the caller believes the delivery happened. The failure is not handled, so the low-level call is unchecked."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"unchecked_low_level_calls\",\n    \"line_numbers\": [5, 7],\n    \"severity\": \"medium\",\n    \"explanation\": \"_deliver (line 7) performs receiver.call{value: value}(\\\"\\\") and returns the success flag. execute (line 5) stores that flag in a local variable `ok` and never checks it or reverts on failure. If the call fails (the receiver reverts, runs out of gas, or is a contract with no payable fallback), execution continues. `completed` is still set to true and the transaction succeeds, so msg.value stays in the contract and the caller believes the delivery happened. The failure is not handled, so the low-level call is unchecked.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 5.685514249984408,
+    "timestamp": "2026-10-02T06:20:59.047641+00:00",
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "done_reason": "end_turn",
+    "thinking": "",
+    "api_metrics": {
+      "stop_reason": "end_turn",
+      "duration_ms": 4992,
+      "duration_api_ms": 4983,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 524,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 619,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 524,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "model_usage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 4,
+          "outputTokens": 619,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 524,
+          "webSearchRequests": 0,
+          "costUSD": 0.011262,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000
+        }
+      },
+      "session_id": "eae94391-8ea7-40d6-b270-a4d0ac2567f2"
+    }
+  }
+]

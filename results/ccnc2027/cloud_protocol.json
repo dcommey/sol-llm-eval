@@ -1,0 +1,31 @@
+{
+  "model": "claude-sonnet-5-5",
+  "display_name": "Claude Sonnet 5.5",
+  "access": "Claude Code headless mode, Claude subscription",
+  "command": [
+    "claude",
+    "-p",
+    "--model",
+    "claude-sonnet-5-5",
+    "--system-prompt",
+    "You are a smart contract security auditor with expertise in Solidity.",
+    "--tools",
+    "",
+    "--output-format",
+    "json",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--strict-mcp-config"
+  ],
+  "environment": {
+    "MAX_THINKING_TOKENS": "0",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "2048"
+  },
+  "system": "You are a smart contract security auditor with expertise in Solidity.",
+  "instruction": "Analyze the Solidity source below for ONLY these vulnerability categories:\nreentrancy, integer_overflow (including underflow), unchecked_low_level_calls.\nRespect the Solidity pragma: checked arithmetic is the default in Solidity 0.8,\nbut arithmetic inside unchecked blocks can wrap. A low-level call is not itself\na vulnerability when its failure is handled. Do not report other categories.\nReturn ONLY a JSON array. Each issue must have vulnerability_type (one of the\nthree exact category names), line_numbers (array of integers), severity (string),\nand explanation (string). Return [] if none of the target vulnerabilities exists.\nContract source:\n```solidity\n{code}\n```",
+  "deviations": "Temperature, top-p, top-k, and seed cannot be set; provider defaults apply. Request time includes network and service latency and is not comparable to local timing.",
+  "refusals": "Recorded as invalid responses",
+  "retries": "None for model outputs; transport errors stop the run",
+  "parsing": "Identical to the local study"
+}

@@ -1,0 +1,33 @@
+{
+  "reason": "Invalid repaired-source response previously counted as correct empty prediction in pair success. Usable pair success now requires valid successful responses for both sources. Label-only matches retained separately.",
+  "all_tp_fp_fn_f1_and_intervals_unchanged": true,
+  "raw_responses_unchanged": true,
+  "models": {
+    "qwen35": {
+      "old_label_only_count": 4,
+      "valid_pair_count": 2,
+      "label_match_count": 4
+    },
+    "gemma4": {
+      "old_label_only_count": 4,
+      "valid_pair_count": 3,
+      "label_match_count": 4
+    },
+    "ministral3": {
+      "old_label_only_count": 0,
+      "valid_pair_count": 0,
+      "label_match_count": 0
+    },
+    "foundationsec": {
+      "old_label_only_count": 1,
+      "valid_pair_count": 0,
+      "label_match_count": 1
+    },
+    "slither": {
+      "old_label_only_count": 3,
+      "valid_pair_count": 3,
+      "label_match_count": 3
+    }
+  },
+  "regression_test": "test_pair_success_requires_valid_repair_response_even_when_labels_are_empty"
+}

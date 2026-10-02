@@ -5,6 +5,7 @@ Provides ground truth comparison with established static analysis tool.
 
 import os
 import json
+import re
 import subprocess
 import logging
 from pathlib import Path
@@ -21,6 +22,7 @@ class SlitherResult:
     vulnerabilities: List[Dict]
     success: bool
     error: Optional[str] = None
+    compiler_version: Optional[str] = None
 
 
 # Mapping of Slither detector names to our vulnerability types
@@ -67,14 +69,29 @@ class SlitherBaseline:
             logger.warning("Slither not installed. Install with: pip install slither-analyzer")
             return False
         return False
+
+    @staticmethod
+    def _compiler_version_for(contract_path: str) -> str:
+        """Choose an installed compiler compatible with the source pragma."""
+        source = Path(contract_path).read_text(encoding='utf-8', errors='ignore')
+        match = re.search(r'pragma\s+solidity\s+([^;]+);', source)
+        pragma = match.group(1) if match else ''
+
+        if re.search(r'(?<!\d)0\.8(?:\D|$)', pragma):
+            return '0.8.27'
+        if re.search(r'(?<!\d)0\.5(?:\D|$)', pragma) or '>=0.5' in pragma:
+            return '0.5.17'
+        return '0.4.25'
     
     def analyze_contract(self, contract_path: str) -> SlitherResult:
         """Analyze a single contract with Slither."""
         try:
+            compiler_version = self._compiler_version_for(contract_path)
             # Run Slither with JSON output
             result = subprocess.run(
                 [
                     'slither', contract_path,
+                    '--compile-force-framework', 'solc',
                     '--json', '-',
                     '--exclude-informational',
                     '--exclude-optimization',
@@ -84,28 +101,39 @@ class SlitherBaseline:
                 capture_output=True,
                 text=True,
                 timeout=60,
-                env={**os.environ, 'SLITHER_SOLC_VERSION': '0.4.25'}  # Common version
+                env={**os.environ, 'SOLC_VERSION': compiler_version}
             )
             
             # Parse JSON output
             if result.stdout:
                 try:
                     data = json.loads(result.stdout)
+                    if not data.get('success', result.returncode == 0):
+                        error = data.get('error') or result.stderr or 'Slither compilation failed'
+                        return SlitherResult(
+                            contract_path=contract_path,
+                            vulnerabilities=[],
+                            success=False,
+                            error=str(error)[-1000:],
+                            compiler_version=compiler_version
+                        )
                     vulnerabilities = self._parse_detectors(data)
                     return SlitherResult(
                         contract_path=contract_path,
                         vulnerabilities=vulnerabilities,
-                        success=True
+                        success=True,
+                        compiler_version=compiler_version
                     )
                 except json.JSONDecodeError:
                     pass
-            
-            # Fallback: parse from stderr (Slither often outputs there)
+
+            # No machine-readable output is a tool failure, not a clean result.
             return SlitherResult(
                 contract_path=contract_path,
                 vulnerabilities=[],
-                success=True,
-                error="No JSON output"
+                success=False,
+                error=(result.stderr or 'No JSON output')[-1000:],
+                compiler_version=compiler_version
             )
             
         except subprocess.TimeoutExpired:
@@ -113,14 +141,16 @@ class SlitherBaseline:
                 contract_path=contract_path,
                 vulnerabilities=[],
                 success=False,
-                error="Timeout"
+                error="Timeout",
+                compiler_version=locals().get('compiler_version')
             )
         except Exception as e:
             return SlitherResult(
                 contract_path=contract_path,
                 vulnerabilities=[],
                 success=False,
-                error=str(e)
+                error=str(e),
+                compiler_version=locals().get('compiler_version')
             )
     
     def _parse_detectors(self, data: Dict) -> List[Dict]:
@@ -173,14 +203,17 @@ class SlitherBaseline:
     
     def calculate_metrics(self, results: Dict[str, SlitherResult], 
                           ground_truth: List[Dict]) -> Dict[str, Any]:
-        """Calculate precision, recall, F1 for Slither baseline."""
+        """Calculate metrics on successful runs and report analysis coverage."""
         tp, fp, fn = 0, 0, 0
         
         # Build ground truth map
         gt_map = {}
         for contract in ground_truth:
             name = contract.get('contract_name', contract.get('name'))
-            gt_map[name] = contract.get('vulnerability_types', [])
+            gt_map[name] = contract.get(
+                'ground_truth_vulnerabilities',
+                contract.get('vulnerability_types', []),
+            )
         
         # Compare predictions to ground truth
         for contract_name, result in results.items():
@@ -207,13 +240,19 @@ class SlitherBaseline:
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0
         f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
         
+        n_total = len(results)
+        n_success = sum(result.success for result in results.values())
         return {
             'precision': precision,
             'recall': recall,
             'f1_score': f1,
             'true_positives': tp,
             'false_positives': fp,
-            'false_negatives': fn
+            'false_negatives': fn,
+            'n_total': n_total,
+            'n_success': n_success,
+            'n_failed': n_total - n_success,
+            'coverage': n_success / n_total if n_total else 0,
         }
 
 

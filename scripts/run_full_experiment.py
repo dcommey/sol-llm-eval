@@ -77,12 +77,25 @@ def main():
         action='store_true',
         help='Skip visualization generation'
     )
+    parser.add_argument(
+        '--output-root',
+        type=str,
+        help='Write predictions, evaluations, figures, and logs under this directory'
+    )
     
     args = parser.parse_args()
     
     # Load configuration
     with open(args.config, 'r') as f:
         config = yaml.safe_load(f)
+
+    if args.output_root:
+        output_root = Path(args.output_root)
+        config['output']['results_dir'] = str(output_root)
+        config['output']['predictions_dir'] = str(output_root / 'predictions')
+        config['output']['evaluations_dir'] = str(output_root / 'evaluations')
+        config['output']['figures_dir'] = str(output_root / 'figures')
+        config['output']['logging']['file'] = str(output_root / 'experiment.log')
     
     # Setup logging
     setup_logging(config)

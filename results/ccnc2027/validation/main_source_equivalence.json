@@ -1,0 +1,847 @@
+{
+  "status": "passed",
+  "contracts": 140,
+  "comparison": "Solidity lexical strings/identifiers/numbers/punctuation after comment stripping; ignores whitespace",
+  "checks": [
+    {
+      "contract_name": "IERC20",
+      "original_source_sha256": "01b6f5c4fa45fd38822b286ecef6daf983d27306dd6362496fa71b3e4600b72c",
+      "model_visible_sha256": "a8ca6fa73e61195a5edd5a99edf9b62b4998c31a51bb97364d51004d94cc12fb",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "king_of_the_ether_throne",
+      "original_source_sha256": "3d70aaab853a28761bcf53f1342619ccf256361b26468c4645c87e78d008ace2",
+      "model_visible_sha256": "20d225d617cfda22f79940a3632ec6c280ab6c1622628cca3c76cdbbf53d2227",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Bytes",
+      "original_source_sha256": "68596086defc2c85b0351f46851d2121287c71d2bc09d7c5c57a5d746f6fa742",
+      "model_visible_sha256": "72307f10197bd290cfe753ba6677633f274a6e120a38f467d2283acf27f0d139",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "original_source_sha256": "abaee44880752eb3217f7744d09edec81cef9f6aa7efc8affbb058a79603b64c",
+      "model_visible_sha256": "f593197c0dd704cb699d05c536a9994c1396bf6a5a447c9a4d3ea600a5dc420b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb620cee6b52f96f3c6b253e6eea556aa2d214a99",
+      "original_source_sha256": "64d7c11b6118e81de441368d26e33fb91fdd9f8aa771da5e0c23bf109c06b23b",
+      "model_visible_sha256": "e14cfda29c54053b9f9108059f964374152c24cc52c83203a49f6522fa298417",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12",
+      "original_source_sha256": "1e976e2c8b7bf8583650b3a92f69810efbe4967334a6f9f1d76abf0a682334e5",
+      "model_visible_sha256": "56350ba68385f914e1c534d34688249d495b98a307e4b01f88be9bd31f02f551",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c",
+      "original_source_sha256": "7a928eb369da0ed9c481ef2738a0ca7374795f3b4477a7a0a8385d13459b2381",
+      "model_visible_sha256": "2109624bb902a9ab7b71f6e7baa226c53acb0d9eea0d5e284774506e3e6c670a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IERC777Sender",
+      "original_source_sha256": "4ddc762186f658ea0a53496300c830c98f4a915c0a52afe5ddbc793ac3697ef1",
+      "model_visible_sha256": "817ce6eb4ba4ee8d6fc563533ae1b2e314fe484e949877965bd340070503031a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x4051334adc52057aca763453820cb0e045076ef3",
+      "original_source_sha256": "dd5cf99587e4bcb09c598df593cfcca0730ac4490da2767ad4495ff9dcd34b55",
+      "model_visible_sha256": "2700a427675713325e9daa9d1fd3c1f5d9fc619a1ebf50f17bb5d6bff433576f",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "GovernorPreventLateQuorum",
+      "original_source_sha256": "d50cf5e957c3ea9ff12992261eedd7231add05fb446277c39e72cda3288e3a9d",
+      "model_visible_sha256": "c422c54e2f564a37739c0ef795be7791e784b29a55bf93fbe0d4e1e16df835a0",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e",
+      "original_source_sha256": "602cf4476affd918bbe3b97ffc41ddd8c553ac442a06cec8791beafa07c67baf",
+      "model_visible_sha256": "bb072d5a75cc7d8dfadf4e9a3eb11901a839011df3b7df46a75b2aa7dd03506b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC2771Context",
+      "original_source_sha256": "37574a9404e003ba4a4624713ee503d4971a983e593a773396bdc3c80468cd67",
+      "model_visible_sha256": "46a2f308a0bb33950b3087a64e5966cd68f25378561bf8cdfa2a384ecf65a45e",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Blockhash",
+      "original_source_sha256": "558cae851261e33e7272037d547b40b891bb8c55dd99caa5acdb6566b79b6712",
+      "model_visible_sha256": "4223513ff397ae43fe838e6f8ae6cf9f0d475b26c3121cfd30082bbe3fbec920",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC2771Forwarder",
+      "original_source_sha256": "8ec55785fbb7bd8943bfe10fc1a38aef4e05dab393a76e220fb36fb8c6dbe94c",
+      "model_visible_sha256": "c750ac18beccec5b7e8a82a94517208421a6a48eb7c9212ed6d02b903f9e78ad",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "SignerEIP7702",
+      "original_source_sha256": "1b1d57b1bae1f61f5e3103b4cb57d03acaba7dd4ceb837c98821e713e8154c86",
+      "model_visible_sha256": "99bb26246745afdd103de9881bddf405231603ff2938aa8f7b597a59f8813383",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IERC1820Registry",
+      "original_source_sha256": "d5c38c7fc97a0fc4c62cbe1987146e5a5ddfe84288dc84626f8affa41ef3d847",
+      "model_visible_sha256": "94f0c7e7f96f4e3ac34676d060b253debe6199ed8d62cbf6276a2f09de1653bd",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "AbstractSigner",
+      "original_source_sha256": "1119a95e6a2b709a6961fc9d5aa0a3d43249857d2edd05a174e191c573329111",
+      "model_visible_sha256": "40164061bb58e38a82b47e554f053a9b061b84526a21ea7d2b4ffeabf871c054",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "token",
+      "original_source_sha256": "3de6aef9e9108cf274a94dc7472e2ad5b05fa391804eb2343db87b67236b3922",
+      "model_visible_sha256": "1a137066718a852258248a27051b800ac918736ffe48fdf88a8e54a674b51f39",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f",
+      "original_source_sha256": "0196d033850b295690465d0f7d2baae8b3570df29c9d03d507496b45155a84e5",
+      "model_visible_sha256": "ea81b2e8b7514fd1ed2709700287d5a5a0b541bc320eaaccceb5566396a6ac63",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x2972d548497286d18e92b5fa1f8f9139e5653fd2",
+      "original_source_sha256": "b9c32c34e06c5b84561b827738b0f4d4fe60d4292516714f6a08cbc8925ccac0",
+      "model_visible_sha256": "51c5cc6a194a92913a02a0fa046789b6ad8303cef61791c6b7d358ea91b22e68",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b",
+      "original_source_sha256": "810460102ccb2de081a2b63b4cf1fcaffe4f728b63b494fa6ae70d2a2769650c",
+      "model_visible_sha256": "da19477e6e78773d304b57e4e5afbcc9bee09b311bb755b385b222832533c9f6",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7",
+      "original_source_sha256": "649cc3600798f83d8ed12f181472a4b95938996a001e72025e65b57606f3f969",
+      "model_visible_sha256": "44c5fb2378e0942630d1d786336cbd28ac66e9018f96c32ff47fdb7a695b2f49",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "SafeERC20",
+      "original_source_sha256": "c2394cb2a327f234711da34884947f4aa0f6dd2791d1d6303a0c7acfaf81bca3",
+      "model_visible_sha256": "8bada3381960266980f4b8f1565374acb16c969a306832acfa11ab72f1a22685",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_benign_1",
+      "original_source_sha256": "7f05171b2d6c4611145729a0444d31d7e07d70743995520df4641f17929495c3",
+      "model_visible_sha256": "20aa1850f6aedb1e9c29d6113c1027ffd2e69be92e754fa797b9e75e8d421a9d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xd2018bfaa266a9ec0a1a84b061640faa009def76",
+      "original_source_sha256": "bd7c5fd3d7647cc476b968c41d93c180e8a0ffe01c926a14c099d6c8e0842008",
+      "model_visible_sha256": "c068b01388fe6867a346e30027fd7c10674cb5085f955ef7d74d9856c398bed8",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xa46edd6a9a93feec36576ee5048146870ea2c3ae",
+      "original_source_sha256": "ae39534d2ae52a6d01ffa65a9cd978ef03758dcb6217fd96d17e1361c90c225b",
+      "model_visible_sha256": "4d26b74f62a26cf480533f48b7cfdf9818b865ea99e0e59f9505ae98e9607d2b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_mapping_sym_1",
+      "original_source_sha256": "abecfbc6b745841cfa4d27227dca7dbd0967e0a7198880c1fc3f30f92f2abe3b",
+      "model_visible_sha256": "101f91741a750ebda61dabcd611d53feb59af8ea64f117e3667dd83ebabca757",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xf015c35649c82f5467c9c74b7f28ee67665aad68",
+      "original_source_sha256": "b7adb5de46b03947779a0432e2dcab14b579bb33a6348793028cda0f6eb06d09",
+      "model_visible_sha256": "aabd8b1e927f132a16efd9ffa318b27603216da1ff7b4d84027dd1f744680a9c",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "GovernorCountingFractional",
+      "original_source_sha256": "b4f872b9559fd97d98f868b1ea77ed18d9f27efb70e70686e8af581992d716fc",
+      "model_visible_sha256": "2adae6779e4f8208197070ce2f02c63be43b20b6e60d531701532dc2080a3407",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x7d09edb07d23acb532a82be3da5c17d9d85806b4",
+      "original_source_sha256": "bbf1dd05a6ff65c4c73313271ec59f58ae60c51ccf7d9dd4debafaab63b0b3cc",
+      "model_visible_sha256": "df62b09b4d4d5d1e700e49da5a497366b0a6618745c37746cf39a6a304a60d29",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "overflow_single_tx",
+      "original_source_sha256": "ebeff1cc498b96abded07057158ec078e8eb1abe610eefdcbc7d6dbcaa497d63",
+      "model_visible_sha256": "066d45c89e1c987b6abe262c7a9d44808ad35e00309fbea3575915ab25df2c16",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC20",
+      "original_source_sha256": "50f34ae16a067a41c2c1091445d11d63788e54c717677cb6d6b0e4cdea2ad21d",
+      "model_visible_sha256": "58628a804445a37268576e8d0ad2befc34ab0aa025e7b1cde866b29e231996a4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "mishandled",
+      "original_source_sha256": "bae5ad84f4a563ed911896ded0e7432c3202757b11bac4f1cb5949085d459d0e",
+      "model_visible_sha256": "320080dac86eb64d09911f9b1294ff9fea154c3d47bfed3bc04f5168b0200039",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC7786Recipient",
+      "original_source_sha256": "fbca2b5bf625bcf91001732ffdadd50f89e13079285337f0d05708b4c3bbd932",
+      "model_visible_sha256": "7f35d93e0bdadc18ad07b8226696f9227a45958f12062daae47a8fb04fc24e01",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152",
+      "original_source_sha256": "5161d297128ed6915df3db2bb67fdfecba1dcd30ec827af94c85ae8278ea508d",
+      "model_visible_sha256": "3a99a09afc484db9f3d2cb84b6c9c39d30c49e775d335647db9884ebb00cc329",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9",
+      "original_source_sha256": "25e13af95fecbc40ae362a331ffb65ad8c1ac284298e3b83bfe194cfb52d0386",
+      "model_visible_sha256": "dfd471e85eedaa3f59d16fa78d8f982036c39a3967df09c6bcfb0a9dd30aacee",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IERC20Permit",
+      "original_source_sha256": "c302edfbf7f396e1130be81278c5c994543868f0f5bf0c0fb3f557e166d8d3f2",
+      "model_visible_sha256": "698dad7c640b61a5bca4ade8f45c75c289a167fa2dd8d872d330d480354bd611",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC165",
+      "original_source_sha256": "61a2b12c96857aaa35f48aeda67a4281637a42494c0b3795be0ae976aa7b3793",
+      "model_visible_sha256": "450ceabf38cf36cbc46cdc47ae512878cc1f6e05c6e3533f8eef6d7e04371903",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x8c7777c45481dba411450c228cb692ac3d550344",
+      "original_source_sha256": "14de5808a50fc6b7efcebad0f9d5782e0523bdab13e8bedc1f328912cd4ef036",
+      "model_visible_sha256": "c08f9eeb1a40ee3d4c9c04f8a2a4b9ba44713a8f7da8d5115966d9efeb951697",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC6909Metadata",
+      "original_source_sha256": "f2e6f1f244492c56c7d48b127312795739c7f5e291b9aa1ef2fef53834e775b0",
+      "model_visible_sha256": "76554f742f1df7f9d3c6227635001533b43fbd96a0c667c61ac8d0aa81568f69",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "draft-IERC1822",
+      "original_source_sha256": "73653312bc2eda0ec231553a5295242eaef2d4f46a023532d45fe76cbd0f565f",
+      "model_visible_sha256": "9ff9bdf9525e2fe858e4d7489af2767dcce51da7f7b5a9a9dec3c92fbb9ceebb",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xd5967fed03e85d1cce44cab284695b41bc675b5c",
+      "original_source_sha256": "d04b4b0d5f1d26d9691862b63cedfcadc89dd733d6e129db4c5be9c2246a5eac",
+      "model_visible_sha256": "a9adc2aeb6a88f96bfbbdfdaf8b008d9691e3b929d6506798544bcdb8739e947",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "original_source_sha256": "df9a3f0d481d394c2d03d72853c6091be2acab93cd8f3512fbf7244dbb2d3118",
+      "model_visible_sha256": "c0bcd4279b2fa90bd13b6254333d5e34bc490cb47f670dc5cfe3517cabfd272d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC7913WebAuthnVerifier",
+      "original_source_sha256": "dcaf1bd4ae5193944eba28b27e08daa1b1627cc60bf0000df2d74b20b6d23e38",
+      "model_visible_sha256": "0f84ac1ad641a1b4f4bd5ed343b0d624180371fcd8d1ed310a5d02236c8ed72b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "etherpot_lotto",
+      "original_source_sha256": "42df68b79df9483a424dc0ce1aba6fd2382b20339ca23a62e881c52a52575b2f",
+      "model_visible_sha256": "f4d2dc4056c1b144342aac73e50d0564db6bd1e754daeff526f8e935393c8f59",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC1967Proxy",
+      "original_source_sha256": "14db075db83fa7a70d733302ead4688e20efa42a1dccc56499e37f48438ddbd7",
+      "model_visible_sha256": "e5bc35cb4d04cfe407a19e9f95280c39b7502aa7eea8e51a3dc2893817fa94af",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e",
+      "original_source_sha256": "cd990cb200f29075f790bed8d2a7f15e7b01a974c533e6206a28842aaa29f368",
+      "model_visible_sha256": "9af8f46a78209c9bf98e86e52b3244c5067fb0953409feb1a2f7e1c9dc875ed2",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x5aa88d2901c68fda244f1d0584400368d2c8e739",
+      "original_source_sha256": "84a947d088b94ebf65eef9e8830a9eb07516c75a209ccbd8309f141b2ee2ea24",
+      "model_visible_sha256": "f2c993ab55fd3997a97fdb17f174b4e01b88fb012876b5e14cfe29378d8aa20d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x39cfd754c85023648bf003bea2dd498c5612abfa",
+      "original_source_sha256": "580b0f56fdf071e7d6831315c17498eb1a0e7b1d9857ebb964dcc9f9e37f3996",
+      "model_visible_sha256": "081445b1bfaf3ed939d084038bfa6add36b855efdc82a02218deafe28483be1f",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC20FlashMint",
+      "original_source_sha256": "d8b667afd5cf2880d755fc0f2a63e32f0b9db9769e9e10057058cf6b52db7dd1",
+      "model_visible_sha256": "dbfaffef78e1e97c1591d698deecdb4e1a4ddaedf4f004a6fcf4c7c7fe43e4c4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e",
+      "original_source_sha256": "244b9e1877bcbcc29c5ecbad3cb007b6ab4c1a15e9fe9a9ff0b42e1e78aa2a84",
+      "model_visible_sha256": "496ccb737d92b1d5167a196c3c2f2fb248f95b872a5885e121e059b555b61c5a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xdb1c55f6926e7d847ddf8678905ad871a68199d2",
+      "original_source_sha256": "b8270bcb70210386096234447283e3a448a091dec817339efbc3a234fc7844f4",
+      "model_visible_sha256": "9ae0481019634f178a57ea7a169968ddfb8a5a1506c379d38a98c56ae623fe88",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_add",
+      "original_source_sha256": "a552367197068e110bdad903a28cb28b7762f8f68ffafde02a58286b89650466",
+      "model_visible_sha256": "9f66f1ead97949f9a429b7ca99f66077cbbc6ba03edaf7b2bef4667e60d4dc2b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489",
+      "original_source_sha256": "34da8b64840b5e44730ca73cc1d2417adea161d9b92299ed2115e4d16dbaee92",
+      "model_visible_sha256": "9f04246048fcf22067808092f0d70efe169a9c7d1e95c6f859641603403d16b2",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "overflow_simple_add",
+      "original_source_sha256": "641f6d9e0a4ff8f91c6340a38af72f4ab48749635f5ebb9815123c8ae2e0a46e",
+      "model_visible_sha256": "478bd09f8d5ad4c89f08c72815d56f93eddd70fea2cfeec1e37cfea27ebdc830",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_1",
+      "original_source_sha256": "0ca34ef4d8e14c6ce859a5fe0a9f1fce3a66ad687a13774945066ed56a6dc34e",
+      "model_visible_sha256": "b900fb4f5d6ef83a2798e5e5d5411c8f89a9cf65b910d58e22c8e63a8424c13c",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xcead721ef5b11f1a7b530171aab69b16c5e66b6e",
+      "original_source_sha256": "de734bd2aa98a0c98d6310a90192d6a3f28594a93e31c70e024474ca022f1ad4",
+      "model_visible_sha256": "4915da298601c382daf4bff018328a8d5f527170b4c28d53e00947f0368d1e85",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_mul",
+      "original_source_sha256": "487adeb218dc1ef816c31808b81e31d4b4d4b2154ba6560d96140999a139f241",
+      "model_visible_sha256": "715605706a6c4d1a6cf50cdc4df5c68b57119563ae72a26e96817f9ad0353f79",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC1155Holder",
+      "original_source_sha256": "ee184c9620ae770a9ccf9d21d1e6fd1177eed668f4e92707b51e9ef36d7c9469",
+      "model_visible_sha256": "d623e077dc88d17ad7ad58acf633f15b39c0eddd07910983670505f66a50b645",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x524960d55174d912768678d8c606b4d50b79d7b1",
+      "original_source_sha256": "d933f98498dd7690c0423e8c86b3e3ca7c328cb3820e371a83a3ddd38dd48167",
+      "model_visible_sha256": "2a13752ef2fe7114925de3a4b83de8610144f2331b4f81fe7bf3dd8fad820645",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xa1fceeff3acc57d257b917e30c4df661401d6431",
+      "original_source_sha256": "c6174237895ac810af5d27c2a9c87896369f7582775d6b4dc78451ca581b523e",
+      "model_visible_sha256": "1f27bbb684c7bd7edfcd77148a17f9dac433fe49cfb68fc9351e53c90be29e80",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "original_source_sha256": "c759773107c63e839906f25004a8bd32eed314cf3aac8c7657f9326b9db94990",
+      "model_visible_sha256": "476959b6eba9dec0687e12e9f8f774710c1d0e17e8c503cdebc52f6df94ed02d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "tokensalechallenge",
+      "original_source_sha256": "2d5ef1bfd7cb877614fa2c00656fc7a9a536e25081bdec494b09ae6be6e6bd58",
+      "model_visible_sha256": "5b0b7599c83e4fd0b7181b6773b5b35023ac74a2a0eeb36920ef0fe3ab3d1d33",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC721Burnable",
+      "original_source_sha256": "2d19ad1769de94d561d31b0713a073bcbd3eac4fef568c0e71f5b1a860619aa0",
+      "model_visible_sha256": "c12f12d313bfcbd178aadf698dca2acacf91449111fcdce18720470bf5470bfd",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x9d06cbafa865037a01d322d3f4222fa3e04e5488",
+      "original_source_sha256": "66c7aa0650cb5c27175f7945bbfa3584e214cf293826bc8903681b62c623e098",
+      "model_visible_sha256": "f4ba23471183bb60aabbbe841dd840c6c678c52d7c9f10989024a2a301a7a1d5",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37",
+      "original_source_sha256": "c6e4d50e5007600bfd8371c5735b76eae5c22ffc64be505c8068d504153a160d",
+      "model_visible_sha256": "e059c10a90de0f0f4d0e197aaa9e0413b4dfb0caa99479bdd2960d4989058243",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "CircularBuffer",
+      "original_source_sha256": "ed0a31b425dd1fe98c571926b78fa983ec12f5fe8ebc821aa3ec16ca8f8f8739",
+      "model_visible_sha256": "a595559289c0848dae715b533ba13b94f8f7a67e483dd24a023e4b478d5058a7",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb37f18af15bafb869a065b61fc83cfc44ed9cc27",
+      "original_source_sha256": "4b990db487343f83f6cf7be2cccbd31f6be16faa9c0ea28f2a7a85efba615cd1",
+      "model_visible_sha256": "0757708e9810b058cd0fea22f293db56a64575c48fabce84350b2edf754fc226",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC1363",
+      "original_source_sha256": "4ab0473a77a4bbcc4bbb8a22e2f2c56a451e85aa7014b7f4fb61e98373ca31a9",
+      "model_visible_sha256": "60bf6e93d524a02c2a3482e8b0ab029f83bedbda2a7183e53509d80baec0d7df",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC1155Supply",
+      "original_source_sha256": "8b8bb0ced2e3fdbb18742b5839694b7ac459957afedccaa14b9918431c4e53d3",
+      "model_visible_sha256": "c896563d8f6403ed1cf963a823b5c8a64c21cea28b6ddac71aa9ef6f336a40c4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x663e4229142a27f00bafb5d087e1e730648314c3",
+      "original_source_sha256": "bfb5d42d860bb8831dbf7306694ec37d88032747a8621dd099777b142662e403",
+      "model_visible_sha256": "19e582e6dd8165b96716c19f6bc59d8d13e9df751c9bb883db8445521a5ea53d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xe894d54dca59cb53fe9cbc5155093605c7068220",
+      "original_source_sha256": "e0371b2aacecbdb695c9861bab902f6d16890c17bcdd856005105867cd4a82fb",
+      "model_visible_sha256": "9b32a0b85c978aba1ee054ea0f9bbdc0eb74a9c544a0bf281ed00513a1e5f0f1",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Packing",
+      "original_source_sha256": "766829f6d9758a1318dd009143912d7aa6bbafa4f4b2a137c94d7f81a73b38ac",
+      "model_visible_sha256": "86e984d273bb9c888039992719aa2e574585006018afd122d13c03593de474fc",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6",
+      "original_source_sha256": "136fd223b0f3feaa22f7954f04f5f1197250fa80d83efb3c7a94aea42be1f0b8",
+      "model_visible_sha256": "557e268f53af7af31d0e8b76fd0da38a667c46488f76dd1bf09da5b95d85dc6e",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IAccessManaged",
+      "original_source_sha256": "2ef4db4c7c678372fe79af348ce3d60d4cf7136d195daf7a9bc2e434ffcbaacd",
+      "model_visible_sha256": "73bc1c7011812ad9140b17156249d1de22df539c40cea5766d20830689c707b8",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Proxy",
+      "original_source_sha256": "fa8aae37b2939371fcbce48b814c0d5c7e57e3e267f348459f29941937746c98",
+      "model_visible_sha256": "9fd3e7f14d54af3f4ea13ede61d47cecaae9e4c7220d78b8c881907b45de104a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xf2570186500a46986f3139f65afedc2afe4f445d",
+      "original_source_sha256": "1c6155494f3966c47cdeb88e7bbf633260fede10a55ff7d8e67f594a6cf0e7e3",
+      "model_visible_sha256": "b04fc120389ab2f0c5dc282ae167b4eafd905a8670bcea65f59844ac5838ee64",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IERC777",
+      "original_source_sha256": "9ed85c11bc308eeb33977efc9068fa948f952252982628c3729dae36c33684ab",
+      "model_visible_sha256": "fcdae64402b754dc3139483b63de805dae44a00facdbf3f108099b576d387155",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "original_source_sha256": "16b738d378a612c4a34c7482ce680dd1b40fabe3059fca8e2c37941c895f9716",
+      "model_visible_sha256": "4c9b17b8a9d2d4770cec188faf3c6348ae383ac8193f6295983b73efae63b1d3",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xf29ebe930a539a60279ace72c707cba851a57707",
+      "original_source_sha256": "1711ebd83906cf6cbcaa54d58221c1ffc6547a1ca1a6e6666549a98e7917ea2b",
+      "model_visible_sha256": "a1458efc84dbb890d48c000389edaa33398411df3fa4c6dcabc3db68efbce0f4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77",
+      "original_source_sha256": "f4027fba48f15fe9ec3d553a1bb3092c9e7f0bea2279390a7ba72765f365d671",
+      "model_visible_sha256": "40bf7343de7e38244707476c5bbdf890c10fc7730e9e055bd11359d20331a15e",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2",
+      "original_source_sha256": "e90a79d67f377a095f6ad1cfebb114f567ffd9bf749670f42a9baa6dcdd74c5c",
+      "model_visible_sha256": "414be43e4fba347ea10bcde2acfe0a2960bc06b6e84bd929daa486a6dfd484bc",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x610495793564aed0f9c7fc48dc4c7c9151d34fd6",
+      "original_source_sha256": "893c008c441ef5f227b797ea456f0d6e76c11f29191544b990f931dcc828b7ea",
+      "model_visible_sha256": "f0a443ae63e22065cd37a6f9d688e67eaf03f91cafc956e34ed5b7f9a6b41418",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "timelock",
+      "original_source_sha256": "1f079a3b8bb6ce973d62d93e1872f96bc3be4db53a9102230fa8c59b70ab0bb4",
+      "model_visible_sha256": "8d907fbc303e16a032bd758fdfc0b1e84342a7e45c30fe96c72c7a8cc16597ff",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Votes",
+      "original_source_sha256": "5dacfbe9b2a3fe6b9b91d6314d8cf07d555caa4740c5ff27675554fc9c71df9e",
+      "model_visible_sha256": "18b885e70ba23d0c9b275041f98a0610f55b05f766008aebaabdb2a6a6d79af2",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrancy_cross_function",
+      "original_source_sha256": "438fda72fcc67ddfe7d949357720537dd07915f90c147db44428d876f5d5f692",
+      "model_visible_sha256": "dd65174074ac0f98fba9af35703a9cf954936718563c5deea33ff1ec64632003",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x806a6bd219f162442d992bdc4ee6eba1f2c5a707",
+      "original_source_sha256": "9f1449fd89171ddf4533af99d63dcfa6d25504a790463f205b022c420232ac71",
+      "model_visible_sha256": "ee865a916253bb08a8c6f089797fdade696143c0e1f593fd7da2be6937ab4d27",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "spank_chain_payment",
+      "original_source_sha256": "15724a9aecd227749e4e3441bf408892ead6639d7c2830b116014183fb537d09",
+      "model_visible_sha256": "842822d3445806fad0d1f5f5c8d2a5e318712a986d180e02b56a94244e6061f3",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "lotto",
+      "original_source_sha256": "09c8886de37a52a987d1a40588bd8fe352b8bb8bbfb9960caf8a6664a893b223",
+      "model_visible_sha256": "a53d676fce5e981be27cc83d6d81048c589a1aa53e84fa4dcc81f859093b5971",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8",
+      "original_source_sha256": "46e60df27d49fbaa75eaf6c29c26d586c8aa69fd439788276853494ae6024390",
+      "model_visible_sha256": "923f405b45abade27e30f7c5e006a3c04c0f7f29c3eb5b760825457a740de67c",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "original_source_sha256": "295dba1924e8d40f718aa97197ce45871ecae2cec07d13f1bc8ce4b887c06a19",
+      "model_visible_sha256": "d2aa8876a976b1f9f41663dc9b2226d05005d39212f042ee95b5c96acc0ceefa",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_minimal",
+      "original_source_sha256": "ca539303822841840452b2aa1bf8607dc7b46d32de7261e11861da1bc9c6e915",
+      "model_visible_sha256": "acdbfb9e002b7904becee14d34cde9532d40fbda137e6f727f4a98d0099c505a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "GovernorSettings",
+      "original_source_sha256": "bff3837e8deb8411352a71e43a0706d266b3dce29ef6fb5ce810af87eae3dbf7",
+      "model_visible_sha256": "cc4cdf744fc6ca2d0fcbb8439e874a2d5c9a41e7396d6349590f0b6351927f48",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "BECToken",
+      "original_source_sha256": "5765dccd66c76ce39da689c314364dc380e0b6a984ad351c5f81eb8e35e749b9",
+      "model_visible_sha256": "b92821319f283c9d863d70b8cc953c9551c802bd942646abacfac32f9eb7a5f2",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_multitx_onefunc_feasible",
+      "original_source_sha256": "2467c66a24f705b43c93495ffe8c065659507d2f2ff00d6affb9a72344606869",
+      "model_visible_sha256": "2db84adab37cd41118eb820cdb7c81c1a65e3188bb90b32fc217cf6957365ca9",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "original_source_sha256": "3f826e89f8ac48c86cef51681eb0d3fb05975d4764f38606e6f629dce68ab099",
+      "model_visible_sha256": "c5eca532f60acd5ac82b8f611d3b55eec611e3979da12cd4bc721cdf6e9a424c",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01",
+      "original_source_sha256": "09a3eae973399d78040611f5e6056823cec63331d899aff4a7bdc244bcf71172",
+      "model_visible_sha256": "b3db5cb8591cf9c6cf5f1d68ebd23566023bbb1505d41ad051a3094bcdd6c157",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrancy_simple",
+      "original_source_sha256": "98b4c8b45c2e6711b1c58fb6991375f698a66f148799ca7aff6e27db8a9803e1",
+      "model_visible_sha256": "85205ba17a5f994fa5e8a9dbd169797a249ac6f20c21f0241693d876b005343d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "etherstore",
+      "original_source_sha256": "bffe7255c351724c3ab15f6c4c4909a3d756650791360e86cf2f71c48046aa79",
+      "model_visible_sha256": "7b749878f870d915884a01cd12cd50ce005b1caf7de7f6400c729df6cd7b9159",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "Calldata",
+      "original_source_sha256": "f400ffb13072d2cbe1de51c78e4fc38d1c29e2b1d7cb0b53c2641bed0effa4d6",
+      "model_visible_sha256": "e897e22e4b04965599375bc7b2889009ec9a08249d8a09fe42b39cdd5854c512",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "MultiSignerERC7913Weighted",
+      "original_source_sha256": "3ff83c3c739a4f42172e133783b3a0f3206b6183791af9123920e34b1d35f82f",
+      "model_visible_sha256": "e1f4927ef8fcc6c99d976a72aa05d9859db48f1bd2603a87ad1b9fcdb73d7c14",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "simple_dao",
+      "original_source_sha256": "40ffea56c722280688eba923676992d20be7623dcf724393c1c7ca1ef24e0ae5",
+      "model_visible_sha256": "ea3504f2de056f6cf24a069245c6df6d155b0e4577c7d5d6c94c85fbc0bc85ab",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1",
+      "original_source_sha256": "97a35d9e594162b70c9b21ce2245863406e6a47ae979e25a9d32a6f3cc615ec4",
+      "model_visible_sha256": "4ddad51a37324a51bd6c8792242072c4ce44b073d216cc188765ee7414fbf41b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "CrosschainLinked",
+      "original_source_sha256": "9bc1964a8b40eb288c34dd6e10b1503482d93002342df66fdb844d9bd45114a7",
+      "model_visible_sha256": "01bf2e838d4950153eeebfecb2d453978327bc8441c54c746ce2a5e492a00505",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "integer_overflow_multitx_multifunc_feasible",
+      "original_source_sha256": "b4751ff85a668932e084d03b08992f62b85f3a62dea2224d7f93eafe5628188f",
+      "model_visible_sha256": "7bafc2a69f7be8b7ca4a485026af169f24a5a95f9017e51919cdeab0bb6862df",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859",
+      "original_source_sha256": "9d63f8963eb9a187583b0f0306d0c2022699f43ed3afd37ae4863be99abea01b",
+      "model_visible_sha256": "05c9974710d71d77d51a13fde4766257ccc7a7b54cefe3c0dc6dacc93388e09e",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC721",
+      "original_source_sha256": "feb5600d46ae52793bebe6bcd639c80332d4ba06ba31e17b08f6ea2501dcf946",
+      "model_visible_sha256": "1edf597b05a88e992ba65681ec093d5b37a4721c2ff6442e01281338f32aa09f",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x7541b76cb60f4c60af330c208b0623b7f54bf615",
+      "original_source_sha256": "5bb1f99cb610a037d71ed227b6ee68e9d76eaf4846e8c67952919ca11b0ec0ee",
+      "model_visible_sha256": "7f26b7fdfcc312cf31b701aebf9e01a055a235f125439036f564f5200a07ffd4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "draft-InteroperableAddress",
+      "original_source_sha256": "b494790f39a1974169148dae702362901e16d9b9ff79ac5ac0a0614e713f1dae",
+      "model_visible_sha256": "dcc83cf2ed3a6fa96eca16b1591c0d202356ff417f1ee452d8e69403d0d4b732",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "SlotDerivation",
+      "original_source_sha256": "f8e5f2c672918a21720ce3b5e2637c6366aa0652d085c0478fc0d0d6edb76386",
+      "model_visible_sha256": "5af81b966392f6bed397755e4adf4eae0a279a2bd6731e37d5a1e4813eb24c98",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrancy_bonus",
+      "original_source_sha256": "32a61297b7da193126a3ffb5863305bc69433ee62fd3ee8c391df57c77fad3d0",
+      "model_visible_sha256": "b903afc4ed4ab8b3262bff2ea8e9b6ea77aebeff24ddcd6084fe5d424b98abc1",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC1155Utils",
+      "original_source_sha256": "8d75a5dd3db8f1c85362ef688d6f3cf5b2892dc62424bfe35678a49ce0d87956",
+      "model_visible_sha256": "f91262b48f212c3e791db8d4995beb30809ed65b0880308e3bd96da029b3a033",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "IERC3156FlashLender",
+      "original_source_sha256": "61927aea23d3ceb7f366f4436b38c26706058729434af3df339fa165c6187d72",
+      "model_visible_sha256": "9cb8b609cdf9528bc1e51e53c659c9dc42d66a802bc9d175bcd9b413b9099c00",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x89c1b3807d4c67df034fffb62f3509561218d30b",
+      "original_source_sha256": "f8732ecafa809f75fb066480a914216bd95eb1ab336a949985147aac5772b907",
+      "model_visible_sha256": "408617d15a44783a08ed487cb5deff2e21d6ccf50f5c15f6b3ff85d6f9742780",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "ERC20Permit",
+      "original_source_sha256": "53584e84cd4851447b3149219f8c1b41397f7c753f85da07eda7f17ac6846e47",
+      "model_visible_sha256": "6139e3a76a802caf8edbae9edf255e9f9dfdd628828160801a89bcf277ff9188",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "draft-ERC4337Utils",
+      "original_source_sha256": "85a8988e7f50a36ba21711e377ab085bb1a4cc842b25e8f05fab4257db95993b",
+      "model_visible_sha256": "59a2f857de23f6b8d4527ee2585247dc4ff1888df34c36634d01815b10d79fa0",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x52d2e0f9b01101a59b38a3d05c80b7618aeed984",
+      "original_source_sha256": "1d9d1408bc11b4200d7b5aef545803da55645cae566cf6d3f8ba4ec5176625ea",
+      "model_visible_sha256": "993caaa1467f4fb6a5d621bc12bfa88fbaa67bfb0b7ee7ee59f53d0d5f986429",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4",
+      "original_source_sha256": "5b41104af199b0c3852b09e2a9c64448a1d17b5260ab408a604c854d6858e191",
+      "model_visible_sha256": "9bc54ccd298d74ab166229d0ad1fa0e9bc39b632b68d849e38cef063e12a71c1",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xec329ffc97d75fe03428ae155fc7793431487f63",
+      "original_source_sha256": "f9f50fa4d68e5e8727c3e095e88c3bd3fd3e88788573ba3ed9434ad0d0bbbeac",
+      "model_visible_sha256": "de7c4a434f2d0e13b233ea4e23dfc8d7f285fe9d96f89f77dd51fbc50c0d9c0d",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf",
+      "original_source_sha256": "bfb8fc0f56cbdff8db12d629a35c843039460a816bf54b1f9817e5ae948b6bff",
+      "model_visible_sha256": "5d21fc29b046a2bb993f3c8883fb8ba66b898e64a3e1cd757ea7e0dfe6eaa638",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "unchecked_return_value",
+      "original_source_sha256": "ac992f26a8a567c74fe30e0f48d0c421d3f483ff431f6672a6dae5dd6c9e168d",
+      "model_visible_sha256": "892e297f4411892d7af2fe98b6702b849dfd25e8ba21d5d9e1a11af7662a86b5",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrancy_insecure",
+      "original_source_sha256": "5569c2a65ebedead15a2eeb63e9185c79c3a30d4edad7948679b3ad009c50a36",
+      "model_visible_sha256": "d6b82c7c9d5c4d2a0d67c16c98e565564b4f4d6e4cd695436f2e404c25e638ea",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x958a8f594101d2c0485a52319f29b2647f2ebc06",
+      "original_source_sha256": "f0d0b48698d546e4d2a3810358b38d3b0dc3fdb291712573fd2a3c8ca9c293e2",
+      "model_visible_sha256": "bbd57aafab7cb5945d4f42b468e3c46522be6b7b2e812c3fd42c3dbe3c4c90ed",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f",
+      "original_source_sha256": "59ebd4fa5520fb501e02a072751299037ef827a8efef1ca06dcb23ce1e862510",
+      "model_visible_sha256": "b4508617da951e59b21344fd9de90f048f82aaebf193a766a1c9f8c40880c603",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xbaa3de6504690efb064420d89e871c27065cdd52",
+      "original_source_sha256": "02d87a04b0f158f986ff1e6aca6e8ca0d57ee23f4efec3c6a5374e470e46ec95",
+      "model_visible_sha256": "20ee5843776668b9e261bff741dda517e1e0c7a9526d3412166546f42ec0445b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87",
+      "original_source_sha256": "0d66a0ef0dc4b885247fefcb04e47179734da988b79987ec6dc7846ed1068298",
+      "model_visible_sha256": "c5c218103c64f91ee2b6a8131ad0cb33d9fd57d1ff97d0d89bce57bce3b8cdfe",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x93c32845fae42c83a70e5f06214c8433665c2ab5",
+      "original_source_sha256": "dafac629c62d76f7de74e28f3f782c284a630f0ea4ea6202be45370d1b25d618",
+      "model_visible_sha256": "116bac385cbd1dbef1fd82a2778d0f32f16c51a9f8015e0b9a2033306611704a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x19cf8481ea15427a98ba3cdd6d9e14690011ab10",
+      "original_source_sha256": "fe2fb0a0e173f241ce33e07f3e01a4b0c8c2f8501e506c360af16648fa47b024",
+      "model_visible_sha256": "cd7bf6de2198d58ab2608abb5a0f1406fecd9ea8e84aaf44f73a7600747115c4",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4",
+      "original_source_sha256": "bcd0fdfad9f6594fdbc940967321856490ed4bffbe8b6ab9c75c6b85072528a5",
+      "model_visible_sha256": "f02f380965298db1aed2b07c6e5d2ea12be11ea6058e2de89c7ba1697a6ce14a",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrancy_dao",
+      "original_source_sha256": "e507ae792671a38307734b38b8d35abf062a7e78889e0178f8647838a2527dd2",
+      "model_visible_sha256": "757867ffbc36e522a365ac0ecb3483506d770ae4dc37e2bc11fb2ad44af26bcd",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "modifier_reentrancy",
+      "original_source_sha256": "5675bc25a679e6e3cae0252605b00ab569a66757e91fbcf8873b5994960cbef7",
+      "model_visible_sha256": "c1efbd4e0e9e31eca5aaa31d6e33ae12a47562087c77a862348f1ba01979f301",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "RLP",
+      "original_source_sha256": "bb9e072680ce4ea0463b19991c5fb7d66a8d6982b00c0bf5848aab450a59da77",
+      "model_visible_sha256": "4cf9cfb124b5bb26a9677a38b77f707a353b7a65e838ae5a88af13ae48aeeabb",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x561eac93c92360949ab1f1403323e6db345cbf31",
+      "original_source_sha256": "7ba4aa075db5de2a1badbdd19dae1404a638f188cb5715abcc3fcafff0f8bb10",
+      "model_visible_sha256": "5fa9fb3cc9edbe4f838f072fe4359092c08ff273e941a8c0b638e9a614dc1655",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "etherbank",
+      "original_source_sha256": "63d14a7dd1a1f2f6f5cdc04be0c509606012af3742dff18a671519c56a63ec36",
+      "model_visible_sha256": "05aa341e5916efc7c13286e8eff431c3b3161b8a10f6cd3c802c0e0169effe05",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "insecure_transfer",
+      "original_source_sha256": "3b0317da6075edb0df489502797d928ae0e6cd903da90b5818b4f7c0f581b9b8",
+      "model_visible_sha256": "dc575423edfcd22a2a4302b10cb7eb265a267dcfade1a0c293e2264127375a1b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xe09b1ab8111c2729a76f16de96bc86a7af837928",
+      "original_source_sha256": "ecca3afcd93e3b614eee1b44555c937470c5054330827ef05e59113f85dee0d9",
+      "model_visible_sha256": "ee842fbef826ee040157371a60678483c32368ff4fe91ebee68dff267bf881aa",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x8fd1e427396ddb511533cf9abdbebd0a7e08da35",
+      "original_source_sha256": "fce9f579b52d462ad524300503ccc970d53629f611fcbf3cd99e6ee4aa7b6324",
+      "model_visible_sha256": "28628d2dc788c04797337832a22bff4a8067469b023a7e3b6043637f30988ec0",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c",
+      "original_source_sha256": "e5d6223f6436f3bf5d402e1c03cc65f1eba75c8feed2208e78d3dae113ec4802",
+      "model_visible_sha256": "1b9de2eb3a7e77ec083614505f596cae0d2257f90b7e71b0a7c26bda01f79f0b",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "reentrance",
+      "original_source_sha256": "78ebf8f92bb978386a96fb1b4bec2ad2aaa77916a6ed7e49c2ae74c92f466ea4",
+      "model_visible_sha256": "6a4dea784c93727380b81c2793bd7890ceea225a00bf82fd913376cc11aee4dc",
+      "comment_free_tokens_equal": true
+    },
+    {
+      "contract_name": "0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8",
+      "original_source_sha256": "cd74aa8fc17eef87d4a5688223044d10de89f9db012847f876aed9669d6d7c71",
+      "model_visible_sha256": "858fe09295f4c5ab4ff58e8d8bb33c662029c487c7d2209459add7fdf7e25a3e",
+      "comment_free_tokens_equal": true
+    }
+  ]
+}

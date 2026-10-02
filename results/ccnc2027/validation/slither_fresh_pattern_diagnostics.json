@@ -1,0 +1,13 @@
+{
+  "slither_version": "0.11.6",
+  "checked_cases": [
+    "unit_13",
+    "unit_15",
+    "unit_17"
+  ],
+  "observed": "Successful analyses produce no unchecked-call reports for these assigned-and-unused status cases; EVM witnesses confirm rejected payments leave completion true. All three fresh reentrancy positives are detected.",
+  "detector_source": ".venv/lib/python3.14/site-packages/slither/detectors/operations/unchecked_low_level_return_values.py",
+  "detector_source_sha256": "f65e19ff8c078bde2a4603617effd3e3898622e97012356686063cd0a471c08d",
+  "implementation_inspection": "The unchecked-lowlevel detector removes a tracked call result upon any subsequent IR read, including tuple unpacking, without following the resulting boolean to a control-flow check. This is an installed-detector limitation, not an inference about a missing compiler.",
+  "raw_outputs": "raw/slither/fresh_unit_13.json, fresh_unit_15.json, fresh_unit_17.json"
+}

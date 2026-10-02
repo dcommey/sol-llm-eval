@@ -1,0 +1,22 @@
+{
+  "slither_version": "0.11.6",
+  "detectors": {
+    "reentrancy-eth": "reentrancy",
+    "reentrancy-no-eth": "reentrancy",
+    "unchecked-lowlevel": "unchecked_low_level_calls",
+    "unchecked-send": "unchecked_low_level_calls"
+  },
+  "compiler_bridge_sha256": "48845dee7c3b3125aa61942e0c5324e9b567d763b1353a6da42d611849397243",
+  "dataset_sha256": "f216bcba0d3078625e4d9a5d05a9786f11cbce80c7470ddb5ba7d3358cdb75ae",
+  "failure_policy": "operational: empty prediction; conditional: exclude failed analysis",
+  "compiler_versions": [
+    "0.4.25",
+    "0.5.17",
+    "0.8.27"
+  ],
+  "compiler_distribution": "official pinned solc-js npm packages",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  }
+}

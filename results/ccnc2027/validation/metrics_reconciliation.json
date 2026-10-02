@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "suite": "main",
+      "model": "qwen35",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "main",
+      "model": "gemma4",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "main",
+      "model": "ministral3",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "main",
+      "model": "foundationsec",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "main",
+      "model": "claude",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "main",
+      "model": "slither",
+      "contracts": 140,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "qwen35",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "gemma4",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "ministral3",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "foundationsec",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "claude",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    },
+    {
+      "suite": "fresh",
+      "model": "slither",
+      "contracts": 18,
+      "hash_alignment": true,
+      "independent_count_reconciliation": true
+    }
+  ],
+  "provenance_checks": [
+    {
+      "model": "qwen35",
+      "main_fresh_artifact_and_runtime_match": true
+    },
+    {
+      "model": "gemma4",
+      "main_fresh_artifact_and_runtime_match": true
+    },
+    {
+      "model": "ministral3",
+      "main_fresh_artifact_and_runtime_match": true
+    },
+    {
+      "model": "foundationsec",
+      "main_fresh_artifact_and_runtime_match": true
+    }
+  ],
+  "definitions": "Micro TP/FP/FN at deduplicated target-category level; clean FPR at contract level; tool failures are abstentions/empty operational predictions."
+}

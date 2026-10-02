@@ -1,0 +1,202 @@
+{
+  "dataset_sha256": "b59461627385480716a8ac98a1af18b667bb984f3b288af12fe6161b5379f2d1",
+  "contracts": 18,
+  "pairs": 9,
+  "source_origin": "Generated in this revision on 2026-10-01; not externally sourced",
+  "limitation": "Small designed contrasts; wrapping arithmetic labels assume overflow/underflow is unintended. Not evidence of production prevalence or absence of pattern exposure.",
+  "compiler": "official solc-js 0.8.27",
+  "checks": [
+    {
+      "contract_name": "unit_01",
+      "pair_id": "reentrancy_0",
+      "target": "reentrancy",
+      "fixed": false,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 2000000000000000000,
+      "expected_payout_wei": 2000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_02",
+      "pair_id": "reentrancy_0",
+      "target": "reentrancy",
+      "fixed": true,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 1000000000000000000,
+      "expected_payout_wei": 1000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_03",
+      "pair_id": "reentrancy_1",
+      "target": "reentrancy",
+      "fixed": false,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 2000000000000000000,
+      "expected_payout_wei": 2000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_04",
+      "pair_id": "reentrancy_1",
+      "target": "reentrancy",
+      "fixed": true,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 1000000000000000000,
+      "expected_payout_wei": 1000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_05",
+      "pair_id": "reentrancy_2",
+      "target": "reentrancy",
+      "fixed": false,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 2000000000000000000,
+      "expected_payout_wei": 2000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_06",
+      "pair_id": "reentrancy_2",
+      "target": "reentrancy",
+      "fixed": true,
+      "test": "one recursive withdrawal",
+      "observed_attacker_payout_wei": 1000000000000000000,
+      "expected_payout_wei": 1000000000000000000,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_07",
+      "pair_id": "integer_overflow_0",
+      "target": "integer_overflow",
+      "fixed": false,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 1,
+      "observed_value": 4,
+      "expected_value": 4,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_08",
+      "pair_id": "integer_overflow_0",
+      "target": "integer_overflow",
+      "fixed": true,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 0,
+      "observed_value": 250,
+      "expected_value": 250,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_09",
+      "pair_id": "integer_overflow_1",
+      "target": "integer_overflow",
+      "fixed": false,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 1,
+      "observed_value": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+      "expected_value": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_10",
+      "pair_id": "integer_overflow_1",
+      "target": "integer_overflow",
+      "fixed": true,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 0,
+      "observed_value": 20,
+      "expected_value": 20,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_11",
+      "pair_id": "integer_overflow_2",
+      "target": "integer_overflow",
+      "fixed": false,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 1,
+      "observed_value": 0,
+      "expected_value": 0,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_12",
+      "pair_id": "integer_overflow_2",
+      "target": "integer_overflow",
+      "fixed": true,
+      "test": "overflow or underflow boundary",
+      "transaction_status": 0,
+      "observed_value": 0,
+      "expected_value": 0,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_13",
+      "pair_id": "unchecked_low_level_calls_0",
+      "target": "unchecked_low_level_calls",
+      "fixed": false,
+      "test": "recipient rejects payment",
+      "transaction_status": 1,
+      "observed_completion": true,
+      "expected_completion": true,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_14",
+      "pair_id": "unchecked_low_level_calls_0",
+      "target": "unchecked_low_level_calls",
+      "fixed": true,
+      "test": "recipient rejects payment",
+      "transaction_status": 0,
+      "observed_completion": false,
+      "expected_completion": false,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_15",
+      "pair_id": "unchecked_low_level_calls_1",
+      "target": "unchecked_low_level_calls",
+      "fixed": false,
+      "test": "recipient rejects payment",
+      "transaction_status": 1,
+      "observed_completion": true,
+      "expected_completion": true,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_16",
+      "pair_id": "unchecked_low_level_calls_1",
+      "target": "unchecked_low_level_calls",
+      "fixed": true,
+      "test": "recipient rejects payment",
+      "transaction_status": 0,
+      "observed_completion": false,
+      "expected_completion": false,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_17",
+      "pair_id": "unchecked_low_level_calls_2",
+      "target": "unchecked_low_level_calls",
+      "fixed": false,
+      "test": "recipient rejects payment",
+      "transaction_status": 1,
+      "observed_completion": true,
+      "expected_completion": true,
+      "passed": true
+    },
+    {
+      "contract_name": "unit_18",
+      "pair_id": "unchecked_low_level_calls_2",
+      "target": "unchecked_low_level_calls",
+      "fixed": true,
+      "test": "recipient rejects payment",
+      "transaction_status": 0,
+      "observed_completion": false,
+      "expected_completion": false,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdrawBalance",
+              "source_mapping": {
+                "start": 245,
+                "length": 199,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "is_dependency": false,
+                "lines": [
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "starting_column": 5,
+                "ending_column": 3
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "SendBack",
+                  "source_mapping": {
+                    "start": 177,
+                    "length": 269,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 0
+                  }
+                },
+                "signature": "withdrawBalance()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "msg.sender.send(amountToWithdraw)",
+              "source_mapping": {
+                "start": 407,
+                "length": 33,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                "is_dependency": false,
+                "lines": [
+                  14
+                ],
+                "starting_column": 3,
+                "ending_column": 36
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawBalance",
+                  "source_mapping": {
+                    "start": 245,
+                    "length": 199,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 3
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "SendBack",
+                      "source_mapping": {
+                        "start": 177,
+                        "length": 269,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          8,
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "withdrawBalance()"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "SendBack.withdrawBalance() (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol#10-15) ignores return value by msg.sender.send(amountToWithdraw) (data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol#14)\n",
+          "markdown": "[SendBack.withdrawBalance()](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol#L10-L15) ignores return value by [msg.sender.send(amountToWithdraw)](data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol#L14)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/unchecked_low_level_calls/mishandled.sol#L10-L15",
+          "id": "afee89a45072eb2a343b87e4a18eb8a82cf44b9d7e2169fed8da6baff2e7a844",
+          "check": "unchecked-send",
+          "impact": "Medium",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-send"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

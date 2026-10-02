@@ -1,0 +1,354 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "CashOut",
+              "source_mapping": {
+                "start": 639,
+                "length": 366,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "is_dependency": false,
+                "lines": [
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "ETH_FUND",
+                  "source_mapping": {
+                    "start": 102,
+                    "length": 951,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "CashOut(uint256)"
+              }
+            },
+            {
+              "type": "node",
+              "name": "msg.sender.call.value(_am)()",
+              "source_mapping": {
+                "start": 823,
+                "length": 28,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "is_dependency": false,
+                "lines": [
+                  44
+                ],
+                "starting_column": 16,
+                "ending_column": 44
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "CashOut",
+                  "source_mapping": {
+                    "start": 639,
+                    "length": 366,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ETH_FUND",
+                      "source_mapping": {
+                        "start": 102,
+                        "length": 951,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29,
+                          30,
+                          31,
+                          32,
+                          33,
+                          34,
+                          35,
+                          36,
+                          37,
+                          38,
+                          39,
+                          40,
+                          41,
+                          42,
+                          43,
+                          44,
+                          45,
+                          46,
+                          47,
+                          48,
+                          49,
+                          50,
+                          51,
+                          52,
+                          53,
+                          54
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "CashOut(uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "balances[msg.sender] -= _am",
+              "source_mapping": {
+                "start": 883,
+                "length": 25,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                "is_dependency": false,
+                "lines": [
+                  46
+                ],
+                "starting_column": 17,
+                "ending_column": 42
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "CashOut",
+                  "source_mapping": {
+                    "start": 639,
+                    "length": 366,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "ETH_FUND",
+                      "source_mapping": {
+                        "start": 102,
+                        "length": 951,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25,
+                          26,
+                          27,
+                          28,
+                          29,
+                          30,
+                          31,
+                          32,
+                          33,
+                          34,
+                          35,
+                          36,
+                          37,
+                          38,
+                          39,
+                          40,
+                          41,
+                          42,
+                          43,
+                          44,
+                          45,
+                          46,
+                          47,
+                          48,
+                          49,
+                          50,
+                          51,
+                          52,
+                          53,
+                          54
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "CashOut(uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "balances"
+              }
+            }
+          ],
+          "description": "Reentrancy in ETH_FUND.CashOut(uint256) (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#37-50):\n\tExternal calls:\n\t- msg.sender.call.value(_am)() (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#44)\n\tState variables written after the call(s):\n\t- balances[msg.sender] -= _am (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#46)\n\tETH_FUND.balances (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#11) can be used in cross function reentrancies:\n\t- ETH_FUND.CashOut(uint256) (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#37-50)\n\t- ETH_FUND.Deposit() (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#25-35)\n\t- ETH_FUND.balances (data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#11)\n",
+          "markdown": "Reentrancy in [ETH_FUND.CashOut(uint256)](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L37-L50):\n\tExternal calls:\n\t- [msg.sender.call.value(_am)()](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L44)\n\tState variables written after the call(s):\n\t- [balances[msg.sender] -= _am](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L46)\n\t[ETH_FUND.balances](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L11) can be used in cross function reentrancies:\n\t- [ETH_FUND.CashOut(uint256)](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L37-L50)\n\t- [ETH_FUND.Deposit()](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L25-L35)\n\t- [ETH_FUND.balances](data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L11)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol#L37-L50",
+          "id": "5e10c7a65db01178390e297933a4a09f2a9421872ba8f07a7ad3aeff0e9b625b",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

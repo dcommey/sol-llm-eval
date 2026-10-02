@@ -1,0 +1,483 @@
+[
+  {
+    "contract_name": "unit_01",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          10
+        ],
+        "severity": "High",
+        "explanation": "The contract performs an external call to `msg.sender` before updating the internal state (`credit[msg.sender] = 0`). An attacker can use a fallback function to re-enter the `withdraw` function and withdraw funds multiple times before the balance is zeroed out."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      10\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs an external call to `msg.sender` before updating the internal state (`credit[msg.sender] = 0`). An attacker can use a fallback function to re-enter the `withdraw` function and withdraw funds multiple times before the balance is zeroed out.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.374610375001794,
+    "timestamp": "2026-10-01T20:51:01.304759+00:00",
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7371328791,
+      "load_duration": 3825375,
+      "prompt_eval_count": 291,
+      "prompt_eval_duration": 770695000,
+      "eval_count": 114,
+      "eval_duration": 6593716000
+    }
+  },
+  {
+    "contract_name": "unit_02",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      11\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs a low-level call `msg.sender.call{value: amount}(\"\")` before updating the state or completing the transaction logic. Although `credit[msg.sender]` is set to 0 on line 10, the call on line 11 allows the recipient to execute arbitrary code (e.g., via a fallback function) before the execution of the current transaction finishes. While the state update is technically before the call, the lack of a non-reentrant guard or a check-effects-interactions pattern is risky in complex environments, and specifically, the call is made to an untrusted address.\"\n  }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 8 column 93 (char 200)",
+    "inference_time": 11.585948874999303,
+    "timestamp": "2026-10-01T20:51:12.891225+00:00",
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 11584400625,
+      "load_duration": 1122292,
+      "prompt_eval_count": 290,
+      "prompt_eval_duration": 764687000,
+      "eval_count": 186,
+      "eval_duration": 10816853000
+    }
+  },
+  {
+    "contract_name": "unit_03",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          10,
+          11
+        ],
+        "severity": "High",
+        "explanation": "The contract performs an external call to `msg.sender` via `_pay` (line 11) before updating the internal state `credit[msg.sender] = 0` (line 12). An attacker can use a fallback function to re-enter the `withdraw` function and withdraw funds multiple times before the balance is zeroed out."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      10,\n      11\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs an external call to `msg.sender` via `_pay` (line 11) before updating the internal state `credit[msg.sender] = 0` (line 12). An attacker can use a fallback function to re-enter the `withdraw` function and withdraw funds multiple times before the balance is zeroed out.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 8.676316500001121,
+    "timestamp": "2026-10-01T20:51:21.567999+00:00",
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 8674174083,
+      "load_duration": 1188667,
+      "prompt_eval_count": 309,
+      "prompt_eval_duration": 775938000,
+      "eval_count": 136,
+      "eval_duration": 7894999000
+    }
+  },
+  {
+    "contract_name": "unit_04",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          11,
+          12
+        ],
+        "severity": "High",
+        "explanation": "The contract performs an external call to `msg.sender` via `_pay` (line 12) before the state is fully finalized or in a way that allows a malicious contract to re-enter the `withdraw` function. Although `credit[msg.sender]` is set to 0 on line 11, the use of `call` allows the recipient to execute arbitrary code. While the state update happens before the call, the pattern of calling an external address without a non-reentrant guard is a classic reentrancy risk if the logic were more complex or if the state update was missing."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      11,\n      12\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs an external call to `msg.sender` via `_pay` (line 12) before the state is fully finalized or in a way that allows a malicious contract to re-enter the `withdraw` function. Although `credit[msg.sender]` is set to 0 on line 11, the use of `call` allows the recipient to execute arbitrary code. While the state update happens before the call, the pattern of calling an external address without a non-reentrant guard is a classic reentrancy risk if the logic were more complex or if the state update was missing.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 11.623918916011462,
+    "timestamp": "2026-10-01T20:51:33.193880+00:00",
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 11620449000,
+      "load_duration": 3591209,
+      "prompt_eval_count": 308,
+      "prompt_eval_duration": 773016000,
+      "eval_count": 187,
+      "eval_duration": 10842052000
+    }
+  },
+  {
+    "contract_name": "unit_05",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      10\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs an external call to `recipient.call{value: amount}(\"\")` before updating the internal state (`credit[msg.sender] = 0`). An attacker can use a fallback function to re-enter the `withdraw` function and withdraw funds multiple times before the balance is zeroed out.\"\n  }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 8 column 95 (char 202)",
+    "inference_time": 7.741998874989804,
+    "timestamp": "2026-10-01T20:51:40.937476+00:00",
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7737631167,
+      "load_duration": 913959,
+      "prompt_eval_count": 299,
+      "prompt_eval_duration": 772468000,
+      "eval_count": 120,
+      "eval_duration": 6944169000
+    }
+  },
+  {
+    "contract_name": "unit_06",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      11\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract performs an external call to `recipient.call{value: amount}(\"\")` before updating the state or completing the transaction. Although `credit[msg.sender]` is set to 0 on line 10, the call on line 11 allows a malicious contract to re-enter the `withdraw` function or other functions in the contract during the execution of the call, as the state change is not finalized until the call returns.\"\n  }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 8 column 95 (char 202)",
+    "inference_time": 9.432550541008823,
+    "timestamp": "2026-10-01T20:51:50.371927+00:00",
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 9428753042,
+      "load_duration": 1091125,
+      "prompt_eval_count": 299,
+      "prompt_eval_duration": 771611000,
+      "eval_count": 148,
+      "eval_duration": 8654475000
+    }
+  },
+  {
+    "contract_name": "unit_07",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "High",
+        "explanation": "The addition operation is wrapped in an 'unchecked' block. Since the variable 'used' is a uint8, adding 'amount' can cause the value to wrap around if the sum exceeds 255, leading to an integer overflow."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [\n      6\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The addition operation is wrapped in an 'unchecked' block. Since the variable 'used' is a uint8, adding 'amount' can cause the value to wrap around if the sum exceeds 255, leading to an integer overflow.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.716636666998966,
+    "timestamp": "2026-10-01T20:51:57.090472+00:00",
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6713568834,
+      "load_duration": 1117084,
+      "prompt_eval_count": 218,
+      "prompt_eval_duration": 544221000,
+      "eval_count": 105,
+      "eval_duration": 6133353000
+    }
+  },
+  {
+    "contract_name": "unit_08",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.8970805419958197,
+    "timestamp": "2026-10-01T20:51:57.989504+00:00",
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 893005125,
+      "load_duration": 1414750,
+      "prompt_eval_count": 215,
+      "prompt_eval_duration": 540922000,
+      "eval_count": 7,
+      "eval_duration": 349278000
+    }
+  },
+  {
+    "contract_name": "unit_09",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "High",
+        "explanation": "The subtraction operation `remaining -= amount` is performed inside an `unchecked` block. In Solidity 0.8.x, while arithmetic is checked by default, the `unchecked` keyword explicitly disables these checks, allowing the value to wrap around (underflow) if `amount` is greater than `remaining`."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [\n      6\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The subtraction operation `remaining -= amount` is performed inside an `unchecked` block. In Solidity 0.8.x, while arithmetic is checked by default, the `unchecked` keyword explicitly disables these checks, allowing the value to wrap around (underflow) if `amount` is greater than `remaining`.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.585029000008944,
+    "timestamp": "2026-10-01T20:52:05.576090+00:00",
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7581282958,
+      "load_duration": 1238791,
+      "prompt_eval_count": 226,
+      "prompt_eval_duration": 549195000,
+      "eval_count": 120,
+      "eval_duration": 7028942000
+    }
+  },
+  {
+    "contract_name": "unit_10",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.9001254579925444,
+    "timestamp": "2026-10-01T20:52:06.477923+00:00",
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 896228417,
+      "load_duration": 1186375,
+      "prompt_eval_count": 223,
+      "prompt_eval_duration": 548055000,
+      "eval_count": 7,
+      "eval_duration": 345623000
+    }
+  },
+  {
+    "contract_name": "unit_11",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "High",
+        "explanation": "The multiplication of 'quantity' and 'unitPrice' is performed inside an 'unchecked' block. In Solidity 0.8.x, while arithmetic is checked by default, the 'unchecked' keyword explicitly disables these checks, allowing the 'total' variable to overflow or underflow if the product exceeds the maximum value of uint256."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"integer_overflow\",\n    \"line_numbers\": [\n      6\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The multiplication of 'quantity' and 'unitPrice' is performed inside an 'unchecked' block. In Solidity 0.8.x, while arithmetic is checked by default, the 'unchecked' keyword explicitly disables these checks, allowing the 'total' variable to overflow or underflow if the product exceeds the maximum value of uint256.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 8.061990832997253,
+    "timestamp": "2026-10-01T20:52:14.541561+00:00",
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 8058437750,
+      "load_duration": 931708,
+      "prompt_eval_count": 232,
+      "prompt_eval_duration": 553477000,
+      "eval_count": 126,
+      "eval_duration": 7502087000
+    }
+  },
+  {
+    "contract_name": "unit_12",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.9188723750121426,
+    "timestamp": "2026-10-01T20:52:15.461964+00:00",
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 915023583,
+      "load_duration": 1112958,
+      "prompt_eval_count": 229,
+      "prompt_eval_duration": 559272000,
+      "eval_count": 7,
+      "eval_duration": 353310000
+    }
+  },
+  {
+    "contract_name": "unit_13",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          8
+        ],
+        "severity": "High",
+        "explanation": "The contract updates the state variable 'completed' before making an external call, but the state change is not sufficient to prevent a reentrancy attack if other functions were to rely on 'completed'. More importantly, the 'completed' flag is set to true before the call, but the contract lacks a non-reentrant guard. If a malicious contract receives the funds and calls back into 'execute' (or other functions in a larger contract context), it could potentially interact with the contract state in an unintended way before the first execution finishes."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      8\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates the state variable 'completed' before making an external call, but the state change is not sufficient to prevent a reentrancy attack if other functions were to rely on 'completed'. More importantly, the 'completed' flag is set to true before the call, but the contract lacks a non-reentrant guard. If a malicious contract receives the funds and calls back into 'execute' (or other functions in a larger contract context), it could potentially interact with the contract state in an unintended way before the first execution finishes.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 10.575387750024674,
+    "timestamp": "2026-10-01T20:52:26.040026+00:00",
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10571703875,
+      "load_duration": 1066584,
+      "prompt_eval_count": 238,
+      "prompt_eval_duration": 559850000,
+      "eval_count": 164,
+      "eval_duration": 10009152000
+    }
+  },
+  {
+    "contract_name": "unit_14",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          8
+        ],
+        "severity": "High",
+        "explanation": "The contract updates the state variable 'completed' before the external call, but the state change is not sufficient to prevent reentrancy if other functions rely on 'completed'. More importantly, the 'completed' flag is set to true before the call, but if there were other functions interacting with this state, the lack of a non-reentrant guard or a check before the call allows an attacker to re-enter the contract during the execution of the call."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      8\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates the state variable 'completed' before the external call, but the state change is not sufficient to prevent reentrancy if other functions rely on 'completed'. More importantly, the 'completed' flag is set to true before the call, but if there were other functions interacting with this state, the lack of a non-reentrant guard or a check before the call allows an attacker to re-enter the contract during the execution of the call.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 9.425052709004376,
+    "timestamp": "2026-10-01T20:52:35.466687+00:00",
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 9420782667,
+      "load_duration": 6751750,
+      "prompt_eval_count": 241,
+      "prompt_eval_duration": 565484000,
+      "eval_count": 148,
+      "eval_duration": 8846959000
+    }
+  },
+  {
+    "contract_name": "unit_15",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.9140883749932982,
+    "timestamp": "2026-10-01T20:52:36.382929+00:00",
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 910164042,
+      "load_duration": 1439875,
+      "prompt_eval_count": 233,
+      "prompt_eval_duration": 556007000,
+      "eval_count": 7,
+      "eval_duration": 351117000
+    }
+  },
+  {
+    "contract_name": "unit_16",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          8
+        ],
+        "severity": "High",
+        "explanation": "The contract updates the state variable 'completed' before the external call, but the call is made to an arbitrary address. While the state change happens before the call, the 'completed' flag is not checked before the call is made, and the contract does not use a reentrancy guard. If this contract were part of a larger system where 'completed' was intended to guard access, the lack of a mutex or proper state management logic before the call could allow for reentrancy if other functions rely on 'completed'."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      8\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates the state variable 'completed' before the external call, but the call is made to an arbitrary address. While the state change happens before the call, the 'completed' flag is not checked before the call is made, and the contract does not use a reentrancy guard. If this contract were part of a larger system where 'completed' was intended to guard access, the lack of a mutex or proper state management logic before the call could allow for reentrancy if other functions rely on 'completed'.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 10.387379292020341,
+    "timestamp": "2026-10-01T20:52:46.771927+00:00",
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10383201959,
+      "load_duration": 1304459,
+      "prompt_eval_count": 236,
+      "prompt_eval_duration": 562078000,
+      "eval_count": 161,
+      "eval_duration": 9817862000
+    }
+  },
+  {
+    "contract_name": "unit_17",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          7,
+          10
+        ],
+        "severity": "High",
+        "explanation": "The contract updates the state variable 'completed' before the external call in the 'execute' function, but the 'execute' function does not have a reentrancy guard. While 'completed' is set to true before the call, the logic relies on this state to prevent multiple executions. However, if other functions were to rely on 'completed' being false to gate logic, the current flow is risky. More importantly, the 'execute' function performs an external call to an untrusted address. If the contract were to be expanded or if 'completed' was intended to be a check for subsequent actions, the lack of a non-reentrant modifier or a check-effects-interactions pattern is a risk."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      7,\n      10\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates the state variable 'completed' before the external call in the 'execute' function, but the 'execute' function does not have a reentrancy guard. While 'completed' is set to true before the call, the logic relies on this state to prevent multiple executions. However, if other functions were to rely on 'completed' being false to gate logic, the current flow is risky. More importantly, the 'execute' function performs an external call to an untrusted address. If the contract were to be expanded or if 'completed' was intended to be a check for subsequent actions, the lack of a non-reentrant modifier or a check-effects-interactions pattern is a risk.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 13.345567584008677,
+    "timestamp": "2026-10-01T20:53:00.119405+00:00",
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 13340949000,
+      "load_duration": 1225541,
+      "prompt_eval_count": 272,
+      "prompt_eval_duration": 755363000,
+      "eval_count": 204,
+      "eval_duration": 12582477000
+    }
+  },
+  {
+    "contract_name": "unit_18",
+    "model": "gemma4",
+    "display_name": "Gemma4-12B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          7,
+          10
+        ],
+        "severity": "High",
+        "explanation": "The contract updates the state variable 'completed' before the external call in the 'execute' function, but the 'execute' function itself does not have a reentrancy guard. While the state change happens before the call, the 'execute' function can still be re-entered if the 'receiver' is a contract that calls 'execute' again. More importantly, the logic relies on 'completed' to signify state, but since 'execute' is public and 'completed' is set to true immediately before the call, there is no protection against multiple calls if the logic were more complex. In this specific snippet, the primary risk is that the state change is not protected by a mutex, and the contract relies on a single boolean that doesn't prevent concurrent execution logic."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"vulnerability_type\": \"reentrancy\",\n    \"line_numbers\": [\n      7,\n      10\n    ],\n    \"severity\": \"High\",\n    \"explanation\": \"The contract updates the state variable 'completed' before the external call in the 'execute' function, but the 'execute' function itself does not have a reentrancy guard. While the state change happens before the call, the 'execute' function can still be re-entered if the 'receiver' is a contract that calls 'execute' again. More importantly, the logic relies on 'completed' to signify state, but since 'execute' is public and 'completed' is set to true immediately before the call, there is no protection against multiple calls if the logic were more complex. In this specific snippet, the primary risk is that the state change is not protected by a mutex, and the contract relies on a single boolean that doesn't prevent concurrent execution logic.\"\n  }\n]\n```",
+    "parse_error": null,
+    "inference_time": 14.239181666984223,
+    "timestamp": "2026-10-01T20:53:14.361870+00:00",
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 14234692958,
+      "load_duration": 9327417,
+      "prompt_eval_count": 275,
+      "prompt_eval_duration": 762065000,
+      "eval_count": 217,
+      "eval_duration": 13397634000
+    }
+  }
+]

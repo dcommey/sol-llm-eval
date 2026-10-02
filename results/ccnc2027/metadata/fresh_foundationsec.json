@@ -1,0 +1,70 @@
+{
+  "tag": "hf.co/fdtn-ai/Foundation-Sec-1.1-8B-Instruct-Q4_K_M-GGUF:Q4_K_M",
+  "display_name": "Foundation-Sec-1.1-8B",
+  "digest": "fe139059fbf26fc75206c32ded544695b11b515751d333f593cb10c963c81299",
+  "details": {
+    "parent_model": "hf.co/fdtn-ai/Foundation-Sec-1.1-8B-Instruct-Q4_K_M-GGUF:Q4_K_M",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "8.03B",
+    "quantization_level": "Q4_K_M"
+  },
+  "model_info": {
+    "general.architecture": "llama",
+    "general.base_model.0.name": "Foundation Sec 8B",
+    "general.base_model.0.organization": "Fdtn Ai",
+    "general.base_model.0.repo_url": "https://huggingface.co/fdtn-ai/Foundation-Sec-8B",
+    "general.base_model.count": 1,
+    "general.basename": "Foundation-Sec-1.1",
+    "general.file_type": 15,
+    "general.finetune": "Instruct",
+    "general.languages": [
+      "en"
+    ],
+    "general.license": "other",
+    "general.parameter_count": 8030326848,
+    "general.quantization_version": 2,
+    "general.size_label": "8B",
+    "general.tags": [
+      "security",
+      "llama",
+      "text-generation"
+    ],
+    "general.type": "model",
+    "llama.attention.head_count": 32,
+    "llama.attention.head_count_kv": 8,
+    "llama.attention.key_length": 128,
+    "llama.attention.layer_norm_rms_epsilon": 1e-05,
+    "llama.attention.value_length": 128,
+    "llama.block_count": 32,
+    "llama.context_length": 65536,
+    "llama.embedding_length": 4096,
+    "llama.feed_forward_length": 14336,
+    "llama.rope.dimension_count": 128,
+    "llama.rope.freq_base": 500000,
+    "llama.vocab_size": 128264,
+    "tokenizer.ggml.add_bos_token": true,
+    "tokenizer.ggml.add_sep_token": false,
+    "tokenizer.ggml.bos_token_id": 128000,
+    "tokenizer.ggml.eos_token_id": 128001,
+    "tokenizer.ggml.merges": [],
+    "tokenizer.ggml.model": "gpt2",
+    "tokenizer.ggml.padding_token_id": 128002,
+    "tokenizer.ggml.pre": "llama-bpe",
+    "tokenizer.ggml.seperator_token_id": 128001,
+    "tokenizer.ggml.token_type": [],
+    "tokenizer.ggml.tokens": []
+  },
+  "template": "{{- range .Messages }}{{ if eq .Role \"system\" }}{{ printf \"<|system|>\\n%s\\n\" .Content }}{{ else if eq .Role \"user\" }}{{ printf \"<|user|>\\n%s\\n\" .Content }}{{ else if eq .Role \"assistant\" }}{{ printf \"<|assistant|>\\n%s<|end_of_text|>\\n\" .Content }}{{ end }}{{ end }}{{ printf \"<|assistant|>\\n\" }}",
+  "parameters": "stop                           \"<|end_of_text|>\"",
+  "ollama_version": "0.34.4",
+  "hardware": "Apple M6",
+  "memory_bytes": 25769803776,
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "protocol_sha256": "23df28f002ad46a6372fe376c1e56dc0e643e56282357fba57b80d31b727278d",
+  "dataset_sha256": "b59461627385480716a8ac98a1af18b667bb984f3b288af12fe6161b5379f2d1",
+  "suite": "fresh"
+}

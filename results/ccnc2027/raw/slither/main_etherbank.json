@@ -1,0 +1,246 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdrawBalance",
+              "source_mapping": {
+                "start": 412,
+                "length": 217,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "is_dependency": false,
+                "lines": [
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ],
+                "starting_column": 2,
+                "ending_column": 3
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "EtherBank",
+                  "source_mapping": {
+                    "start": 175,
+                    "length": 460,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 0
+                  }
+                },
+                "signature": "withdrawBalance()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "! (msg.sender.call.value(amountToWithdraw)())",
+              "source_mapping": {
+                "start": 538,
+                "length": 44,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "is_dependency": false,
+                "lines": [
+                  21
+                ],
+                "starting_column": 7,
+                "ending_column": 51
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawBalance",
+                  "source_mapping": {
+                    "start": 412,
+                    "length": 217,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23
+                    ],
+                    "starting_column": 2,
+                    "ending_column": 3
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "EtherBank",
+                      "source_mapping": {
+                        "start": 175,
+                        "length": 460,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          8,
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "withdrawBalance()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "userBalances[msg.sender] = 0",
+              "source_mapping": {
+                "start": 597,
+                "length": 28,
+                "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                "is_dependency": false,
+                "lines": [
+                  22
+                ],
+                "starting_column": 3,
+                "ending_column": 31
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdrawBalance",
+                  "source_mapping": {
+                    "start": 412,
+                    "length": 217,
+                    "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23
+                    ],
+                    "starting_column": 2,
+                    "ending_column": 3
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "EtherBank",
+                      "source_mapping": {
+                        "start": 175,
+                        "length": 460,
+                        "filename_relative": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "filename_absolute": "<repo>/data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "filename_short": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          8,
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18,
+                          19,
+                          20,
+                          21,
+                          22,
+                          23,
+                          24,
+                          25
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 0
+                      }
+                    },
+                    "signature": "withdrawBalance()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "userBalances"
+              }
+            }
+          ],
+          "description": "Reentrancy in EtherBank.withdrawBalance() (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#18-23):\n\tExternal calls:\n\t- ! (msg.sender.call.value(amountToWithdraw)()) (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#21)\n\tState variables written after the call(s):\n\t- userBalances[msg.sender] = 0 (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#22)\n\tEtherBank.userBalances (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#9) can be used in cross function reentrancies:\n\t- EtherBank.addToBalance() (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#14-16)\n\t- EtherBank.getBalance(address) (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#10-12)\n\t- EtherBank.withdrawBalance() (data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#18-23)\n",
+          "markdown": "Reentrancy in [EtherBank.withdrawBalance()](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L18-L23):\n\tExternal calls:\n\t- [! (msg.sender.call.value(amountToWithdraw)())](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L21)\n\tState variables written after the call(s):\n\t- [userBalances[msg.sender] = 0](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L22)\n\t[EtherBank.userBalances](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L9) can be used in cross function reentrancies:\n\t- [EtherBank.addToBalance()](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L14-L16)\n\t- [EtherBank.getBalance(address)](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L10-L12)\n\t- [EtherBank.withdrawBalance()](data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L18-L23)\n",
+          "first_markdown_element": "data/raw/smartbugs-curated/dataset/reentrancy/etherbank.sol#L18-L23",
+          "id": "99fcbcd55a1ef9f85bcddd9ac6e61daecfc4d71155a5269f07c250eff7ea432a",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

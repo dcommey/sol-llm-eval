@@ -1,0 +1,11 @@
+{
+  "correction": "Generic Foundation-Sec GGUF import had no chat template; install a literal translation of the publisher template before any Foundation-Sec prediction. No weight, prompt task or inference-option change.",
+  "upstream_repository": "fdtn-ai/Foundation-Sec-1.1-8B-Instruct",
+  "upstream_revision": "243b27655e01c87cc04fdb88632be7cd9e55ac1f",
+  "upstream_chat_template_sha256": "ac7498a36a719da630e99d48e6ebc4409de85a77556c2b6159eeb735bcbd11df",
+  "local_modelfile_sha256": "8260366cb4c1250221ed992cbcd488fa87f67a0ebf47a51be0bd09d1a3a5eb65",
+  "gguf_weight_layer_sha256": "5813d725b38f0da1eac34486e44b70b0f728c2e2881c96873def69e76f8421ed",
+  "corrected_digest": "fe139059fbf26fc75206c32ded544695b11b515751d333f593cb10c963c81299",
+  "original_configuration_backup_tag": "foundationsec-ccnc-import-original:8b",
+  "predictions_before_correction": 0
+}

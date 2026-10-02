@@ -137,6 +137,7 @@ class VulnerabilityEvaluator:
         fp = 0  # False positives
         tn = 0  # True negatives
         fn = 0  # False negatives
+        clean_fp = 0  # Clean contracts with at least one reported issue
         
         for idx, row in ground_truth.iterrows():
             contract_name = row['contract_name']
@@ -147,47 +148,40 @@ class VulnerabilityEvaluator:
             pred_row = predictions[predictions['contract_name'] == contract_name]
             
             if len(pred_row) == 0:
-                # No predictions for this contract
-                fn += len(gt_vulns)
+                if gt_vulns:
+                    fn += len(set(gt_vulns))
+                else:
+                    tn += 1
                 continue
-            
+
             pred_vulns = pred_row.iloc[0]['vulnerabilities']
-            
-            if not pred_vulns or len(pred_vulns) == 0:
-                # Model found no vulnerabilities, but there are some
-                fn += len(gt_vulns)
-            else:
-                # Track which ground truth vulns have been matched
-                matched_gt_indices = set()
-                
-                for pred_vuln in pred_vulns:
-                    pred_type = self._normalize_vulnerability_type(pred_vuln['vulnerability_type'])
-                    matched = False
-                    
-                    # Try to match with an unmatched ground truth vulnerability
-                    for gt_idx, gt_vuln in enumerate(gt_vulns):
-                        if gt_idx in matched_gt_indices:
-                            continue  # Already matched
-                        
-                        gt_type = self._normalize_vulnerability_type(gt_vuln)
-                        if pred_type == gt_type:
-                            tp += 1
-                            matched_gt_indices.add(gt_idx)
-                            matched = True
-                            break
-                    
-                    if not matched:
-                        # Prediction doesn't match any unmatched ground truth
-                        fp += 1
-                
-                # Unmatched ground truth = false negatives
-                fn += len(gt_vulns) - len(matched_gt_indices)
+            gt_types = {
+                self._normalize_vulnerability_type(vuln)
+                for vuln in gt_vulns
+            }
+            pred_types = {
+                self._normalize_vulnerability_type(
+                    vuln.get('vulnerability_type', '')
+                )
+                for vuln in pred_vulns
+                if vuln.get('vulnerability_type')
+            }
+
+            if not gt_types:
+                if pred_types:
+                    clean_fp += 1
+                else:
+                    tn += 1
+
+            tp += len(pred_types & gt_types)
+            fp += len(pred_types - gt_types)
+            fn += len(gt_types - pred_types)
         
         # Calculate metrics
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
         f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
-        fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
+        fpr = clean_fp / (clean_fp + tn) if (clean_fp + tn) > 0 else 0.0
         fnr = fn / (fn + tp) if (fn + tp) > 0 else 0.0
         
         logger.info(f"Evaluation: TP={tp}, FP={fp}, TN={tn}, FN={fn}")
@@ -223,18 +217,23 @@ class VulnerabilityEvaluator:
             Dictionary mapping vulnerability type to metrics
         """
         results = {}
-        
+
         for vuln_type in vulnerability_types:
-            # Filter to only this vulnerability type
-            gt_filtered = ground_truth[
-                ground_truth['vulnerability_type'] == vuln_type
-            ].copy()
-            
-            # Filter predictions to contracts in this subset
-            contract_names = set(gt_filtered['contract_name'])
-            pred_filtered = predictions[
-                predictions['contract_name'].isin(contract_names)
-            ].copy()
+            # Convert the multi-label task into one binary task per class.
+            gt_filtered = ground_truth.copy()
+            gt_filtered['ground_truth_vulnerabilities'] = gt_filtered[
+                'ground_truth_vulnerabilities'
+            ].apply(lambda labels: [vuln_type] if vuln_type in labels else [])
+
+            pred_filtered = predictions.copy()
+            pred_filtered['vulnerabilities'] = pred_filtered['vulnerabilities'].apply(
+                lambda reports: [
+                    report for report in reports
+                    if self._normalize_vulnerability_type(
+                        report.get('vulnerability_type', '')
+                    ) == vuln_type
+                ]
+            )
             
             # Evaluate
             metrics = self.evaluate_predictions(pred_filtered, gt_filtered)

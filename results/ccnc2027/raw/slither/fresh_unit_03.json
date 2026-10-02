@@ -1,0 +1,280 @@
+{
+  "returncode": 0,
+  "stdout": {
+    "success": true,
+    "error": null,
+    "results": {
+      "detectors": [
+        {
+          "elements": [
+            {
+              "type": "function",
+              "name": "withdraw",
+              "source_mapping": {
+                "start": 169,
+                "length": 147,
+                "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                "is_dependency": false,
+                "lines": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "starting_column": 5,
+                "ending_column": 6
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "contract",
+                  "name": "Unit",
+                  "source_mapping": {
+                    "start": 25,
+                    "length": 402,
+                    "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10
+                    ],
+                    "starting_column": 1,
+                    "ending_column": 2
+                  }
+                },
+                "signature": "withdraw()"
+              }
+            },
+            {
+              "type": "node",
+              "name": "_pay(amount)",
+              "source_mapping": {
+                "start": 274,
+                "length": 12,
+                "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                "is_dependency": false,
+                "lines": [
+                  7
+                ],
+                "starting_column": 9,
+                "ending_column": 21
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 169,
+                    "length": 147,
+                    "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      5,
+                      6,
+                      7,
+                      8
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Unit",
+                      "source_mapping": {
+                        "start": 25,
+                        "length": 402,
+                        "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                        "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                        "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls"
+              }
+            },
+            {
+              "type": "node",
+              "name": "(ok,None) = msg.sender.call{value: amount}()",
+              "source_mapping": {
+                "start": 362,
+                "length": 47,
+                "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                "is_dependency": false,
+                "lines": [
+                  9
+                ],
+                "starting_column": 46,
+                "ending_column": 93
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "_pay",
+                  "source_mapping": {
+                    "start": 321,
+                    "length": 104,
+                    "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      9
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 109
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Unit",
+                      "source_mapping": {
+                        "start": 25,
+                        "length": 402,
+                        "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                        "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                        "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "_pay(uint256)"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "external_calls_sending_eth"
+              }
+            },
+            {
+              "type": "node",
+              "name": "credit[msg.sender] = 0",
+              "source_mapping": {
+                "start": 287,
+                "length": 22,
+                "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                "is_dependency": false,
+                "lines": [
+                  7
+                ],
+                "starting_column": 22,
+                "ending_column": 44
+              },
+              "type_specific_fields": {
+                "parent": {
+                  "type": "function",
+                  "name": "withdraw",
+                  "source_mapping": {
+                    "start": 169,
+                    "length": 147,
+                    "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                    "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                    "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                    "is_dependency": false,
+                    "lines": [
+                      5,
+                      6,
+                      7,
+                      8
+                    ],
+                    "starting_column": 5,
+                    "ending_column": 6
+                  },
+                  "type_specific_fields": {
+                    "parent": {
+                      "type": "contract",
+                      "name": "Unit",
+                      "source_mapping": {
+                        "start": 25,
+                        "length": 402,
+                        "filename_relative": "data/fresh-ccnc2027/unit_03.sol",
+                        "filename_absolute": "<repo>/data/fresh-ccnc2027/unit_03.sol",
+                        "filename_short": "data/fresh-ccnc2027/unit_03.sol",
+                        "is_dependency": false,
+                        "lines": [
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10
+                        ],
+                        "starting_column": 1,
+                        "ending_column": 2
+                      }
+                    },
+                    "signature": "withdraw()"
+                  }
+                }
+              },
+              "additional_fields": {
+                "underlying_type": "variables_written",
+                "variable_name": "credit"
+              }
+            }
+          ],
+          "description": "Reentrancy in Unit.withdraw() (data/fresh-ccnc2027/unit_03.sol#5-8):\n\tExternal calls:\n\t- _pay(amount) (data/fresh-ccnc2027/unit_03.sol#7)\n\t\t- (ok,None) = msg.sender.call{value: amount}() (data/fresh-ccnc2027/unit_03.sol#9)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (data/fresh-ccnc2027/unit_03.sol#7)\n\tUnit.credit (data/fresh-ccnc2027/unit_03.sol#3) can be used in cross function reentrancies:\n\t- Unit.credit (data/fresh-ccnc2027/unit_03.sol#3)\n\t- Unit.deposit() (data/fresh-ccnc2027/unit_03.sol#4)\n\t- Unit.withdraw() (data/fresh-ccnc2027/unit_03.sol#5-8)\n",
+          "markdown": "Reentrancy in [Unit.withdraw()](data/fresh-ccnc2027/unit_03.sol#L5-L8):\n\tExternal calls:\n\t- [_pay(amount)](data/fresh-ccnc2027/unit_03.sol#L7)\n\t\t- [(ok,None) = msg.sender.call{value: amount}()](data/fresh-ccnc2027/unit_03.sol#L9)\n\tState variables written after the call(s):\n\t- [credit[msg.sender] = 0](data/fresh-ccnc2027/unit_03.sol#L7)\n\t[Unit.credit](data/fresh-ccnc2027/unit_03.sol#L3) can be used in cross function reentrancies:\n\t- [Unit.credit](data/fresh-ccnc2027/unit_03.sol#L3)\n\t- [Unit.deposit()](data/fresh-ccnc2027/unit_03.sol#L4)\n\t- [Unit.withdraw()](data/fresh-ccnc2027/unit_03.sol#L5-L8)\n",
+          "first_markdown_element": "data/fresh-ccnc2027/unit_03.sol#L5-L8",
+          "id": "ed4499a81124f908a8cbda49925d28e65a1c47a65e464c931a7c3ca1fd216d1f",
+          "check": "reentrancy-eth",
+          "impact": "High",
+          "confidence": "Medium",
+          "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1"
+        }
+      ]
+    }
+  },
+  "stderr": ""
+}

@@ -1,0 +1,637 @@
+[
+  {
+    "contract_name": "unit_01",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The withdraw function calls msg.sender.call without checking the return value, which could allow a reentrant call to the contract. This could potentially lead to reentrancy attacks if the called contract interacts with this contract again."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The unchecked low-level call in the withdraw function does not check the return value of the call, which could lead to unexpected behavior if the call fails. However, since Solidity 0.8, unchecked blocks are used to optimize performance, and the failure of a low-level call is typically not a vulnerability unless the contract logic relies on the success of the call."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The withdraw function calls msg.sender.call without checking the return value, which could allow a reentrant call to the contract. This could potentially lead to reentrancy attacks if the called contract interacts with this contract again.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The unchecked low-level call in the withdraw function does not check the return value of the call, which could lead to unexpected behavior if the call fails. However, since Solidity 0.8, unchecked blocks are used to optimize performance, and the failure of a low-level call is typically not a vulnerability unless the contract logic relies on the success of the call.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.433174000005238,
+    "timestamp": "2026-10-01T20:56:12.436408+00:00",
+    "source_sha256": "3a10f66204b56ebbf02b4e64c511f315652a8dd3dd3ba9e71c72bc020e964067",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7429623500,
+      "load_duration": 7049791,
+      "prompt_eval_count": 254,
+      "prompt_eval_duration": 298743000,
+      "eval_count": 198,
+      "eval_duration": 7115436000
+    }
+  },
+  {
+    "contract_name": "unit_02",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The withdraw function calls msg.sender.call without checking the return value, which could allow a reentrant call to the contract. This could potentially lead to reentrancy attacks if the called contract interacts with this contract again."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The unchecked low-level call in the withdraw function does not check the return value of the call, which could lead to unexpected behavior if the call fails. However, since Solidity 0.8, checked arithmetic is the default, and the use of unchecked blocks is intentional here to optimize gas usage. The severity is medium because the failure of the call is not handled, but the risk is mitigated by the checked arithmetic outside the unchecked block."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The withdraw function calls msg.sender.call without checking the return value, which could allow a reentrant call to the contract. This could potentially lead to reentrancy attacks if the called contract interacts with this contract again.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The unchecked low-level call in the withdraw function does not check the return value of the call, which could lead to unexpected behavior if the call fails. However, since Solidity 0.8, checked arithmetic is the default, and the use of unchecked blocks is intentional here to optimize gas usage. The severity is medium because the failure of the call is not handled, but the risk is mitigated by the checked arithmetic outside the unchecked block.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.798248749983031,
+    "timestamp": "2026-10-01T20:56:20.235494+00:00",
+    "source_sha256": "8b6f11388c8277d570dad6785a0f7cc1d268cdff863514feda15bfb3735117ce",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7794476708,
+      "load_duration": 1146917,
+      "prompt_eval_count": 253,
+      "prompt_eval_duration": 127915000,
+      "eval_count": 214,
+      "eval_duration": 7654508000
+    }
+  },
+  {
+    "contract_name": "unit_03",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The function _pay makes an external call to msg.sender without reentrancy protection. This could allow a malicious contract to call back into withdraw before the balance is reset to zero, potentially leading to reentrancy attacks."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The low-level call in _pay does not check the return value directly. If the call fails, the transaction will revert, but the contract state will not be rolled back. This could lead to unexpected behavior if the called contract has side effects."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The function _pay makes an external call to msg.sender without reentrancy protection. This could allow a malicious contract to call back into withdraw before the balance is reset to zero, potentially leading to reentrancy attacks.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The low-level call in _pay does not check the return value directly. If the call fails, the transaction will revert, but the contract state will not be rolled back. This could lead to unexpected behavior if the called contract has side effects.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.613255667005433,
+    "timestamp": "2026-10-01T20:56:26.849574+00:00",
+    "source_sha256": "3547ee96e9f9572dbe7117d61c440ccb20afa43feb83c86c00104fac8b6d9690",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6610109084,
+      "load_duration": 931917,
+      "prompt_eval_count": 268,
+      "prompt_eval_duration": 132366000,
+      "eval_count": 175,
+      "eval_duration": 6469114000
+    }
+  },
+  {
+    "contract_name": "unit_04",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The function _pay makes an external call to msg.sender without reentrancy protection. This could allow a malicious contract to call back into withdraw before the balance is reset to zero, potentially leading to reentrancy attacks."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The low-level call in _pay does not check the return value directly. If the call fails, the transaction will revert, but the contract does not explicitly check for the success of the call. This could lead to unexpected reverts and loss of gas."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The function _pay makes an external call to msg.sender without reentrancy protection. This could allow a malicious contract to call back into withdraw before the balance is reset to zero, potentially leading to reentrancy attacks.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The low-level call in _pay does not check the return value directly. If the call fails, the transaction will revert, but the contract does not explicitly check for the success of the call. This could lead to unexpected reverts and loss of gas.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.697502458002418,
+    "timestamp": "2026-10-01T20:56:33.548675+00:00",
+    "source_sha256": "fbc92978f0df82e4d36f8140f19feed45cfa2dcd496eec41714322e619a1b601",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6693523333,
+      "load_duration": 1156208,
+      "prompt_eval_count": 268,
+      "prompt_eval_duration": 131410000,
+      "eval_count": 177,
+      "eval_duration": 6548941000
+    }
+  },
+  {
+    "contract_name": "unit_05",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The 'withdraw' function calls an external contract without checking the return value of the low-level call, which could potentially allow a reentrant call if the external contract is malicious. This is a reentrancy vulnerability."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The 'withdraw' function uses an unchecked low-level call without checking the return value, which could lead to unexpected behavior if the call fails. This is an unchecked low-level call vulnerability."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The 'withdraw' function calls an external contract without checking the return value of the low-level call, which could potentially allow a reentrant call if the external contract is malicious. This is a reentrancy vulnerability.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The 'withdraw' function uses an unchecked low-level call without checking the return value, which could lead to unexpected behavior if the call fails. This is an unchecked low-level call vulnerability.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.167252249986632,
+    "timestamp": "2026-10-01T20:56:39.717990+00:00",
+    "source_sha256": "1c36d87840e125135fb7dc30a25f79481f8ab4d6bd952822c8e069c6e138673d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6163952458,
+      "load_duration": 1045958,
+      "prompt_eval_count": 261,
+      "prompt_eval_duration": 130521999,
+      "eval_count": 162,
+      "eval_duration": 6022007000
+    }
+  },
+  {
+    "contract_name": "unit_06",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          14
+        ],
+        "severity": "high",
+        "explanation": "The withdraw function calls an external contract without checking the return value of the low-level call, which could potentially allow a reentrant call if the external contract is malicious. This is a reentrancy vulnerability."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          14
+        ],
+        "severity": "medium",
+        "explanation": "The withdraw function uses an unchecked low-level call to transfer Ether. The return value is not checked, which means that if the call fails, the contract will not revert and the state changes will be left in an undefined state. This is an unchecked low-level call vulnerability."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [14],\n        \"severity\": \"high\",\n        \"explanation\": \"The withdraw function calls an external contract without checking the return value of the low-level call, which could potentially allow a reentrant call if the external contract is malicious. This is a reentrancy vulnerability.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [14],\n        \"severity\": \"medium\",\n        \"explanation\": \"The withdraw function uses an unchecked low-level call to transfer Ether. The return value is not checked, which means that if the call fails, the contract will not revert and the state changes will be left in an undefined state. This is an unchecked low-level call vulnerability.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.797196375002386,
+    "timestamp": "2026-10-01T20:56:46.515726+00:00",
+    "source_sha256": "84fad03aebc98970d37a61b0589750e56f91cbdcc1bd62786d6d639606030a84",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6795140583,
+      "load_duration": 1076750,
+      "prompt_eval_count": 261,
+      "prompt_eval_duration": 132000000,
+      "eval_count": 177,
+      "eval_duration": 6660628000
+    }
+  },
+  {
+    "contract_name": "unit_07",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          6
+        ],
+        "severity": "medium",
+        "explanation": "The unchecked block is used to avoid overflow checks, which can lead to silent failures if the addition overflows. However, since this is a simple arithmetic operation and not a low-level call, it's not a direct unchecked low-level call vulnerability. It's important to note that unchecked blocks should be used judiciously and only when the risk of overflow/underflow is negligible and well understood."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [6],\n        \"severity\": \"medium\",\n        \"explanation\": \"The unchecked block is used to avoid overflow checks, which can lead to silent failures if the addition overflows. However, since this is a simple arithmetic operation and not a low-level call, it's not a direct unchecked low-level call vulnerability. It's important to note that unchecked blocks should be used judiciously and only when the risk of overflow/underflow is negligible and well understood.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 4.682898833998479,
+    "timestamp": "2026-10-01T20:56:51.200538+00:00",
+    "source_sha256": "55e9996ee0fd487e9707ea0a33df8524f26a17f8dbf1cd057fd4f556534d0980",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 4678769792,
+      "load_duration": 1474625,
+      "prompt_eval_count": 201,
+      "prompt_eval_duration": 127152000,
+      "eval_count": 124,
+      "eval_duration": 4540302000
+    }
+  },
+  {
+    "contract_name": "unit_08",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.3232602080097422,
+    "timestamp": "2026-10-01T20:56:51.525726+00:00",
+    "source_sha256": "39773fa350822b5fa0a243bf97609fc4fbc6fd7fdfe5a9720dc25b8b9e4523a5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 318654375,
+      "load_duration": 1426750,
+      "prompt_eval_count": 198,
+      "prompt_eval_duration": 127423000,
+      "eval_count": 6,
+      "eval_duration": 188630000
+    }
+  },
+  {
+    "contract_name": "unit_09",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          6
+        ],
+        "severity": "medium",
+        "explanation": "The function 'reserve' uses an unchecked block which can lead to reentrancy vulnerabilities if external calls are made within this block. However, in this specific case, there are no external calls, so the reentrancy risk is minimal. Nonetheless, it's good practice to avoid unchecked blocks when possible."
+      },
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "low",
+        "explanation": "Solidity 0.8 performs checked arithmetic by default, which means integer overflows and underflows are prevented. However, the use of the 'unchecked' block on line 6 bypasses this safety mechanism, potentially allowing for integer overflows if 'amount' is greater than 'remaining'."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [],
+        "severity": "low",
+        "explanation": "There are no low-level calls (calls to external contracts, calls to delegatecalls, or calls to low-level functions like call, delegatecall, or send) in the provided code, so there is no unchecked low-level call vulnerability to report."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [6],\n        \"severity\": \"medium\",\n        \"explanation\": \"The function 'reserve' uses an unchecked block which can lead to reentrancy vulnerabilities if external calls are made within this block. However, in this specific case, there are no external calls, so the reentrancy risk is minimal. Nonetheless, it's good practice to avoid unchecked blocks when possible.\"\n    },\n    {\n        \"vulnerability_type\": \"integer_overflow\",\n        \"line_numbers\": [6],\n        \"severity\": \"low\",\n        \"explanation\": \"Solidity 0.8 performs checked arithmetic by default, which means integer overflows and underflows are prevented. However, the use of the 'unchecked' block on line 6 bypasses this safety mechanism, potentially allowing for integer overflows if 'amount' is greater than 'remaining'.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [],\n        \"severity\": \"low\",\n        \"explanation\": \"There are no low-level calls (calls to external contracts, calls to delegatecalls, or calls to low-level functions like call, delegatecall, or send) in the provided code, so there is no unchecked low-level call vulnerability to report.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 10.632456374994945,
+    "timestamp": "2026-10-01T20:57:02.159794+00:00",
+    "source_sha256": "9f77a8cb7b945e13928e82357c8e51ea45daf05c5b175bcdbef86c5e6e89ef8d",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10628758291,
+      "load_duration": 1510958,
+      "prompt_eval_count": 204,
+      "prompt_eval_duration": 128532999,
+      "eval_count": 286,
+      "eval_duration": 10497596000
+    }
+  },
+  {
+    "contract_name": "unit_10",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          6
+        ],
+        "severity": "high",
+        "explanation": "The function 'reserve' modifies state (it decreases 'remaining') without reentrancy guard. An attacker could call this function again (reentrantly) after the first call has modified the state, potentially leading to unexpected behavior or loss of funds."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [],
+        "severity": "low",
+        "explanation": "There are no low-level calls in this contract, so there is no unchecked low-level call vulnerability. However, it's important to note that any future addition of low-level calls should be carefully reviewed to ensure proper handling of failure conditions."
+      },
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "low",
+        "explanation": "In Solidity 0.8, arithmetic operations automatically check for overflows and underflows, so there is no risk of integer overflow or underflow in the 'remaining -= amount;' line. However, if unchecked {} were used, it could potentially lead to an overflow or underflow."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [6],\n        \"severity\": \"high\",\n        \"explanation\": \"The function 'reserve' modifies state (it decreases 'remaining') without reentrancy guard. An attacker could call this function again (reentrantly) after the first call has modified the state, potentially leading to unexpected behavior or loss of funds.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [],\n        \"severity\": \"low\",\n        \"explanation\": \"There are no low-level calls in this contract, so there is no unchecked low-level call vulnerability. However, it's important to note that any future addition of low-level calls should be carefully reviewed to ensure proper handling of failure conditions.\"\n    },\n    {\n        \"vulnerability_type\": \"integer_overflow\",\n        \"line_numbers\": [6],\n        \"severity\": \"low\",\n        \"explanation\": \"In Solidity 0.8, arithmetic operations automatically check for overflows and underflows, so there is no risk of integer overflow or underflow in the 'remaining -= amount;' line. However, if unchecked {} were used, it could potentially lead to an overflow or underflow.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 10.12251237500459,
+    "timestamp": "2026-10-01T20:57:12.283983+00:00",
+    "source_sha256": "54a1878cc5ccacd1838849cbf19ae2b2ff89626b21f3ba92ed771b9c65c2bc9f",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10117856250,
+      "load_duration": 5306791,
+      "prompt_eval_count": 201,
+      "prompt_eval_duration": 127102000,
+      "eval_count": 271,
+      "eval_duration": 9974799000
+    }
+  },
+  {
+    "contract_name": "unit_11",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          6
+        ],
+        "severity": "high",
+        "explanation": "The function 'price' uses an unchecked block which can lead to reentrancy vulnerabilities if external calls are made within this block. However, there are no external calls in this function, so this specific instance might not be exploitable. Nonetheless, the unchecked block itself is a potential risk factor."
+      },
+      {
+        "vulnerability_type": "integer_overflow",
+        "line_numbers": [
+          6
+        ],
+        "severity": "low",
+        "explanation": "In Solidity 0.8, arithmetic operations automatically check for overflows and underflows, so there is no risk of integer overflow or underflow within the unchecked block. However, it's important to note that the unchecked block is a warning sign and should be used judiciously."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [],
+        "severity": "low",
+        "explanation": "There are no low-level calls (calls to external contracts, delegatecalls, or calls to libraries) in the provided code, so there is no unchecked low-level call vulnerability. The unchecked block itself does not constitute a low-level call vulnerability."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [6],\n        \"severity\": \"high\",\n        \"explanation\": \"The function 'price' uses an unchecked block which can lead to reentrancy vulnerabilities if external calls are made within this block. However, there are no external calls in this function, so this specific instance might not be exploitable. Nonetheless, the unchecked block itself is a potential risk factor.\"\n    },\n    {\n        \"vulnerability_type\": \"integer_overflow\",\n        \"line_numbers\": [6],\n        \"severity\": \"low\",\n        \"explanation\": \"In Solidity 0.8, arithmetic operations automatically check for overflows and underflows, so there is no risk of integer overflow or underflow within the unchecked block. However, it's important to note that the unchecked block is a warning sign and should be used judiciously.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [],\n        \"severity\": \"low\",\n        \"explanation\": \"There are no low-level calls (calls to external contracts, delegatecalls, or calls to libraries) in the provided code, so there is no unchecked low-level call vulnerability. The unchecked block itself does not constitute a low-level call vulnerability.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 10.343905874993652,
+    "timestamp": "2026-10-01T20:57:22.631004+00:00",
+    "source_sha256": "796cfc96f937c421050316af4b2ba098d9c9a08088b349295300f622bed7957c",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 10339579667,
+      "load_duration": 5389458,
+      "prompt_eval_count": 209,
+      "prompt_eval_duration": 127896000,
+      "eval_count": 281,
+      "eval_duration": 10195706000
+    }
+  },
+  {
+    "contract_name": "unit_12",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[]\n```",
+    "parse_error": null,
+    "inference_time": 0.31820449998485856,
+    "timestamp": "2026-10-01T20:57:22.951079+00:00",
+    "source_sha256": "7863fe4bc8f5d30c5ac5cfb0694614ce8eae2bc5ef1cc6a862d4a1dc10fdabd5",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 314553792,
+      "load_duration": 847792,
+      "prompt_eval_count": 206,
+      "prompt_eval_duration": 128466000,
+      "eval_count": 6,
+      "eval_duration": 176514000
+    }
+  },
+  {
+    "contract_name": "unit_13",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          10
+        ],
+        "severity": "High",
+        "explanation": "The low-level call to 'receiver.call' is not checked for failure. If the call fails, the contract may lose funds without any exception being thrown. This can be mitigated by checking the return value of the call and handling the failure appropriately."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [10],\n        \"severity\": \"High\",\n        \"explanation\": \"The low-level call to 'receiver.call' is not checked for failure. If the call fails, the contract may lose funds without any exception being thrown. This can be mitigated by checking the return value of the call and handling the failure appropriately.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 3.564625500002876,
+    "timestamp": "2026-10-01T20:57:26.517278+00:00",
+    "source_sha256": "d953c3338570c42ed10493c2b1ae1e78b0626b19bddebd3cb205eeb252474bc9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 3561102083,
+      "load_duration": 807458,
+      "prompt_eval_count": 216,
+      "prompt_eval_duration": 129586999,
+      "eval_count": 95,
+      "eval_duration": 3429175000
+    }
+  },
+  {
+    "contract_name": "unit_14",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [10],\n        \"severity\": \"High\",\n        \"explanation\": \"The call to 'receiver.call{value: msg.value}(\"\")' is an unchecked low-level call. If the call fails, the transaction reverts, but the state changes (transfer of value) are not reverted. This can lead to unexpected behavior if the call fails. The 'require(ok)' statement attempts to mitigate this, but if 'ok' is false, an exception will be thrown, which might not be caught or handled properly in the calling context.\"\n    }\n]\n```",
+    "parse_error": "Expecting ',' delimiter: line 6 column 71 (char 195)",
+    "inference_time": 5.212360208010068,
+    "timestamp": "2026-10-01T20:57:31.731600+00:00",
+    "source_sha256": "d8dbc9df49131e6d8662822058070e4dbed0f33bf348233d48bf029835925e61",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 5207924625,
+      "load_duration": 959292,
+      "prompt_eval_count": 218,
+      "prompt_eval_duration": 129360999,
+      "eval_count": 138,
+      "eval_duration": 5076528000
+    }
+  },
+  {
+    "contract_name": "unit_15",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          7
+        ],
+        "severity": "high",
+        "explanation": "The function 'execute' uses 'send' which is susceptible to reentrancy attacks. 'send' can fail and revert, but the transaction will not be reverted if the receiver's fallback function is called. This can lead to reentrancy if the receiver's fallback function interacts with the state of the 'Unit' contract."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          7
+        ],
+        "severity": "medium",
+        "explanation": "The 'send' function is used without checking its return value. This is an unchecked low-level call. If 'send' fails, the transaction will not revert, and the function will proceed as if 'send' succeeded, which can lead to unexpected behavior or loss of funds."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [7],\n        \"severity\": \"high\",\n        \"explanation\": \"The function 'execute' uses 'send' which is susceptible to reentrancy attacks. 'send' can fail and revert, but the transaction will not be reverted if the receiver's fallback function is called. This can lead to reentrancy if the receiver's fallback function interacts with the state of the 'Unit' contract.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [7],\n        \"severity\": \"medium\",\n        \"explanation\": \"The 'send' function is used without checking its return value. This is an unchecked low-level call. If 'send' fails, the transaction will not revert, and the function will proceed as if 'send' succeeded, which can lead to unexpected behavior or loss of funds.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.649957958026789,
+    "timestamp": "2026-10-01T20:57:39.383457+00:00",
+    "source_sha256": "19da4c94d3c3ce7147eda159e82fd38ae9d6a36494e859406131c9eec00d8af0",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7646630750,
+      "load_duration": 1355875,
+      "prompt_eval_count": 210,
+      "prompt_eval_duration": 125582000,
+      "eval_count": 204,
+      "eval_duration": 7518378000
+    }
+  },
+  {
+    "contract_name": "unit_16",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          7
+        ],
+        "severity": "high",
+        "explanation": "The function 'execute' uses 'send' which is susceptible to reentrancy attacks. 'send' can call back into the calling contract before the 'send' returns, potentially leading to reentrancy if the receiver's function interacts with the state of the 'Unit' contract."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          7
+        ],
+        "severity": "medium",
+        "explanation": "The use of 'send' in the 'execute' function is an unchecked low-level call. If 'send' fails (returns false), the transaction will revert, but the 'require' statement will catch this failure. However, it is good practice to use 'transfer' or 'call' with value for clarity and to avoid potential issues with gas limits."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [7],\n        \"severity\": \"high\",\n        \"explanation\": \"The function 'execute' uses 'send' which is susceptible to reentrancy attacks. 'send' can call back into the calling contract before the 'send' returns, potentially leading to reentrancy if the receiver's function interacts with the state of the 'Unit' contract.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [7],\n        \"severity\": \"medium\",\n        \"explanation\": \"The use of 'send' in the 'execute' function is an unchecked low-level call. If 'send' fails (returns false), the transaction will revert, but the 'require' statement will catch this failure. However, it is good practice to use 'transfer' or 'call' with value for clarity and to avoid potential issues with gas limits.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 7.9046129590133205,
+    "timestamp": "2026-10-01T20:57:47.290476+00:00",
+    "source_sha256": "157cdea55aa6c73814631879825cfbbc5f30258c4d7b38d00e98b8b51a4d8cb9",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 7900740000,
+      "load_duration": 1025125,
+      "prompt_eval_count": 212,
+      "prompt_eval_duration": 127604000,
+      "eval_count": 211,
+      "eval_duration": 7763664000
+    }
+  },
+  {
+    "contract_name": "unit_17",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          7
+        ],
+        "severity": "high",
+        "explanation": "The function '_deliver' makes a low-level call to 'receiver.call' without checking the return value. If the called contract reenters the 'execute' function, it could lead to reentrancy attacks. However, since Solidity 0.8, functions that modify state (like 'completed = true;') are protected from reentrancy by default. Nonetheless, the unchecked low-level call is a potential point of reentrancy."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          7
+        ],
+        "severity": "medium",
+        "explanation": "The low-level call to 'receiver.call' is made without checking the return value. This could lead to unexpected behavior if the call fails. In Solidity 0.8, arithmetic operations are checked by default, but unchecked blocks can be used to bypass this safety feature. The call here is made within an unchecked block, which means that it could potentially lead to an unchecked low-level call vulnerability."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [7],\n        \"severity\": \"high\",\n        \"explanation\": \"The function '_deliver' makes a low-level call to 'receiver.call' without checking the return value. If the called contract reenters the 'execute' function, it could lead to reentrancy attacks. However, since Solidity 0.8, functions that modify state (like 'completed = true;') are protected from reentrancy by default. Nonetheless, the unchecked low-level call is a potential point of reentrancy.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [7],\n        \"severity\": \"medium\",\n        \"explanation\": \"The low-level call to 'receiver.call' is made without checking the return value. This could lead to unexpected behavior if the call fails. In Solidity 0.8, arithmetic operations are checked by default, but unchecked blocks can be used to bypass this safety feature. The call here is made within an unchecked block, which means that it could potentially lead to an unchecked low-level call vulnerability.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 9.4327262089937,
+    "timestamp": "2026-10-01T20:57:56.725244+00:00",
+    "source_sha256": "3ff37f8b4af06cff3455baf7b48829c2ed56de327ba4cfcae7ee7c082927c5e8",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 9429260084,
+      "load_duration": 1456292,
+      "prompt_eval_count": 246,
+      "prompt_eval_duration": 132213000,
+      "eval_count": 252,
+      "eval_duration": 9290615000
+    }
+  },
+  {
+    "contract_name": "unit_18",
+    "model": "foundationsec",
+    "display_name": "Foundation-Sec-1.1-8B",
+    "vulnerabilities": [
+      {
+        "vulnerability_type": "reentrancy",
+        "line_numbers": [
+          12
+        ],
+        "severity": "high",
+        "explanation": "The function '_deliver' makes a low-level call to 'receiver.call' without checking the return value for reentrancy attacks. An attacker could call back into the contract before the execution of the current call is finished, potentially leading to reentrancy vulnerabilities."
+      },
+      {
+        "vulnerability_type": "unchecked_low_level_calls",
+        "line_numbers": [
+          12
+        ],
+        "severity": "medium",
+        "explanation": "The low-level call in the '_deliver' function does not check the return value of the call. If the call fails, the contract will proceed without any error handling, which can lead to unexpected behavior and potential loss of funds."
+      }
+    ],
+    "raw_response": "```json\n[\n    {\n        \"vulnerability_type\": \"reentrancy\",\n        \"line_numbers\": [12],\n        \"severity\": \"high\",\n        \"explanation\": \"The function '_deliver' makes a low-level call to 'receiver.call' without checking the return value for reentrancy attacks. An attacker could call back into the contract before the execution of the current call is finished, potentially leading to reentrancy vulnerabilities.\"\n    },\n    {\n        \"vulnerability_type\": \"unchecked_low_level_calls\",\n        \"line_numbers\": [12],\n        \"severity\": \"medium\",\n        \"explanation\": \"The low-level call in the '_deliver' function does not check the return value of the call. If the call fails, the contract will proceed without any error handling, which can lead to unexpected behavior and potential loss of funds.\"\n    }\n]\n```",
+    "parse_error": null,
+    "inference_time": 6.83340279199183,
+    "timestamp": "2026-10-01T20:58:03.560450+00:00",
+    "source_sha256": "a74238b0f7de43802a823d014f1d02ef1b7e252d0b35a8d01cba19fa31a833af",
+    "done_reason": "stop",
+    "thinking": "",
+    "api_metrics": {
+      "total_duration": 6829794333,
+      "load_duration": 1250875,
+      "prompt_eval_count": 248,
+      "prompt_eval_duration": 129922000,
+      "eval_count": 180,
+      "eval_duration": 6688785000
+    }
+  }
+]
